@@ -6,7 +6,7 @@
 
 ## Goal
 The overarching goal is to create a framework that allows organizations to quickly gather, create, update, edit,
-and delete incident relevant data. 
+and delete incident relevant data.
 
 ### Requirements
 - Ability to use pre-existing datasets as well as collect data from scratch

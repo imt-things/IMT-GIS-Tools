@@ -1,6 +1,18 @@
 # Work Ideas
 Please create a new H2 heading for each major idea.
 
+# Summary
+|Topic|Backend|Frontend|Physical (printed maps)|
+|-|-|-|-|
+|Event Scripts|X
+|Event GDB|X
+|Custom Webmaps||X
+|Print Kiosk|||X
+|GDB Symbology||X|X
+|Pro Template||X|X
+|Asset Tracking|X
+|
+
 ## Event scripts
 Create a suite of scripts to handle event administration. The scripts should be able to be run from AGOL notebook
 to prevent the need to have Pro open to get started (if it's decided to use pro, perhaps create a toolbox).
@@ -96,7 +108,7 @@ for feature templates however.
 - Allow check-out/in of resources (iPads especially)
 - 
 
-## Brainstorms
+## Snippets
 - Move from gdb to geo package to allow use of third party applications/libraries
 - IAP creator
 - iSuites tools
