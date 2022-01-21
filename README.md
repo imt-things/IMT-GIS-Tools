@@ -4,9 +4,14 @@
 - All-hazard incident management teams
 - Local government emergency management agencies
 
-## Goal
-The overarching goal is to create a framework that allows organizations to quickly gather, create, update, edit,
-and delete incident relevant data.
+## Mission
+<!-- Could probably use a marketing person to clean this up -->
+Create a framework that allows organizations to quickly manage data and produce relevent products.
+
+## Specific goals
+- Be platform agnostic where practical
+- Maintian ability to adapt to user requirements through config file(s)
+- Be scripted where practical to allow for versioning and reduce bandwidth requirements
 
 ### Requirements
 - Ability to use pre-existing datasets as well as collect data from scratch

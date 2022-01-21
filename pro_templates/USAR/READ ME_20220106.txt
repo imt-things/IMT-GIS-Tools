@@ -1,0 +1,28 @@
+08/09/2021
+The National SAR Geospatial Coordination Group (NSARGC) Cadre continues to develop this ArcGIS Pro Template. 
+This folder structure is based on the National Wildfire Coordination Group PMS936 standard.
+
+See the projects folder to get started with the ArcGIS Pro Project. The layouts are currently pointing
+to the Sandbox ArcGIS Pro Web Map but the FEMA ArcGIS Pro Web Map is also embedded in the project
+and ready for use. You will simply need to change the data frame the layouts point to. We will add additional documentation soon.
+
+Updates 08/09/2021
+- Switched to the templates that Tim Mahon from NY-TF1 shared based on Collin Grove OH-TF1 maps during Champlain Tower Collapse
+- Moved service level credits off the map
+- Added 0.1" padding to the legend
+- Added USNG Grid to East and South axis
+- Pointed the map layouts to the Sandbox for easy viewing and review
+- Saved with ArcGIS Pro 2.7 since most FEMA staff won't be on 2.8 for a while.
+- Added a white background to the Grid Zone text box.
+
+Updates
+-updated names to 2022
+-added Lat/Long Calculators from NIFC
+-matched NIFC 2022 folders
+-fixed link to Offline ArcPro Workflow
+
+Next:
+- USNG Grids in the layout
+- Additional HIFLD Critical Infrastructure Layers
+- Additional Map Layouts
+- Offline workflow guidance
