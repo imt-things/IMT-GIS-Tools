@@ -10,7 +10,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 1. When you begin work on a feature, create a version branch and a draft pull request against the issue. That will notify developers that someone has begun work on the issue. **Note:** Creating the Pull Request as a draft will indicate the branch in not ready to be merged but will allow discussion on new features.
 2. Complete a design doc. A template is included in the ```design_docs``` folder. If you are developing a complex feature, the design_doc should be approved by the owners prior to writing relevant code.
 3. Increase the version numbers in any examples, tools, and README.md to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you. **Note:** You will need to convert the Pull Request from Draft in order to merge.
+4. You may merge the Pull Request in once you have the sign-off of one additional developer, or if you do not have permission to do that, you may request the reviewer to merge it for you. **Note:** You will need to convert the Pull Request from Draft in order to merge.
 
 
 # Contributor Covenant Code of Conduct
