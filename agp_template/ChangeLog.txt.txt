@@ -1,0 +1,2 @@
+2020-02-12:
+Removed layouts from 'layouts'. Now accessable via 'Import Layout'
