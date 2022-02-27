@@ -7,7 +7,11 @@
 ***
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
+How do we collect data that allows for pre-built tools to create, read, update, delete (CRUD) with little to no configuration?
+
+The nature of IMT assignments require numerous pre-built tools to enable personnel to begin performing CRUD operations immediately. Additionally, pre-built tools for specific functions/tasks necessitates a pre-defined schema to perform operations on.
+
+This ADR attempts to layout the underlying data schema.
 
 ## Decision Drivers <!-- optional -->
 
@@ -17,53 +21,71 @@
 
 ## Considered Options
 
-1. [option 1]
-2. [option 2]
-3. [option 3]
-4. … <!-- numbers of options can vary -->
+1. Standardized data schema acting as a framework for all assignments.
+2. Different data schemas for different assignment types.
+3. Creation of schema at time of incident assignment.
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+Chosen option: Framework schema due to flexibility, ability to pre-develop/deploy tools, and drastic reduction of resources required to deploy.
 
 ### Positive Consequences <!-- optional -->
 
-* [e.g., improvement of quality attribute satisfaction, follow-up decisions required, …]
-* …
+* Enable immediate data collection following notification of assignment. 
+* Framework allows creating domains to limit feature types based on assignment requirements (requires completion of [#14](https://github.com/fdny-imt/IMT-GIS-Tools/issues/14) to be completed).
+* In conjunction with ready-state deployment, will require no work from technical specialists to begin collection (technical specialist will be required for above point).
+* Allows for pre-developed and deployed tools (surveys, webapps, etc.) to be ready for immediate use.
+* Common schema allows for simple archiving by appending to a master feature service.
 
 ### Negative Consequences <!-- optional -->
 
-* [e.g., compromising quality attribute, follow-up decisions required, …]
-* …
-
+* Will require numerous SQL queries on downstream products to ensure viewing of relevant data (consider use of feature service views to perform the queries and serve as layers).
+* Will require a technical specialist to update domains. See [#14](https://github.com/fdny-imt/IMT-GIS-Tools/issues/14).
+* May require unknown sacrifices on what data can be collected or methods in which it can be collected.
 ## Pros and Cons of the Options <!-- optional -->
 
-### [option 1]
+### Framework Schema
 
-[example | description | pointer to more information | …] <!-- optional -->
+Create frame work that contains can accept numerous pre-loaded feature types and provide the ability to update domains from a template. ([#14](https://github.com/fdny-imt/IMT-GIS-Tools/issues/14).
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+* Pros:
+  * Allows for same schema for all potential incident types
+  * Allows for hasty deployment for immediate use
+  * Allows for starting from standalone database for disconnected incidents
+  * Allows for pre-developed/deployed tools
 
-### [option 2]
+* Cons:
+  * May require technical specialist to update domains
+  * Potential to limit the data that can be collected and the methods of collection.
 
-[example | description | pointer to more information | …] <!-- optional -->
+### Incident-Type Specific Schemas
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+Create numerous pre-defined schemas for pre-determined incident types.
 
-### [option 3]
+* Pros:
+  * More specific schemas specific to certain incident types
+  * Would not require updating of domains for feature types
 
-[example | description | pointer to more information | …] <!-- optional -->
+* Cons:
+  * Limited to pre-determined incident types. Incidents outside those previously built require falling back to option 3 (manual creation)
+  * If data to be collected falls outside the pre-determined feature types would require updating of domains/fields
+  * Severely limits ability to maintain pre-deployed tools
+  * Requires maintaining multiple schemas/deployments
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+**Note:** Some of the cons may be able to be negated by scripting but largely remain significant hurdles. 
+
+### Custom Schema Per Incident
+
+Manual creation of database at time of assignment.
+
+* Pros:
+  * Custom schema provides results most likely to meet needs of incident
+
+* Cons:
+  * Requires extensive time and technical knowledge to create
+  * Can be very difficult to change mid-incident, potentially resulting in data loss
+  * No ability to create/deploy pre-developed tools
+  * Has ability to create very difficult to understand/maintain data structures
 
 ## Links <!-- optional -->
 
@@ -75,7 +97,7 @@ Chosen option: "[option 1]", because [justification. e.g., only option, which me
 
 **Evaluation criteria**:
 
-  * Summary: explain briefly what we seek to discover and why.
+  * Summary: Determine method to quickly spin-up database to allow near-immediate data collection following notification of assignment.
 
   * Specifics
 
