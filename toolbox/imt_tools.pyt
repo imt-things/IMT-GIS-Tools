@@ -7,8 +7,9 @@ import _template
 importlib.reload(_template)
 from _template import Template
 
+# Add tools here
 tool_list = [
-    Template
+    #Template
 ]
 
 class Toolbox(object):
