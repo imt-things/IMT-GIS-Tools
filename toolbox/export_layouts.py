@@ -1,7 +1,7 @@
 import arcpy
 from pathlib import Path
 
-__version__ = '2022-03-03'
+__version__ = '2022-03-11'
 
 
 class ExportLayouts:
@@ -20,9 +20,9 @@ class ExportLayouts:
         
         # Todo: Select layouts to export
         layouts = arcpy.Parameter(
-            name='Start Number',
-            displayName='Number to add to',
-            datatype='GPLong',
+            name='Output Directory',
+            displayName='Output Directory',
+            datatype='DEFolder',
             parameterType='Required',
             direction='Input'
         )
@@ -40,11 +40,9 @@ class ExportLayouts:
         for param in parameters:
             messages.addMessage(f'Parameter: {param.name} = {param.valueAsText}')
 
-        layouts = arcpy.GetParameter(0)
-
-        messages.addMessage(f'Exporting layouts: {layouts}}')
+        out_path = Path(parameters[0].valueAsText).resolve()
         
-        export_layouts(messages, layouts)
+        export_layouts(messages, out_path)
         
         
 
@@ -53,9 +51,12 @@ class ExportLayouts:
         return
 
 
-def export_layouts(messages, layouts):
-    # Todo: Requires product naming
-    for layout in layouts:
-        messages.addMessage(f'Exproting {layout}')
-        # Todo: export layout
+def export_layouts(messages, out_path):
+    # Todo: Requires product naming IAW SOP
+    messages.addMessage(f'Exporting layouts to {out_path}')
+    aprx = arcpy.mp.ArcGISProject("CURRENT")
+
+    for layout in aprx.listLayouts():
+        messages.addMessage(f'Exporting {layout.name}')
+        layout.exportToPDF(out_path.joinpath(f'{layout.name}.pdf'))
     return

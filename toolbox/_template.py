@@ -4,7 +4,7 @@ from datetime import date
 
 __version__ = '2022-02-12'
 
-class Template:
+class _Template:
     def __init__(self):
         # Define the tool (tool name is the name of the class).
         self.label = 'Tool Template'

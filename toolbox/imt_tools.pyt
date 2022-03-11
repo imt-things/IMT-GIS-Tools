@@ -5,11 +5,16 @@ import importlib
 # Adapted from https://github.com/Wildsong/ArcGIS_Python_Template
 import _template
 importlib.reload(_template)
-from _template import Template
+from _template import _Template
+
+import export_layouts
+importlib.reload(export_layouts)
+from export_layouts import ExportLayouts
 
 # Add tools here
 tool_list = [
-    #Template
+    #_Template
+    ExportLayouts
 ]
 
 class Toolbox(object):
