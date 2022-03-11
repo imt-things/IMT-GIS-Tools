@@ -1,16 +1,15 @@
 import arcpy
 from pathlib import Path
-from datetime import date
 
-__version__ = '2022-02-12'
+__version__ = '2022-03-11'
 
-class _Template:
-    def __init__(self):
-        # Define the tool (tool name is the name of the class).
-        self.label = 'Tool Template'
-        self.description = 'Just a template'
+
+class ExportLayouts:
+    def __init__(self) -> None:
+        self.label = 'Export All Project Layouts'
+        self.description = 'Export all layouts in project'
         self.canRunInBackground = True
-        self.category = 'Debugging' # Use your own category here, or an existing one.
+        self.category = 'Products' # Use your own category here, or an existing one.
         #self.stylesheet = '' # I don't know how to use this yet.
     
 
@@ -18,25 +17,17 @@ class _Template:
         # Define parameter definitions.
         # Refer to https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameters-in-a-python-toolbox.htm
 
-        start_number = arcpy.Parameter(
-            name='Start Number',
-            displayName='Number to add to',
-            datatype='GPLong',
+        
+        # Todo: Select layouts to export
+        layouts = arcpy.Parameter(
+            name='Output Directory',
+            displayName='Output Directory',
+            datatype='DEFolder',
             parameterType='Required',
             direction='Input'
         )
 
-        add_number = arcpy.Parameter(
-            name='Number to add',
-            displayName='Number to add',
-            datatype='GPLong',
-            parameterType='Required',
-            direction='Input'
-        )
-
-        add_number.value = 5  # Set default value
-
-        return [start_number, add_number]
+        return [layouts]
 
    
     def execute(self, parameters, messages):
@@ -49,12 +40,9 @@ class _Template:
         for param in parameters:
             messages.addMessage(f'Parameter: {param.name} = {param.valueAsText}')
 
-        base_num = arcpy.GetParameter(0)
-        add_num = arcpy.GetParameter(1)
-
-        messages.addMessage(f'{base_num+add_num}')
+        out_path = Path(parameters[0].valueAsText).resolve()
         
-        add_nums(messages, base_num, add_num)
+        export_layouts(messages, out_path)
         
         
 
@@ -62,6 +50,13 @@ class _Template:
 
         return
 
-def add_nums(messages, x, y):
-    messages.addMessage(x + y)
+
+def export_layouts(messages, out_path):
+    # Todo: Requires product naming IAW SOP
+    messages.addMessage(f'Exporting layouts to {out_path}')
+    aprx = arcpy.mp.ArcGISProject("CURRENT")
+
+    for layout in aprx.listLayouts():
+        messages.addMessage(f'Exporting {layout.name}')
+        layout.exportToPDF(out_path.joinpath(f'{layout.name}.pdf'))
     return
