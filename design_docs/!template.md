@@ -17,10 +17,10 @@
 
 ## Considered Options
 
-* [option 1]
-* [option 2]
-* [option 3]
-* … <!-- numbers of options can vary -->
+1. [option 1]
+2. [option 2]
+3. [option 3]
+4. … <!-- numbers of options can vary -->
 
 ## Decision Outcome
 
