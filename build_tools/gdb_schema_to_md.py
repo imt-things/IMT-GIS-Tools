@@ -1,12 +1,15 @@
-
 from xml.etree import ElementTree
 from pathlib import Path
 
+out_file = Path('event_gdb/test.md')
 
-xml = ElementTree.ElementTree(file='../event_gdb/event_gdb_schema.xml')
-out_file = Path('../event_gdb/test.md')
+in_file = Path('event_gdb/event_gdb_schema.xml')
+print(in_file.resolve())
+xml = ElementTree.ElementTree(file=in_file)
 
-output = '# Domains\n'
+print(out_file)
+
+output = '<details>\n<summary>\n\nDomains\n</summary>\n\n'
 
 for domain in xml.findall('WorkspaceDefinition/Domains/Domain'):
     output += f'## {domain.find("DomainName").text}\n'
@@ -17,6 +20,7 @@ for domain in xml.findall('WorkspaceDefinition/Domains/Domain'):
                 output += f'- {val.tag}: {val.text}\n'
             else:
                 output += f'  - {val.tag}: {val.text}\n'
+output += '</details>\n\n'
 
 output += '# Tables/Fields\n'
 
