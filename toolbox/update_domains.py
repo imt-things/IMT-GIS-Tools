@@ -59,6 +59,7 @@ class _Template:
         return
 
 def add_domains(messages, gdb, in_data):
+    # Todo: This should: read in file -> read in current domains -> delete ones no longer needed? -> add new domains -> update correct tables/fields
     in_data = Path('event_gdb/domain_template.csv')
 
     values = []
