@@ -3461,7 +3461,7 @@
                             <ModelName>Field</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>IncNum</Name>
+                            <Name>incident_num</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>100</Length>
@@ -3471,13 +3471,22 @@
                             <ModelName>Value</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>OpPeriod</Name>
-                            <Type>esriFieldTypeString</Type>
+                            <Name>operational_period_start</Name>
+                            <Type>esriFieldTypeDate</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>100</Length>
+                            <Length>8</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Operational Peried</AliasName>
+                            <AliasName>Operational Peried Start</AliasName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>operational_period_end</Name>
+                            <Type>esriFieldTypeDate</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>8</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Operational Peried End</AliasName>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>author</Name>
@@ -3489,13 +3498,13 @@
                             <AliasName>Author</AliasName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>time</Name>
+                            <Name>output_time</Name>
                             <Type>esriFieldTypeDate</Type>
                             <IsNullable>true</IsNullable>
                             <Length>8</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Date/Time</AliasName>
+                            <AliasName>Output Date/Time</AliasName>
                         </Field>
                     </FieldArray>
                 </Fields>
