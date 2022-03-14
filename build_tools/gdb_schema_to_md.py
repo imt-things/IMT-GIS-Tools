@@ -9,7 +9,7 @@ xml = ElementTree.ElementTree(file=in_file)
 
 print(out_file)
 
-output = '<details>\n<summary>\n\nDomains\n</summary>\n\n'
+output = '<details>\n<summary>Domains</summary>\n\n'
 
 for domain in xml.findall('WorkspaceDefinition/Domains/Domain'):
     output += f'## {domain.find("DomainName").text}\n'
@@ -22,13 +22,13 @@ for domain in xml.findall('WorkspaceDefinition/Domains/Domain'):
                 output += f'  - {val.tag}: {val.text}\n'
 output += '</details>\n\n'
 
-output += '# Tables/Fields\n'
+output += '<details>\n<summary>Tables/Fields\n</summary>\n\n'
 
 # Define attributes to write and do so
 attribs_to_write = 'Type IsNullable Length Precision Required DomainFixed AliasName DefaultValue Domain'.split()
 
 for field in xml.findall('WorkspaceDefinition/DatasetDefinitions/DataElement'):
-    output += f'## {field.find("Name").text}\n'
+    output += f'<details>\n<summary>{field.find("Name").text}</summary>\n\n'
     for field in list(field.findall('Fields/FieldArray/Field')):
         for attrib in list(field):
             if attrib.tag == 'Name':
@@ -38,10 +38,12 @@ for field in xml.findall('WorkspaceDefinition/DatasetDefinitions/DataElement'):
                 output += f'- DomainName: {field.find("Domain/DomainName").text}\n'
             elif attrib.tag in(attribs_to_write):
                 output += f'- {attrib.tag}: {attrib.text}\n'
+    output += '</details>\n\n'
+
+output += '</details>\n\n'
 
 
-
-output += '# Subtypes'
+output += '<details>\n<summary>Subtypes</summary>\n\n'
 
 with out_file.open('w') as out:
     out.write(output)
