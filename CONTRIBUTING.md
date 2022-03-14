@@ -5,12 +5,18 @@ email, or any other method with the owners of this repository before making a ch
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
-## Pull Request Process
+## Development Process
 
 1. When you begin work on a feature, create a version branch and a draft pull request against the issue. That will notify developers that someone has begun work on the issue. **Note:** Creating the Pull Request as a draft will indicate the branch in not ready to be merged but will allow discussion on new features.
 2. Complete a design doc. A template is included in the ```design_docs``` folder. If you are developing a complex feature, the design_doc should be approved by the owners prior to writing relevant code.
 3. Increase the version numbers in any examples, tools, and README.md to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
 4. You may merge the Pull Request in once you have the sign-off of one additional developer, or if you do not have permission to do that, you may request the reviewer to merge it for you. **Note:** You will need to convert the Pull Request from Draft in order to merge.
+
+## Code Standards
+1. All paths shall be created as Path (from pathlib) objects at the time of initialization. Should a package not accept Path objects, such as GDAL, paths should be passed to the package as str(path/to/file).
+2. Doc strings shall be included in each function. Doc strings should be in the XXXX format <!-- Todo: define this !-->
+3. Tests are not required, but testing is. Due to the nature of required tools, testing can be a hassle. Tools shall be tested to ensure operation as advertised and tests should be written when appropriate. Pytest is the test platform of choice.
+4. No usernames or passwords are to be stored in plain text.
 
 
 # Contributor Covenant Code of Conduct
