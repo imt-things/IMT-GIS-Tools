@@ -368,7 +368,7 @@
                         <Code xsi:type='xs:string'>Parking</Code>
                     </CodedValue>
                     <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Police Statiomn</Name>
+                        <Name>Police Station</Name>
                         <Code xsi:type='xs:string'>Police Station</Code>
                     </CodedValue>
                     <CodedValue xsi:type='esri:CodedValue'>
