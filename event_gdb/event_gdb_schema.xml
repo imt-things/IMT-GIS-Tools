@@ -1400,7 +1400,7 @@
                             <Name>IRWINID</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>50</Length>
+                            <Length>32</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>IRWINID</AliasName>
@@ -2230,7 +2230,7 @@
                             <Name>IRWINID</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>50</Length>
+                            <Length>32</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>IRWINID</AliasName>
@@ -3102,7 +3102,7 @@
                             <Name>IRWINID</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>50</Length>
+                            <Length>32</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>IRWINID</AliasName>
