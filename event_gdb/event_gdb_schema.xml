@@ -3002,7 +3002,7 @@
                             <Name>Multiplier</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>2</Length>
+                            <Length>4</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Multiplier</AliasName>
@@ -3012,7 +3012,7 @@
                             <Name>Sequence</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>2</Length>
+                            <Length>3</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Sequence</AliasName>
