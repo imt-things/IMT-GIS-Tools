@@ -11,10 +11,15 @@ import export_layouts
 importlib.reload(export_layouts)
 from export_layouts import ExportLayouts
 
+import update_domains
+importlib.reload(update_domains)
+from update_domains import UpdateDomains
+
 # Add tools here
 tool_list = [
     #_Template
-    ExportLayouts
+    ExportLayouts,
+    UpdateDomains
 ]
 
 class Toolbox(object):

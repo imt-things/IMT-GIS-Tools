@@ -4,7 +4,7 @@ import csv
 
 __version__ = '2022-03-14'
 
-class _Template:
+class UpdateDomains:
     def __init__(self):
         # Define the tool (tool name is the name of the class).
         self.label = 'Update Domains'
@@ -29,7 +29,7 @@ class _Template:
         input_csv = arcpy.Parameter(
             name='Input Domains',
             displayName='CSV to add domains from',
-            datatype='GPDataFile',
+            datatype='DEFile',
             parameterType='Required',
             direction='Input'
         )
@@ -48,9 +48,9 @@ class _Template:
             messages.addMessage(f'Parameter: {param.name} = {param.valueAsText}')
 
         gdb = parameters[0].valueAsText
-        in_data = Path(parameters[1].valueAsText).resolve
+        in_file = Path(parameters[1].valueAsText).resolve()
         
-        add_domains(messages, gdb, in_data)
+        add_domains(messages, gdb, in_file)
         
         
 
@@ -58,12 +58,11 @@ class _Template:
 
         return
 
-def add_domains(messages, gdb, in_data):
+def add_domains(messages, gdb, in_file):
     # Todo: This should: read in file -> read in current domains -> delete ones no longer needed? -> add new domains -> update correct tables/fields
-    in_data = Path('event_gdb/domain_template.csv')
 
     values = []
-    with open(in_data, newline='') as src:
+    with in_file.open(newline='') as src:
         data = csv.DictReader(src)
 
         for row in data:
@@ -73,19 +72,34 @@ def add_domains(messages, gdb, in_data):
     unique = set([value['domain_full'] for value in values])
 
     for dom in unique:
-        arcpy.CreateDomain_management(gdb, dom)
+
+        # add value to FeatureGroup domain
+        arcpy.AddCodedValueToDomain_management(gdb, 'FeatureGroup', dom, dom)
+        messages.addMessage(f'Added {dom} to FeatureGroup domain')
+
+        # create new domain
+        # Todo: Add error checking....fails if the domain exists. If that's the case, we should update the coded values
+        arcpy.CreateDomain_management(gdb, dom, field_type='TEXT', domain_type='CODED')
+        messages.addMessage(f'Added domain: {dom}')
+
+        # add coded values to new domain
         codes = {value['feature_name']: value['feature_name'] for value in values if value['domain_full'] == dom}
         for code in codes:
-            arcpy.AddCodedValueToDomain_management(gdb, dom, code, code)
-            # print(dom, code, codes[code])
+            short_code = code.replace(' ', '_')
+            arcpy.AddCodedValueToDomain_management(gdb, dom, short_code, code)
 
-        if dom.contains('Polygons'):
-            in_table = 'Event_Polygon'
-        elif dom.contains('Lines'):
-            in_table = 'Event_Line'
-        elif dom.contains('Points'):
-            in_table = 'Event_Point'
-        arcpy.AssignDomainToField_management(in_table, in_field, dom)
+        # # create subtype for domain
+
+
+
+        # # add domain to field in subtype
+        # if dom.contains('Polygons'):
+        #     in_table = 'Event_Polygon'
+        # elif dom.contains('Lines'):
+        #     in_table = 'Event_Line'
+        # elif dom.contains('Points'):
+        #     in_table = 'Event_Point'
+        # arcpy.AssignDomainToField_management(in_table, in_field, dom)
 
 
     return
