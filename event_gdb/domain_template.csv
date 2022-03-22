@@ -1,0 +1,6 @@
+domain_name,feature_name,feat_type,field_type,domain_type
+HazMat,Hot Zone,Polygon,Text,
+HazMat,Warm Zone,Polygon,Text,
+HazMat,Cold Zone,Polygon,Text,
+HazMat,CCP,Point,Text,
+HazMat,Staging Area,Point,Text,
