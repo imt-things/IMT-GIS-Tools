@@ -2989,6 +2989,16 @@
                             <ModelName>LongWGS84_DDM</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
+                            <Name>Elevation</Name>
+                            <Type>esriFieldTypeSmallInteger</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>2</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Elevation</AliasName>
+                            <ModelName>Elevation</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
                             <Name>PropertyInfo</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
