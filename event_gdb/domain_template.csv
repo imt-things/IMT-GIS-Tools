@@ -1,6 +1,148 @@
-domain_name,feature_name,feat_type,field_type,domain_type
-HazMat,Hot Zone,Polygon,Text,
-HazMat,Warm Zone,Polygon,Text,
-HazMat,Cold Zone,Polygon,Text,
-HazMat,CCP,Point,Text,
-HazMat,Staging Area,Point,Text,
+domain_name,feature_name,feat_type
+Urban,Road Closure,Line
+Urban,Shuttle Route,Line
+Wildland,Uncontrolled Fire Edge,Line
+Wildland,Completed Dozer Line,Line
+Wildland,Completed Line,Line
+Wildland,Completed Hand Line,Line
+Wildland,Road as Completed Line,Line
+Wildland,Active Burnout,Line
+Wildland,Aerial Foam Drop,Line
+Wildland,Aerial Hazard,Line
+Wildland,Aerial Ignition,Line
+Wildland,Aerial Retardant Drop,Line
+Wildland,Aerial Water Drop,Line
+Wildland,Air Tanker Foam,Line
+Wildland,Air Tanker Retardant,Line
+Wildland,Completed Burnout,Line
+Wildland,Edge of Imagery,Line
+Wildland,Escape Route,Line
+Wildland,Explosive Line,Line
+Wildland,Fire Break Planned or Incomplete,Line
+Wildland,Fire Spread Prediction,Line
+Wildland,Helitanker Foam,Line
+Wildland,Helitanker Water,Line
+Wildland,Highlighted Manmade Feature,Line
+Wildland,Line Break Completed,Line
+Wildland,Management Action Point,Line
+Wildland,Planned Fire Line,Line
+Wildland,Planned Secondary Line,Line
+Wildland,Completed Plow Line,Line
+Wildland,Proposed Burnout,Line
+Wildland,Proposed Dozer Line,Line
+Wildland,Ridge/Geographic Feature,Line
+Wildland,Unknown,Line
+Wildland,Other,Line
+Wildland,Access or Improved Road,Line
+Wildland,Temporary Flight Restriction,Line
+USAR,Animal Issue,Point
+USAR,Assisted,Point
+USAR,Evacuated,Point
+USAR,Extra 21,Point
+USAR,Extra 22,Point
+USAR,Extra 23,Point
+USAR,Extra 24,Point
+USAR,Fire Incident,Point
+USAR,Flood/Water Level,Point
+USAR,Follow-up form,Point
+USAR,HAZMAT Incident,Point
+USAR,Helicopter LZ,Point
+USAR,Human remains,Point
+USAR,Human Remains Removed,Point
+USAR,Rescued,Point
+USAR,Route Blocked,Point
+USAR,Shelter in Place,Point
+USAR,"Structure, Damaged",Point
+USAR,"Structure, Destroyed",Point
+USAR,"Structure, Failed",Point
+USAR,"Structure, No Damage",Point
+USAR,Targeted Search,Point
+USAR,"Victim, confirmed",Point
+USAR,"Victim, detected",Point
+Urban,Church,Point
+Urban,Drop-off/Pick-up,Point
+Urban,Fire House,Point
+Urban,Food,Point
+Urban,Hospital,Point
+Urban,Hotel,Point
+Urban,Military Base,Point
+Urban,Other,Point
+Urban,Parking,Point
+Urban,Police Station,Point
+Urban,Radio Tower,Point
+Urban,Subway Station,Point
+Urban,Water,Point
+Urban,Cold Zone,Polygon
+Urban,Effected Area,Polygon
+Urban,Evacuation Zone A,Polygon
+Urban,Evacuation Zone B,Polygon
+Urban,Evacuation Zone C,Polygon
+Urban,Evacuation Zone D,Polygon
+Urban,Flood/Innundation Zone,Polygon
+Urban,Hot Zone,Polygon
+Urban,Warm Zone,Polygon
+Urban,Hasty,Polygon
+Urban,Primary,Polygon
+Urban,Recon,Polygon
+Urban,Secondary High,Polygon
+Urban,Secondary Low,Polygon
+Wildland,Wildfire Final Fire Perimeter,Polygon
+Wildland,Wildfire Daily Fire Perimeter,Polygon
+Wildland,Prescribed Fire,Polygon
+Wildland,IR Heat Perimeter,Polygon
+Wildland,IR Intense Heat,Polygon
+Wildland,IR Scattered Heat,Polygon
+Wildland,Unburned Island,Polygon
+Wildland,Active Burnout,Polygon
+Wildland,Proposed Burnout,Polygon
+Wildland,Completed Burnout,Polygon
+Wildland,Retardant Avoidance Area,Polygon
+Wildland,Value at Risk,Polygon
+Wildland,Closure Area,Polygon
+Wildland,Evacuation Area,Polygon
+Wildland,Cloud Cover,Polygon
+Wildland,Area Covered by IR Flight,Polygon
+Wildland,Unknown,Polygon
+Wildland,Other,Polygon
+Wildland,Aerial Hazard,Point
+Wildland,Aerial Ignition,Point
+Wildland,Airstrip or Airport,Point
+Wildland,Branch Break,Point
+Wildland,Camp,Point
+Wildland,Closure,Point
+Wildland,Division Break,Point
+Wildland,Dip Site,Point
+Wildland,Drop Point,Point
+Wildland,Fire Location,Point
+Wildland,Fire Origin,Point
+Wildland,Fire Station,Point
+Wildland,First Aid Station,Point
+Wildland,Gate,Point
+Wildland,Helibase,Point
+Wildland,Helispot,Point
+Wildland,Hot Spot,Point
+Wildland,Incident Base,Point
+Wildland,Incident Command Post,Point
+Wildland,Possible IR Heat Source,Point
+Wildland,IR Isolated Heat Source,Point
+Wildland,Landmark,Point
+Wildland,Lookout,Point
+Wildland,Mobile Weather Unit,Point
+Wildland,Pump,Point
+Wildland,Repeater,Point
+Wildland,Retardant/Mud Pit,Point
+Wildland,Safety Zone,Point
+Wildland,Segment Break,Point
+Wildland,Sling Site,Point
+Wildland,Spot Fire,Point
+Wildland,Staging Area,Point
+Wildland,Internet Access,Point
+Wildland,Water Source,Point
+Wildland,Water Tank,Point
+Wildland,Restricted Water Source,Point
+Wildland,Wind Speed & Direction,Point
+Wildland,Zone Break,Point
+Wildland,Value at Risk,Point
+Wildland,Unknown,Point
+Wildland,Other,Point
+Wildland,Unimproved Landing Area,Point
