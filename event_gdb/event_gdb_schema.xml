@@ -219,6 +219,15 @@
                     </CodedValue>
                 </CodedValues>
             </Domain>
+            <Domain xsi:type='esri:CodedValueDomain'>
+                <DomainName>FeatureGroup</DomainName>
+                <FieldType>esriFieldTypeString</FieldType>
+                <MergePolicy>esriMPTDefaultValue</MergePolicy>
+                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
+                <Description>Feature Group</Description>
+                <Owner></Owner>
+                <CodedValues xsi:type='esri:ArrayOfCodedValue'></CodedValues>
+            </Domain>
         </Domains>
         <DatasetDefinitions xsi:type='esri:ArrayOfDataElement'>
             <DataElement xsi:type='esri:DEFeatureClass'>
