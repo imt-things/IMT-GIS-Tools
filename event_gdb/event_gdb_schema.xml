@@ -58,7 +58,7 @@
                 <FieldType>esriFieldTypeInteger</FieldType>
                 <MergePolicy>esriMPTDefaultValue</MergePolicy>
                 <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
-                <Description></Description>
+                <Description>Map Measurement</Description>
                 <Owner></Owner>
                 <CodedValues xsi:type='esri:ArrayOfCodedValue'>
                     <CodedValue xsi:type='esri:CodedValue'>
