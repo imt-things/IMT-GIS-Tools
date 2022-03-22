@@ -10,7 +10,7 @@
                 <FieldType>esriFieldTypeString</FieldType>
                 <MergePolicy>esriMPTDefaultValue</MergePolicy>
                 <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
-                <Description>Yes, No field</Description>
+                <Description>Yes, No</Description>
                 <Owner></Owner>
                 <CodedValues xsi:type='esri:ArrayOfCodedValue'>
                     <CodedValue xsi:type='esri:CodedValue'>
@@ -24,6 +24,20 @@
                     <CodedValue xsi:type='esri:CodedValue'>
                         <Name>Unknown</Name>
                         <Code xsi:type='xs:string'>Unk</Code>
+                    </CodedValue>
+                </CodedValues>
+            </Domain>
+            <Domain xsi:type='esri:CodedValueDomain'>
+                <DomainName>FeatureGroup</DomainName>
+                <FieldType>esriFieldTypeSmallInteger</FieldType>
+                <MergePolicy>esriMPTDefaultValue</MergePolicy>
+                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
+                <Description>Feature Group</Description>
+                <Owner></Owner>
+                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Other/Unknown</Name>
+                        <Code xsi:type='xs:short'>0</Code>
                     </CodedValue>
                 </CodedValues>
             </Domain>
@@ -50,60 +64,6 @@
                     <CodedValue xsi:type='esri:CodedValue'>
                         <Name>Archive</Name>
                         <Code xsi:type='xs:string'>Archive</Code>
-                    </CodedValue>
-                </CodedValues>
-            </Domain>
-            <Domain xsi:type='esri:CodedValueDomain'>
-                <DomainName>MeasurementTypesDomain</DomainName>
-                <FieldType>esriFieldTypeInteger</FieldType>
-                <MergePolicy>esriMPTDefaultValue</MergePolicy>
-                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
-                <Description>Map Measurement</Description>
-                <Owner></Owner>
-                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Point</Name>
-                        <Code xsi:type='xs:int'>0</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Distance</Name>
-                        <Code xsi:type='xs:int'>1</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Area</Name>
-                        <Code xsi:type='xs:int'>2</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Centroid</Name>
-                        <Code xsi:type='xs:int'>6</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Base To Top Height</Name>
-                        <Code xsi:type='xs:int'>3</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Base To Top Shadow Height</Name>
-                        <Code xsi:type='xs:int'>4</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Top To Top Shadow Height</Name>
-                        <Code xsi:type='xs:int'>5</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Point 3D</Name>
-                        <Code xsi:type='xs:int'>7</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Distance 3D</Name>
-                        <Code xsi:type='xs:int'>8</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Centroid 3D</Name>
-                        <Code xsi:type='xs:int'>13</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Area 3D</Name>
-                        <Code xsi:type='xs:int'>9</Code>
                     </CodedValue>
                 </CodedValues>
             </Domain>
@@ -190,6 +150,60 @@
                 </CodedValues>
             </Domain>
             <Domain xsi:type='esri:CodedValueDomain'>
+                <DomainName>MeasurementTypesDomain</DomainName>
+                <FieldType>esriFieldTypeInteger</FieldType>
+                <MergePolicy>esriMPTDefaultValue</MergePolicy>
+                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
+                <Description>Map Measurement</Description>
+                <Owner></Owner>
+                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Point</Name>
+                        <Code xsi:type='xs:int'>0</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Distance</Name>
+                        <Code xsi:type='xs:int'>1</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Area</Name>
+                        <Code xsi:type='xs:int'>2</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Centroid</Name>
+                        <Code xsi:type='xs:int'>6</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Base To Top Height</Name>
+                        <Code xsi:type='xs:int'>3</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Base To Top Shadow Height</Name>
+                        <Code xsi:type='xs:int'>4</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Top To Top Shadow Height</Name>
+                        <Code xsi:type='xs:int'>5</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Point 3D</Name>
+                        <Code xsi:type='xs:int'>7</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Distance 3D</Name>
+                        <Code xsi:type='xs:int'>8</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Centroid 3D</Name>
+                        <Code xsi:type='xs:int'>13</Code>
+                    </CodedValue>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Area 3D</Name>
+                        <Code xsi:type='xs:int'>9</Code>
+                    </CodedValue>
+                </CodedValues>
+            </Domain>
+            <Domain xsi:type='esri:CodedValueDomain'>
                 <DomainName>FeatureAccess</DomainName>
                 <FieldType>esriFieldTypeString</FieldType>
                 <MergePolicy>esriMPTDefaultValue</MergePolicy>
@@ -219,26 +233,266 @@
                     </CodedValue>
                 </CodedValues>
             </Domain>
-            <Domain xsi:type='esri:CodedValueDomain'>
-                <DomainName>FeatureGroup</DomainName>
-                <FieldType>esriFieldTypeSmallInteger</FieldType>
-                <MergePolicy>esriMPTDefaultValue</MergePolicy>
-                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
-                <Description>Feature Group</Description>
-                <CodedValues xsi:type='esri:ArrayOfCodedValue'></CodedValues>
-            </Domain>
         </Domains>
         <DatasetDefinitions xsi:type='esri:ArrayOfDataElement'>
+            <DataElement xsi:type='esri:DETable'>
+                <CatalogPath>/OC=DynamicText</CatalogPath>
+                <Name>DynamicText</Name>
+                <DatasetType>esriDTTable</DatasetType>
+                <DSID>9</DSID>
+                <Versioned>false</Versioned>
+                <CanVersion>false</CanVersion>
+                <ConfigurationKeyword></ConfigurationKeyword>
+                <HasOID>true</HasOID>
+                <OIDFieldName>OBJECTID</OIDFieldName>
+                <Fields xsi:type='esri:Fields'>
+                    <FieldArray xsi:type='esri:ArrayOfField'>
+                        <Field xsi:type='esri:Field'>
+                            <Name>OBJECTID</Name>
+                            <Type>esriFieldTypeOID</Type>
+                            <IsNullable>false</IsNullable>
+                            <Length>4</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <Required>true</Required>
+                            <Editable>false</Editable>
+                            <AliasName>OBJECTID</AliasName>
+                            <ModelName>OBJECTID</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>ic</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>100</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Incident Commander</AliasName>
+                            <ModelName>Field</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>incident_num</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>100</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Incident Number</AliasName>
+                            <ModelName>Value</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>operational_period_start</Name>
+                            <Type>esriFieldTypeDate</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>8</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Operational Peried Start</AliasName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>operational_period_end</Name>
+                            <Type>esriFieldTypeDate</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>8</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Operational Peried End</AliasName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>author</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>100</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Author</AliasName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>output_time</Name>
+                            <Type>esriFieldTypeDate</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>8</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Output Date/Time</AliasName>
+                        </Field>
+                    </FieldArray>
+                </Fields>
+                <Indexes xsi:type='esri:Indexes'>
+                    <IndexArray xsi:type='esri:ArrayOfIndex'>
+                        <Index xsi:type='esri:Index'>
+                            <Name>FDO_OBJECTID</Name>
+                            <IsUnique>true</IsUnique>
+                            <IsAscending>true</IsAscending>
+                            <Fields xsi:type='esri:Fields'>
+                                <FieldArray xsi:type='esri:ArrayOfField'>
+                                    <Field xsi:type='esri:Field'>
+                                        <Name>OBJECTID</Name>
+                                        <Type>esriFieldTypeOID</Type>
+                                        <IsNullable>false</IsNullable>
+                                        <Length>4</Length>
+                                        <Precision>0</Precision>
+                                        <Scale>0</Scale>
+                                        <Required>true</Required>
+                                        <Editable>false</Editable>
+                                        <AliasName>OBJECTID</AliasName>
+                                        <ModelName>OBJECTID</ModelName>
+                                    </Field>
+                                </FieldArray>
+                            </Fields>
+                        </Index>
+                    </IndexArray>
+                </Indexes>
+                <CLSID>{7A566981-C114-11D2-8A28-006097AFF44E}</CLSID>
+                <EXTCLSID></EXTCLSID>
+                <RelationshipClassNames xsi:type='esri:Names'></RelationshipClassNames>
+                <AliasName>DynamicText</AliasName>
+                <ModelName></ModelName>
+                <HasGlobalID>false</HasGlobalID>
+                <GlobalIDFieldName></GlobalIDFieldName>
+                <RasterFieldName></RasterFieldName>
+                <ExtensionProperties xsi:type='esri:PropertySet'>
+                    <PropertyArray xsi:type='esri:ArrayOfPropertySetProperty'></PropertyArray>
+                </ExtensionProperties>
+                <ControllerMemberships xsi:type='esri:ArrayOfControllerMembership'></ControllerMemberships>
+                <EditorTrackingEnabled>false</EditorTrackingEnabled>
+                <CreatorFieldName></CreatorFieldName>
+                <CreatedAtFieldName></CreatedAtFieldName>
+                <EditorFieldName></EditorFieldName>
+                <EditedAtFieldName></EditedAtFieldName>
+                <IsTimeInUTC>true</IsTimeInUTC>
+                <ChangeTracked>false</ChangeTracked>
+                <FieldFilteringEnabled>false</FieldFilteringEnabled>
+                <FilteredFieldNames xsi:type='esri:Names'></FilteredFieldNames>
+                <ReplicaTracked>false</ReplicaTracked>
+            </DataElement>
+            <DataElement xsi:type='esri:DETable'>
+                <CatalogPath>/OC=Incidents</CatalogPath>
+                <Name>Incidents</Name>
+                <DatasetType>esriDTTable</DatasetType>
+                <DSID>10</DSID>
+                <Versioned>false</Versioned>
+                <CanVersion>false</CanVersion>
+                <ConfigurationKeyword></ConfigurationKeyword>
+                <HasOID>true</HasOID>
+                <OIDFieldName>OBJECTID</OIDFieldName>
+                <Fields xsi:type='esri:Fields'>
+                    <FieldArray xsi:type='esri:ArrayOfField'>
+                        <Field xsi:type='esri:Field'>
+                            <Name>OBJECTID</Name>
+                            <Type>esriFieldTypeOID</Type>
+                            <IsNullable>false</IsNullable>
+                            <Length>4</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <Required>true</Required>
+                            <Editable>false</Editable>
+                            <AliasName>OBJECTID</AliasName>
+                            <ModelName>OBJECTID</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>name</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>255</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Incident Name</AliasName>
+                            <ModelName>name</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>start_date_time</Name>
+                            <Type>esriFieldTypeDate</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>8</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>start_date_time</AliasName>
+                            <ModelName>start_date_time</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>end_date_time</Name>
+                            <Type>esriFieldTypeDate</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>8</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>end_date_time</AliasName>
+                            <ModelName>end_date_time</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>location</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>255</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>location</AliasName>
+                            <ModelName>locanion</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>number</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>255</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Incident Number</AliasName>
+                        </Field>
+                    </FieldArray>
+                </Fields>
+                <Indexes xsi:type='esri:Indexes'>
+                    <IndexArray xsi:type='esri:ArrayOfIndex'>
+                        <Index xsi:type='esri:Index'>
+                            <Name>FDO_OBJECTID</Name>
+                            <IsUnique>true</IsUnique>
+                            <IsAscending>true</IsAscending>
+                            <Fields xsi:type='esri:Fields'>
+                                <FieldArray xsi:type='esri:ArrayOfField'>
+                                    <Field xsi:type='esri:Field'>
+                                        <Name>OBJECTID</Name>
+                                        <Type>esriFieldTypeOID</Type>
+                                        <IsNullable>false</IsNullable>
+                                        <Length>4</Length>
+                                        <Precision>0</Precision>
+                                        <Scale>0</Scale>
+                                        <Required>true</Required>
+                                        <Editable>false</Editable>
+                                        <AliasName>OBJECTID</AliasName>
+                                        <ModelName>OBJECTID</ModelName>
+                                    </Field>
+                                </FieldArray>
+                            </Fields>
+                        </Index>
+                    </IndexArray>
+                </Indexes>
+                <CLSID>{7A566981-C114-11D2-8A28-006097AFF44E}</CLSID>
+                <EXTCLSID></EXTCLSID>
+                <RelationshipClassNames xsi:type='esri:Names'></RelationshipClassNames>
+                <AliasName>Incidents</AliasName>
+                <ModelName></ModelName>
+                <HasGlobalID>false</HasGlobalID>
+                <GlobalIDFieldName></GlobalIDFieldName>
+                <RasterFieldName></RasterFieldName>
+                <ExtensionProperties xsi:type='esri:PropertySet'>
+                    <PropertyArray xsi:type='esri:ArrayOfPropertySetProperty'></PropertyArray>
+                </ExtensionProperties>
+                <ControllerMemberships xsi:type='esri:ArrayOfControllerMembership'></ControllerMemberships>
+                <EditorTrackingEnabled>false</EditorTrackingEnabled>
+                <CreatorFieldName></CreatorFieldName>
+                <CreatedAtFieldName></CreatedAtFieldName>
+                <EditorFieldName></EditorFieldName>
+                <EditedAtFieldName></EditedAtFieldName>
+                <IsTimeInUTC>true</IsTimeInUTC>
+                <ChangeTracked>false</ChangeTracked>
+                <FieldFilteringEnabled>false</FieldFilteringEnabled>
+                <FilteredFieldNames xsi:type='esri:Names'></FilteredFieldNames>
+                <ReplicaTracked>false</ReplicaTracked>
+            </DataElement>
             <DataElement xsi:type='esri:DEFeatureClass'>
                 <CatalogPath>/FC=Event_Line</CatalogPath>
                 <Name>Event_Line</Name>
-                <MetadataRetrieved>true</MetadataRetrieved>
-                <Metadata xsi:type='esri:XmlPropertySet'>
-                    <XmlDoc>&lt;metadata xml:lang=&quot;en&quot;&gt;&lt;Esri&gt;&lt;CreaDate&gt;20190128&lt;/CreaDate&gt;&lt;CreaTime&gt;11472200&lt;/CreaTime&gt;&lt;ArcGISFormat&gt;1.0&lt;/ArcGISFormat&gt;&lt;SyncOnce&gt;TRUE&lt;/SyncOnce&gt;&lt;DataProperties&gt;&lt;lineage&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;114722&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Line&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AssignDefaultToField&amp;gt;&amp;lt;field_name&amp;gt;FeatureGroup&amp;lt;/field_name&amp;gt;&amp;lt;default_value&amp;gt;0&amp;lt;/default_value&amp;gt;&amp;lt;/AssignDefaultToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;SetSubtypeField&amp;gt;&amp;lt;field_name&amp;gt;FeatureGroup&amp;lt;/field_name&amp;gt;&amp;lt;/SetSubtypeField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Urban&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;UrbanLines&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;1&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;USAR&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;3&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Wildland&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;SetDefaultSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;/SetDefaultSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\RemoveSubtype&quot; Date=&quot;20190128&quot; Time=&quot;114754&quot;&gt;RemoveSubtype &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Line&quot; &apos;1: USAR&apos;;&apos;3: Wildland&apos;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;120045&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Line&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;1&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Wildland&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;WildlandLines&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;1&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190507&quot; Time=&quot;151808&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.3.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Line&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra1&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;255&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Extra1&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra2&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;255&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Extra2&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra3&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;255&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Extra3&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra_Num1&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;SHORT&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;Extra_Num1&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra_Num2&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;SHORT&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;Extra_Num2&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\EnableEditorTracking&quot; Date=&quot;20200212&quot; Time=&quot;150206&quot;&gt;EnableEditorTracking &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Line&quot; created_user created_date last_edited_user last_edited_date ADD_FIELDS &quot;UTC (Coordinated Universal Time)&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;110828&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Line&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;GeometryID&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;Comments&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;500&amp;lt;/field_length&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;110847&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Line&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;LineWidthFeet&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;SHORT&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;LineWidthFeet&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;111224&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Line&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;IsVisible&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;3&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;IsVisible&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;field_domain&amp;gt;YesNo&amp;lt;/field_domain&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;111321&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Line&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;CreateName&amp;lt;/field_name&amp;gt;&amp;lt;field_name&amp;gt;CreateDate&amp;lt;/field_name&amp;gt;&amp;lt;field_name&amp;gt;EditName&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;/lineage&gt;&lt;/DataProperties&gt;&lt;/Esri&gt;&lt;/metadata&gt;
-                    </XmlDoc>
-                </Metadata>
                 <DatasetType>esriDTFeatureClass</DatasetType>
-                <DSID>15</DSID>
+                <DSID>11</DSID>
                 <Versioned>false</Versioned>
                 <CanVersion>false</CanVersion>
                 <ConfigurationKeyword></ConfigurationKeyword>
@@ -305,6 +559,20 @@
                             <AliasName>Feature Group</AliasName>
                             <ModelName>FeatureGroup</ModelName>
                             <DefaultValue xsi:type='xs:short'>0</DefaultValue>
+                            <Domain xsi:type='esri:CodedValueDomain'>
+                                <DomainName>FeatureGroup</DomainName>
+                                <FieldType>esriFieldTypeSmallInteger</FieldType>
+                                <MergePolicy>esriMPTDefaultValue</MergePolicy>
+                                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
+                                <Description>Feature Group</Description>
+                                <Owner></Owner>
+                                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                                    <CodedValue xsi:type='esri:CodedValue'>
+                                        <Name>Other/Unknown</Name>
+                                        <Code xsi:type='xs:short'>0</Code>
+                                    </CodedValue>
+                                </CodedValues>
+                            </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>FeatureCategory</Name>
@@ -834,6 +1102,17 @@
                             <AliasName>GlobalID</AliasName>
                             <ModelName>GlobalID</ModelName>
                         </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>SHAPE_Length</Name>
+                            <Type>esriFieldTypeDouble</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>8</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <Required>true</Required>
+                            <Editable>false</Editable>
+                            <AliasName>SHAPE_Length</AliasName>
+                        </Field>
                     </FieldArray>
                 </Fields>
                 <Indexes xsi:type='esri:Indexes'>
@@ -941,6 +1220,38 @@
                 </ExtensionProperties>
                 <SubtypeFieldName>FeatureGroup</SubtypeFieldName>
                 <DefaultSubtypeCode>0</DefaultSubtypeCode>
+                <Subtypes xsi:type='esri:ArrayOfSubtype'>
+                    <Subtype xsi:type='esri:Subtype'>
+                        <SubtypeName>Default</SubtypeName>
+                        <SubtypeCode>0</SubtypeCode>
+                        <FieldInfos xsi:type='esri:ArrayOfSubtypeFieldInfo'>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>MapMethod</FieldName>
+                                <DomainName>MapMethod</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>FeatureStatus</FieldName>
+                                <DomainName>FeatureStatus</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>FeatureAccess</FieldName>
+                                <DomainName>FeatureAccess</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>IsVisible</FieldName>
+                                <DomainName>YesNo</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>DeleteThis</FieldName>
+                                <DomainName>YesNo</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>IsOwner</FieldName>
+                                <DomainName>YesNo</DomainName>
+                            </SubtypeFieldInfo>
+                        </FieldInfos>
+                    </Subtype>
+                </Subtypes>
                 <ControllerMemberships xsi:type='esri:ArrayOfControllerMembership'></ControllerMemberships>
                 <EditorTrackingEnabled>true</EditorTrackingEnabled>
                 <CreatorFieldName>created_user</CreatorFieldName>
@@ -1004,13 +1315,8 @@
             <DataElement xsi:type='esri:DEFeatureClass'>
                 <CatalogPath>/FC=Event_Polygon</CatalogPath>
                 <Name>Event_Polygon</Name>
-                <MetadataRetrieved>true</MetadataRetrieved>
-                <Metadata xsi:type='esri:XmlPropertySet'>
-                    <XmlDoc>&lt;metadata xml:lang=&quot;en&quot;&gt;&lt;Esri&gt;&lt;CreaDate&gt;20190128&lt;/CreaDate&gt;&lt;CreaTime&gt;11465600&lt;/CreaTime&gt;&lt;ArcGISFormat&gt;1.0&lt;/ArcGISFormat&gt;&lt;SyncOnce&gt;TRUE&lt;/SyncOnce&gt;&lt;DataProperties&gt;&lt;lineage&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;114656&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Polygon&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AssignDefaultToField&amp;gt;&amp;lt;field_name&amp;gt;FeatureGroup&amp;lt;/field_name&amp;gt;&amp;lt;default_value&amp;gt;0&amp;lt;/default_value&amp;gt;&amp;lt;/AssignDefaultToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;SetSubtypeField&amp;gt;&amp;lt;field_name&amp;gt;FeatureGroup&amp;lt;/field_name&amp;gt;&amp;lt;/SetSubtypeField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Urban&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;UrbanPolygons&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;1&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;USAR&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;USARPolygons&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;1&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;3&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Wildland&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;SetDefaultSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;/SetDefaultSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\RemoveSubtype&quot; Date=&quot;20190128&quot; Time=&quot;114923&quot;&gt;RemoveSubtype &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Polygon&quot; &apos;3: Wildland&apos;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;120208&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Polygon&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;2&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Wildland&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;135608&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Polygon&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;WildlandPolygons&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;2&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateGeometryAttributes&quot; Date=&quot;20190129&quot; Time=&quot;100442&quot;&gt;CalculateGeometryAttributes Event_Polygon &quot;GISAcres AREA_GEODESIC&quot; # Acres #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateGeometryAttributes&quot; Date=&quot;20190129&quot; Time=&quot;100521&quot;&gt;CalculateGeometryAttributes Event_Polygon &quot;GISAcres AREA_GEODESIC&quot; # Acres #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190507&quot; Time=&quot;152106&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.3.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Polygon&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra1&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;255&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Extra1&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra2&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;255&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Extra2&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra3&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;255&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Extra3&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra_Num1&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;SHORT&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;Extra_Num1&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra_Num2&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;SHORT&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;Extra_Num2&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\EnableEditorTracking&quot; Date=&quot;20200212&quot; Time=&quot;150226&quot;&gt;EnableEditorTracking &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Polygon&quot; created_user created_date last_edited_user last_edited_date ADD_FIELDS &quot;UTC (Coordinated Universal Time)&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;110640&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Polygon&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;CreateName&amp;lt;/field_name&amp;gt;&amp;lt;field_name&amp;gt;CreateDate&amp;lt;/field_name&amp;gt;&amp;lt;field_name&amp;gt;EditName&amp;lt;/field_name&amp;gt;&amp;lt;field_name&amp;gt;PolygonDateTime&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;Comments&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;500&amp;lt;/field_length&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;DateEnd&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;DATE&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;DateEnd&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;/lineage&gt;&lt;/DataProperties&gt;&lt;/Esri&gt;&lt;/metadata&gt;
-                    </XmlDoc>
-                </Metadata>
                 <DatasetType>esriDTFeatureClass</DatasetType>
-                <DSID>16</DSID>
+                <DSID>12</DSID>
                 <Versioned>false</Versioned>
                 <CanVersion>false</CanVersion>
                 <ConfigurationKeyword></ConfigurationKeyword>
@@ -1077,6 +1383,20 @@
                             <AliasName>Feature Group</AliasName>
                             <ModelName>FeatureGroup</ModelName>
                             <DefaultValue xsi:type='xs:short'>0</DefaultValue>
+                            <Domain xsi:type='esri:CodedValueDomain'>
+                                <DomainName>FeatureGroup</DomainName>
+                                <FieldType>esriFieldTypeSmallInteger</FieldType>
+                                <MergePolicy>esriMPTDefaultValue</MergePolicy>
+                                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
+                                <Description>Feature Group</Description>
+                                <Owner></Owner>
+                                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                                    <CodedValue xsi:type='esri:CodedValue'>
+                                        <Name>Other/Unknown</Name>
+                                        <Code xsi:type='xs:short'>0</Code>
+                                    </CodedValue>
+                                </CodedValues>
+                            </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>FeatureCategory</Name>
@@ -1513,31 +1833,6 @@
                             <ModelName>GeometryID</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>SHAPE_Length</Name>
-                            <Type>esriFieldTypeDouble</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>8</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <Required>true</Required>
-                            <Editable>false</Editable>
-                            <AliasName>SHAPE_Length</AliasName>
-                            <ModelName>SHAPE_Length</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>SHAPE_Area</Name>
-                            <Type>esriFieldTypeDouble</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>8</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <Required>true</Required>
-                            <Editable>false</Editable>
-                            <AliasName>SHAPE_Area</AliasName>
-                            <ModelName>SHAPE_Area</ModelName>
-                        </Field>
-                        
-                        <Field xsi:type='esri:Field'>
                             <Name>DateEnd</Name>
                             <Type>esriFieldTypeDate</Type>
                             <IsNullable>true</IsNullable>
@@ -1641,6 +1936,28 @@
                             <Editable>false</Editable>
                             <AliasName>GlobalID</AliasName>
                             <ModelName>GlobalID</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>SHAPE_Length</Name>
+                            <Type>esriFieldTypeDouble</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>8</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <Required>true</Required>
+                            <Editable>false</Editable>
+                            <AliasName>SHAPE_Length</AliasName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>SHAPE_Area</Name>
+                            <Type>esriFieldTypeDouble</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>8</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <Required>true</Required>
+                            <Editable>false</Editable>
+                            <AliasName>SHAPE_Area</AliasName>
                         </Field>
                     </FieldArray>
                 </Fields>
@@ -1749,6 +2066,38 @@
                 </ExtensionProperties>
                 <SubtypeFieldName>FeatureGroup</SubtypeFieldName>
                 <DefaultSubtypeCode>0</DefaultSubtypeCode>
+                <Subtypes xsi:type='esri:ArrayOfSubtype'>
+                    <Subtype xsi:type='esri:Subtype'>
+                        <SubtypeName>Default</SubtypeName>
+                        <SubtypeCode>0</SubtypeCode>
+                        <FieldInfos xsi:type='esri:ArrayOfSubtypeFieldInfo'>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>MapMethod</FieldName>
+                                <DomainName>MapMethod</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>FeatureStatus</FieldName>
+                                <DomainName>FeatureStatus</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>FeatureAccess</FieldName>
+                                <DomainName>FeatureAccess</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>IsVisible</FieldName>
+                                <DomainName>YesNo</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>DeleteThis</FieldName>
+                                <DomainName>YesNo</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>IsOwner</FieldName>
+                                <DomainName>YesNo</DomainName>
+                            </SubtypeFieldInfo>
+                        </FieldInfos>
+                    </Subtype>
+                </Subtypes>
                 <ControllerMemberships xsi:type='esri:ArrayOfControllerMembership'></ControllerMemberships>
                 <EditorTrackingEnabled>true</EditorTrackingEnabled>
                 <CreatorFieldName>created_user</CreatorFieldName>
@@ -1765,10 +2114,10 @@
                 <AreaFieldName>SHAPE_Area</AreaFieldName>
                 <LengthFieldName>SHAPE_Length</LengthFieldName>
                 <Extent xsi:type='esri:EnvelopeN'>
-                    <XMin>-73.953070025999978</XMin>
-                    <YMin>40.58113660500004</YMin>
-                    <XMax>-73.901045488999983</XMax>
-                    <YMax>40.615089307000041</YMax>
+                    <XMin>NaN</XMin>
+                    <YMin>NaN</YMin>
+                    <XMax>NaN</XMax>
+                    <YMax>NaN</YMax>
                     <SpatialReference xsi:type='esri:GeographicCoordinateSystem'>
                         <WKT>GEOGCS[&quot;GCS_WGS_1984&quot;,DATUM[&quot;D_WGS_1984&quot;,SPHEROID[&quot;WGS_1984&quot;,6378137.0,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0.0],UNIT[&quot;Degree&quot;,0.0174532925199433],AUTHORITY[&quot;EPSG&quot;,4326]]</WKT>
                         <XOrigin>-400</XOrigin>
@@ -1812,13 +2161,8 @@
             <DataElement xsi:type='esri:DEFeatureClass'>
                 <CatalogPath>/FC=Event_Point</CatalogPath>
                 <Name>Event_Point</Name>
-                <MetadataRetrieved>true</MetadataRetrieved>
-                <Metadata xsi:type='esri:XmlPropertySet'>
-                    <XmlDoc>&lt;metadata xml:lang=&quot;en&quot;&gt;&lt;Esri&gt;&lt;CreaDate&gt;20190128&lt;/CreaDate&gt;&lt;CreaTime&gt;11435100&lt;/CreaTime&gt;&lt;ArcGISFormat&gt;1.0&lt;/ArcGISFormat&gt;&lt;SyncOnce&gt;TRUE&lt;/SyncOnce&gt;&lt;DataProperties&gt;&lt;lineage&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\EnableEditorTracking&quot; Date=&quot;20190128&quot; Time=&quot;114351&quot;&gt;EnableEditorTracking &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Point&quot; created_user created_date last_edited_user last_edited_date ADD_FIELDS &quot;UTC (Coordinated Universal Time)&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;114606&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Point&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AssignDefaultToField&amp;gt;&amp;lt;field_name&amp;gt;FeatureGroup&amp;lt;/field_name&amp;gt;&amp;lt;default_value&amp;gt;0&amp;lt;/default_value&amp;gt;&amp;lt;/AssignDefaultToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;SetSubtypeField&amp;gt;&amp;lt;field_name&amp;gt;FeatureGroup&amp;lt;/field_name&amp;gt;&amp;lt;/SetSubtypeField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Urban&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;1&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;USAR&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;2&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Wildland&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;SetDefaultSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;/SetDefaultSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;114632&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Point&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;UrbanPoints&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;USARPoints&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;1&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\RemoveSubtype&quot; Date=&quot;20190128&quot; Time=&quot;114832&quot;&gt;RemoveSubtype &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Point&quot; &apos;2: Wildland&apos;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;120113&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.3.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Point&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;FeatureGroup_1&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;120142&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Point&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;2&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Wildland&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;WildlandPoints&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;2&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;150723&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Point&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;SetSubtypeField&amp;gt;&amp;lt;clear_value&amp;gt;True&amp;lt;/clear_value&amp;gt;&amp;lt;/SetSubtypeField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;150850&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Point&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AssignDefaultToField&amp;gt;&amp;lt;field_name&amp;gt;FeatureGroup&amp;lt;/field_name&amp;gt;&amp;lt;default_value&amp;gt;0&amp;lt;/default_value&amp;gt;&amp;lt;/AssignDefaultToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;SetSubtypeField&amp;gt;&amp;lt;field_name&amp;gt;FeatureGroup&amp;lt;/field_name&amp;gt;&amp;lt;/SetSubtypeField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Urban&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;UrbanPoints&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;1&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;USAR&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;USARPoints&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;1&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;2&amp;lt;/subtype_code&amp;gt;&amp;lt;subtype_description&amp;gt;Wildland&amp;lt;/subtype_description&amp;gt;&amp;lt;/AddSubtype&amp;gt;&amp;lt;AssignDomainToField&amp;gt;&amp;lt;field_name&amp;gt;featurecategory&amp;lt;/field_name&amp;gt;&amp;lt;domain_name&amp;gt;WildlandPoints&amp;lt;/domain_name&amp;gt;&amp;lt;subtype_code&amp;gt;2&amp;lt;/subtype_code&amp;gt;&amp;lt;/AssignDomainToField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;SetDefaultSubtype&amp;gt;&amp;lt;subtype_code&amp;gt;0&amp;lt;/subtype_code&amp;gt;&amp;lt;/SetDefaultSubtype&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190507&quot; Time=&quot;151938&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.3.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Point&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Sequence&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;SHORT&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;Sequence&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra1&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;255&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Extra1&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra2&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;255&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Extra2&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra3&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;255&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Extra3&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra_Num1&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;SHORT&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;Extra_Num1&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;Extra_Num2&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;SHORT&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;Extra_Num2&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\EnableEditorTracking&quot; Date=&quot;20200212&quot; Time=&quot;150218&quot;&gt;EnableEditorTracking &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Event_Point&quot; created_user created_date last_edited_user last_edited_date ADD_FIELDS &quot;UTC (Coordinated Universal Time)&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20200214&quot; Time=&quot;163800&quot;&gt;UpdateSchema &quot;Incident Location\Incident Point&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteDomain&amp;gt;&amp;lt;domain_name&amp;gt;WildlandLines&amp;lt;/domain_name&amp;gt;&amp;lt;/DeleteDomain&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\MatchLayerSymbologyToAStyle&quot; Date=&quot;20200214&quot; Time=&quot;165216&quot;&gt;MatchLayerSymbologyToAStyle &quot;Incident Location\Incident Point&quot; $feature.FeatureGroup PublicSafety&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;104749&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Point&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;CreateName&amp;lt;/field_name&amp;gt;&amp;lt;field_name&amp;gt;CreateDate&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;105644&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Point&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;EditName&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;105729&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Point&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;GeometryID&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;105912&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Point&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;PointDateTime&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;110009&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Point&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;Comments&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;500&amp;lt;/field_length&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;111250&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Event_Point&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTFeatureClass&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;PointName&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;/lineage&gt;&lt;/DataProperties&gt;&lt;/Esri&gt;&lt;/metadata&gt;
-                    </XmlDoc>
-                </Metadata>
                 <DatasetType>esriDTFeatureClass</DatasetType>
-                <DSID>17</DSID>
+                <DSID>13</DSID>
                 <Versioned>false</Versioned>
                 <CanVersion>false</CanVersion>
                 <ConfigurationKeyword></ConfigurationKeyword>
@@ -1883,6 +2227,20 @@
                             <AliasName>Feature Group</AliasName>
                             <ModelName>FeatureGroup</ModelName>
                             <DefaultValue xsi:type='xs:short'>0</DefaultValue>
+                            <Domain xsi:type='esri:CodedValueDomain'>
+                                <DomainName>FeatureGroup</DomainName>
+                                <FieldType>esriFieldTypeSmallInteger</FieldType>
+                                <MergePolicy>esriMPTDefaultValue</MergePolicy>
+                                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
+                                <Description>Feature Group</Description>
+                                <Owner></Owner>
+                                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                                    <CodedValue xsi:type='esri:CodedValue'>
+                                        <Name>Other/Unknown</Name>
+                                        <Code xsi:type='xs:short'>0</Code>
+                                    </CodedValue>
+                                </CodedValues>
+                            </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>FeatureCategory</Name>
@@ -2352,7 +2710,7 @@
                             <Name>Multiplier</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>4</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Multiplier</AliasName>
@@ -2362,7 +2720,7 @@
                             <Name>Sequence</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>3</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Sequence</AliasName>
@@ -2569,6 +2927,38 @@
                 </ExtensionProperties>
                 <SubtypeFieldName>FeatureGroup</SubtypeFieldName>
                 <DefaultSubtypeCode>0</DefaultSubtypeCode>
+                <Subtypes xsi:type='esri:ArrayOfSubtype'>
+                    <Subtype xsi:type='esri:Subtype'>
+                        <SubtypeName>Default</SubtypeName>
+                        <SubtypeCode>0</SubtypeCode>
+                        <FieldInfos xsi:type='esri:ArrayOfSubtypeFieldInfo'>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>MapMethod</FieldName>
+                                <DomainName>MapMethod</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>FeatureStatus</FieldName>
+                                <DomainName>FeatureStatus</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>FeatureAccess</FieldName>
+                                <DomainName>FeatureAccess</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>IsVisible</FieldName>
+                                <DomainName>YesNo</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>DeleteThis</FieldName>
+                                <DomainName>YesNo</DomainName>
+                            </SubtypeFieldInfo>
+                            <SubtypeFieldInfo xsi:type='esri:SubtypeFieldInfo'>
+                                <FieldName>IsOwner</FieldName>
+                                <DomainName>YesNo</DomainName>
+                            </SubtypeFieldInfo>
+                        </FieldInfos>
+                    </Subtype>
+                </Subtypes>
                 <ControllerMemberships xsi:type='esri:ArrayOfControllerMembership'></ControllerMemberships>
                 <EditorTrackingEnabled>true</EditorTrackingEnabled>
                 <CreatorFieldName>created_user</CreatorFieldName>
@@ -2585,10 +2975,10 @@
                 <AreaFieldName></AreaFieldName>
                 <LengthFieldName></LengthFieldName>
                 <Extent xsi:type='esri:EnvelopeN'>
-                    <XMin>-73.971062293999978</XMin>
-                    <YMin>40.692396822000035</YMin>
-                    <XMax>-73.776567536999949</XMax>
-                    <YMax>40.793224043000066</YMax>
+                    <XMin>NaN</XMin>
+                    <YMin>NaN</YMin>
+                    <XMax>NaN</XMax>
+                    <YMax>NaN</YMax>
                     <SpatialReference xsi:type='esri:GeographicCoordinateSystem'>
                         <WKT>GEOGCS[&quot;GCS_WGS_1984&quot;,DATUM[&quot;D_WGS_1984&quot;,SPHEROID[&quot;WGS_1984&quot;,6378137.0,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0.0],UNIT[&quot;Degree&quot;,0.0174532925199433],AUTHORITY[&quot;EPSG&quot;,4326]]</WKT>
                         <XOrigin>-400</XOrigin>
@@ -2629,274 +3019,7 @@
                 <FieldFilteringEnabled>false</FieldFilteringEnabled>
                 <FilteredFieldNames xsi:type='esri:Names'></FilteredFieldNames>
             </DataElement>
-            <DataElement xsi:type='esri:DETable'>
-                <CatalogPath>/OC=DynamicText</CatalogPath>
-                <Name>DynamicText</Name>
-                <MetadataRetrieved>true</MetadataRetrieved>
-                <Metadata xsi:type='esri:XmlPropertySet'>
-                    <XmlDoc>&lt;metadata xml:lang=&quot;en&quot;&gt;&lt;Esri&gt;&lt;CreaDate&gt;20190128&lt;/CreaDate&gt;&lt;CreaTime&gt;13251900&lt;/CreaTime&gt;&lt;ArcGISFormat&gt;1.0&lt;/ArcGISFormat&gt;&lt;SyncOnce&gt;FALSE&lt;/SyncOnce&gt;&lt;DataProperties&gt;&lt;lineage&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Conversion Tools.tbx\TableToTable&quot; Date=&quot;20190128&quot; Time=&quot;132519&quot;&gt;TableToTable &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY IMT Template.gdb\DynamicText&quot; &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY IMT Template.gdb&quot; DynamicText # &quot;Field &quot;Field&quot; true true false 50 Text 0 0,First,#,C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY IMT Template.gdb\DynamicText,Field,0,50;Value &quot;Value&quot; true true false 50 Text 0 0,First,#,C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY IMT Template.gdb\DynamicText,Value,0,50&quot; #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CopyRows&quot; Date=&quot;20190128&quot; Time=&quot;133022&quot;&gt;CopyRows DynamicText &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\DynamicText&quot; #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField&quot; Date=&quot;20190506&quot; Time=&quot;145859&quot;&gt;CalculateField DynamicText Value None &quot;Python 3&quot; #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField&quot; Date=&quot;20190507&quot; Time=&quot;133328&quot;&gt;CalculateField DynamicText Value None &quot;Python 3&quot; #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField&quot; Date=&quot;20190507&quot; Time=&quot;154343&quot;&gt;CalculateField DynamicText Value None &quot;Python 3&quot; #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20200423&quot; Time=&quot;121032&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.5.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;DynamicText&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTTable&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;Field&amp;lt;/field_name&amp;gt;&amp;lt;new_field_name&amp;gt;ic&amp;lt;/new_field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;Value&amp;lt;/field_name&amp;gt;&amp;lt;new_field_name&amp;gt;inc_num&amp;lt;/new_field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20200423&quot; Time=&quot;121152&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.5.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;DynamicText&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTTable&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &quot;&amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;ic&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;100&amp;lt;/field_length&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;inc_num&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;100&amp;lt;/field_length&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;period&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;100&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Operational Peried&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;author&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_length&amp;gt;100&amp;lt;/field_length&amp;gt;&amp;lt;field_alias&amp;gt;Author&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddField&amp;gt;&amp;lt;field_name&amp;gt;time&amp;lt;/field_name&amp;gt;&amp;lt;field_type&amp;gt;DATE&amp;lt;/field_type&amp;gt;&amp;lt;field_alias&amp;gt;Date/Time&amp;lt;/field_alias&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;field_is_required&amp;gt;False&amp;lt;/field_is_required&amp;gt;&amp;lt;/AddField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;111452&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;DynamicText&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTTable&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &quot;&amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;ic&amp;lt;/field_name&amp;gt;&amp;lt;new_field_name&amp;gt;IC&amp;lt;/new_field_name&amp;gt;&amp;lt;field_alias&amp;gt;Incident Commander&amp;lt;/field_alias&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;inc_num&amp;lt;/field_name&amp;gt;&amp;lt;new_field_name&amp;gt;IncNum&amp;lt;/new_field_name&amp;gt;&amp;lt;field_alias&amp;gt;Incident Number&amp;lt;/field_alias&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;period&amp;lt;/field_name&amp;gt;&amp;lt;new_field_name&amp;gt;OpPeriod&amp;lt;/new_field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;author&amp;lt;/field_name&amp;gt;&amp;lt;new_field_name&amp;gt;Author&amp;lt;/new_field_name&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;time&amp;lt;/field_name&amp;gt;&amp;lt;new_field_name&amp;gt;Time&amp;lt;/new_field_name&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&quot;&lt;/Process&gt;&lt;/lineage&gt;&lt;itemProps&gt;&lt;itemName Sync=&quot;TRUE&quot;&gt;DynamicText&lt;/itemName&gt;&lt;imsContentType Sync=&quot;TRUE&quot;&gt;002&lt;/imsContentType&gt;&lt;itemLocation&gt;&lt;linkage Sync=&quot;TRUE&quot;&gt;file://\\DESKTOP-1S2Q7CF\C$\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&lt;/linkage&gt;&lt;protocol Sync=&quot;TRUE&quot;&gt;Local Area Network&lt;/protocol&gt;&lt;/itemLocation&gt;&lt;/itemProps&gt;&lt;/DataProperties&gt;&lt;SyncDate&gt;20190128&lt;/SyncDate&gt;&lt;SyncTime&gt;13302200&lt;/SyncTime&gt;&lt;ModDate&gt;20190128&lt;/ModDate&gt;&lt;ModTime&gt;13302200&lt;/ModTime&gt;&lt;/Esri&gt;&lt;dataIdInfo&gt;&lt;envirDesc Sync=&quot;TRUE&quot;&gt;Microsoft Windows 10 Version 10.0 (Build 10240) ; Esri ArcGIS 12.3.0.15769&lt;/envirDesc&gt;&lt;dataLang&gt;&lt;languageCode value=&quot;eng&quot; Sync=&quot;TRUE&quot;&gt;&lt;/languageCode&gt;&lt;countryCode value=&quot;USA&quot; Sync=&quot;TRUE&quot;&gt;&lt;/countryCode&gt;&lt;/dataLang&gt;&lt;idCitation&gt;&lt;resTitle Sync=&quot;TRUE&quot;&gt;DynamicText&lt;/resTitle&gt;&lt;presForm&gt;&lt;PresFormCd value=&quot;011&quot; Sync=&quot;TRUE&quot;&gt;&lt;/PresFormCd&gt;&lt;/presForm&gt;&lt;/idCitation&gt;&lt;spatRpType&gt;&lt;SpatRepTypCd value=&quot;003&quot; Sync=&quot;TRUE&quot;&gt;&lt;/SpatRepTypCd&gt;&lt;/spatRpType&gt;&lt;/dataIdInfo&gt;&lt;mdLang&gt;&lt;languageCode value=&quot;eng&quot; Sync=&quot;TRUE&quot;&gt;&lt;/languageCode&gt;&lt;countryCode value=&quot;USA&quot; Sync=&quot;TRUE&quot;&gt;&lt;/countryCode&gt;&lt;/mdLang&gt;&lt;distInfo&gt;&lt;distFormat&gt;&lt;formatName Sync=&quot;TRUE&quot;&gt;File Geodatabase Table&lt;/formatName&gt;&lt;/distFormat&gt;&lt;/distInfo&gt;&lt;mdHrLv&gt;&lt;ScopeCd value=&quot;007&quot; Sync=&quot;TRUE&quot;&gt;&lt;/ScopeCd&gt;&lt;/mdHrLv&gt;&lt;mdHrLvName Sync=&quot;TRUE&quot;&gt;dataset&lt;/mdHrLvName&gt;&lt;eainfo&gt;&lt;detailed Name=&quot;DynamicText&quot;&gt;&lt;enttyp&gt;&lt;enttypl Sync=&quot;TRUE&quot;&gt;DynamicText&lt;/enttypl&gt;&lt;enttypt Sync=&quot;TRUE&quot;&gt;Table&lt;/enttypt&gt;&lt;enttypc Sync=&quot;TRUE&quot;&gt;0&lt;/enttypc&gt;&lt;/enttyp&gt;&lt;attr&gt;&lt;attrlabl Sync=&quot;TRUE&quot;&gt;OBJECTID&lt;/attrlabl&gt;&lt;attalias Sync=&quot;TRUE&quot;&gt;OBJECTID&lt;/attalias&gt;&lt;attrtype Sync=&quot;TRUE&quot;&gt;OID&lt;/attrtype&gt;&lt;attwidth Sync=&quot;TRUE&quot;&gt;4&lt;/attwidth&gt;&lt;atprecis Sync=&quot;TRUE&quot;&gt;0&lt;/atprecis&gt;&lt;attscale Sync=&quot;TRUE&quot;&gt;0&lt;/attscale&gt;&lt;attrdef Sync=&quot;TRUE&quot;&gt;Internal feature number.&lt;/attrdef&gt;&lt;attrdefs Sync=&quot;TRUE&quot;&gt;Esri&lt;/attrdefs&gt;&lt;attrdomv&gt;&lt;udom Sync=&quot;TRUE&quot;&gt;Sequential unique whole numbers that are automatically generated.&lt;/udom&gt;&lt;/attrdomv&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync=&quot;TRUE&quot;&gt;Field&lt;/attrlabl&gt;&lt;attalias Sync=&quot;TRUE&quot;&gt;Field&lt;/attalias&gt;&lt;attrtype Sync=&quot;TRUE&quot;&gt;String&lt;/attrtype&gt;&lt;attwidth Sync=&quot;TRUE&quot;&gt;50&lt;/attwidth&gt;&lt;atprecis Sync=&quot;TRUE&quot;&gt;0&lt;/atprecis&gt;&lt;attscale Sync=&quot;TRUE&quot;&gt;0&lt;/attscale&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync=&quot;TRUE&quot;&gt;Value&lt;/attrlabl&gt;&lt;attalias Sync=&quot;TRUE&quot;&gt;Value&lt;/attalias&gt;&lt;attrtype Sync=&quot;TRUE&quot;&gt;String&lt;/attrtype&gt;&lt;attwidth Sync=&quot;TRUE&quot;&gt;50&lt;/attwidth&gt;&lt;atprecis Sync=&quot;TRUE&quot;&gt;0&lt;/atprecis&gt;&lt;attscale Sync=&quot;TRUE&quot;&gt;0&lt;/attscale&gt;&lt;/attr&gt;&lt;/detailed&gt;&lt;/eainfo&gt;&lt;mdDateSt Sync=&quot;TRUE&quot;&gt;20190128&lt;/mdDateSt&gt;&lt;/metadata&gt;
-                    </XmlDoc>
-                </Metadata>
-                <DatasetType>esriDTTable</DatasetType>
-                <DSID>23</DSID>
-                <Versioned>false</Versioned>
-                <CanVersion>false</CanVersion>
-                <ConfigurationKeyword></ConfigurationKeyword>
-                <HasOID>true</HasOID>
-                <OIDFieldName>OBJECTID</OIDFieldName>
-                <Fields xsi:type='esri:Fields'>
-                    <FieldArray xsi:type='esri:ArrayOfField'>
-                        <Field xsi:type='esri:Field'>
-                            <Name>OBJECTID</Name>
-                            <Type>esriFieldTypeOID</Type>
-                            <IsNullable>false</IsNullable>
-                            <Length>4</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <Required>true</Required>
-                            <Editable>false</Editable>
-                            <AliasName>OBJECTID</AliasName>
-                            <ModelName>OBJECTID</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>ic</Name>
-                            <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>100</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>Incident Commander</AliasName>
-                            <ModelName>Field</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>incident_num</Name>
-                            <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>100</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>Incident Number</AliasName>
-                            <ModelName>Value</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>operational_period_start</Name>
-                            <Type>esriFieldTypeDate</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>8</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>Operational Peried Start</AliasName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>operational_period_end</Name>
-                            <Type>esriFieldTypeDate</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>8</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>Operational Peried End</AliasName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>author</Name>
-                            <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>100</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>Author</AliasName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>output_time</Name>
-                            <Type>esriFieldTypeDate</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>8</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>Output Date/Time</AliasName>
-                        </Field>
-                    </FieldArray>
-                </Fields>
-                <Indexes xsi:type='esri:Indexes'>
-                    <IndexArray xsi:type='esri:ArrayOfIndex'>
-                        <Index xsi:type='esri:Index'>
-                            <Name>FDO_OBJECTID</Name>
-                            <IsUnique>true</IsUnique>
-                            <IsAscending>true</IsAscending>
-                            <Fields xsi:type='esri:Fields'>
-                                <FieldArray xsi:type='esri:ArrayOfField'>
-                                    <Field xsi:type='esri:Field'>
-                                        <Name>OBJECTID</Name>
-                                        <Type>esriFieldTypeOID</Type>
-                                        <IsNullable>false</IsNullable>
-                                        <Length>4</Length>
-                                        <Precision>0</Precision>
-                                        <Scale>0</Scale>
-                                        <Required>true</Required>
-                                        <Editable>false</Editable>
-                                        <AliasName>OBJECTID</AliasName>
-                                        <ModelName>OBJECTID</ModelName>
-                                    </Field>
-                                </FieldArray>
-                            </Fields>
-                        </Index>
-                    </IndexArray>
-                </Indexes>
-                <CLSID>{7A566981-C114-11D2-8A28-006097AFF44E}</CLSID>
-                <EXTCLSID></EXTCLSID>
-                <RelationshipClassNames xsi:type='esri:Names'></RelationshipClassNames>
-                <AliasName>DynamicText</AliasName>
-                <ModelName></ModelName>
-                <HasGlobalID>false</HasGlobalID>
-                <GlobalIDFieldName></GlobalIDFieldName>
-                <RasterFieldName></RasterFieldName>
-                <ExtensionProperties xsi:type='esri:PropertySet'>
-                    <PropertyArray xsi:type='esri:ArrayOfPropertySetProperty'></PropertyArray>
-                </ExtensionProperties>
-                <ControllerMemberships xsi:type='esri:ArrayOfControllerMembership'></ControllerMemberships>
-                <EditorTrackingEnabled>false</EditorTrackingEnabled>
-                <CreatorFieldName></CreatorFieldName>
-                <CreatedAtFieldName></CreatedAtFieldName>
-                <EditorFieldName></EditorFieldName>
-                <EditedAtFieldName></EditedAtFieldName>
-                <IsTimeInUTC>true</IsTimeInUTC>
-                <ChangeTracked>false</ChangeTracked>
-                <FieldFilteringEnabled>false</FieldFilteringEnabled>
-                <FilteredFieldNames xsi:type='esri:Names'></FilteredFieldNames>
-                <ReplicaTracked>false</ReplicaTracked>
-            </DataElement>
-            <DataElement xsi:type='esri:DETable'>
-                <CatalogPath>/OC=Incidents</CatalogPath>
-                <Name>Incidents</Name>
-                <MetadataRetrieved>true</MetadataRetrieved>
-                <Metadata xsi:type='esri:XmlPropertySet'>
-                    <XmlDoc>&lt;metadata xml:lang=&quot;en&quot;&gt;&lt;Esri&gt;&lt;CreaDate&gt;20200417&lt;/CreaDate&gt;&lt;CreaTime&gt;11370500&lt;/CreaTime&gt;&lt;ArcGISFormat&gt;1.0&lt;/ArcGISFormat&gt;&lt;SyncOnce&gt;TRUE&lt;/SyncOnce&gt;&lt;DataProperties&gt;&lt;lineage&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CreateTable&quot; Date=&quot;20200417&quot; Time=&quot;113705&quot;&gt;CreateTable &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot; Incidents # #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField&quot; Date=&quot;20200417&quot; Time=&quot;113707&quot;&gt;AddField &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Incidents&quot; name Text # # 255 &quot;Incident Name&quot; NULLABLE NON_REQUIRED #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField&quot; Date=&quot;20200417&quot; Time=&quot;113710&quot;&gt;AddField &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Incidents&quot; start_date_time Date # # 255 # NULLABLE NON_REQUIRED #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField&quot; Date=&quot;20200417&quot; Time=&quot;113712&quot;&gt;AddField &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Incidents&quot; end_date_time Date # # 255 # NULLABLE NON_REQUIRED #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField&quot; Date=&quot;20200417&quot; Time=&quot;113714&quot;&gt;AddField &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Incidents&quot; locanion Text # # 255 # NULLABLE NON_REQUIRED #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField&quot; Date=&quot;20200417&quot; Time=&quot;113716&quot;&gt;AddField &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Incidents&quot; state Text # # 255 State NULLABLE NON_REQUIRED #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField&quot; Date=&quot;20200417&quot; Time=&quot;113718&quot;&gt;AddField &quot;\\Mac\Home\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb\Incidents&quot; number Text # # 255 &quot;Incident Number&quot; NULLABLE NON_REQUIRED #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20220313&quot; Time=&quot;111615&quot;&gt;UpdateSchema &quot;CIMDATA=&amp;lt;CIMStandardDataConnection xsi:type=&apos;typens:CIMStandardDataConnection&apos; xmlns:xsi=&apos;http://www.w3.org/2001/XMLSchema-instance&apos; xmlns:xs=&apos;http://www.w3.org/2001/XMLSchema&apos; xmlns:typens=&apos;http://www.esri.com/schemas/ArcGIS/2.9.0&apos;&amp;gt;&amp;lt;WorkspaceConnectionString&amp;gt;DATABASE=\\Mac\Home\Documents\Code\IMT-GIS-Tools\agp_template\FDNY Event GDB.gdb&amp;lt;/WorkspaceConnectionString&amp;gt;&amp;lt;WorkspaceFactory&amp;gt;FileGDB&amp;lt;/WorkspaceFactory&amp;gt;&amp;lt;Dataset&amp;gt;Incidents&amp;lt;/Dataset&amp;gt;&amp;lt;DatasetType&amp;gt;esriDTTable&amp;lt;/DatasetType&amp;gt;&amp;lt;/CIMStandardDataConnection&amp;gt;&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteField&amp;gt;&amp;lt;field_name&amp;gt;state&amp;lt;/field_name&amp;gt;&amp;lt;/DeleteField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AlterField&amp;gt;&amp;lt;field_name&amp;gt;locanion&amp;lt;/field_name&amp;gt;&amp;lt;new_field_name&amp;gt;location&amp;lt;/new_field_name&amp;gt;&amp;lt;field_alias&amp;gt;location&amp;lt;/field_alias&amp;gt;&amp;lt;field_type&amp;gt;TEXT&amp;lt;/field_type&amp;gt;&amp;lt;field_is_nullable&amp;gt;True&amp;lt;/field_is_nullable&amp;gt;&amp;lt;clear_field_alias&amp;gt;False&amp;lt;/clear_field_alias&amp;gt;&amp;lt;/AlterField&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;/lineage&gt;&lt;/DataProperties&gt;&lt;/Esri&gt;&lt;/metadata&gt;
-                    </XmlDoc>
-                </Metadata>
-                <DatasetType>esriDTTable</DatasetType>
-                <DSID>26</DSID>
-                <Versioned>false</Versioned>
-                <CanVersion>false</CanVersion>
-                <ConfigurationKeyword></ConfigurationKeyword>
-                <HasOID>true</HasOID>
-                <OIDFieldName>OBJECTID</OIDFieldName>
-                <Fields xsi:type='esri:Fields'>
-                    <FieldArray xsi:type='esri:ArrayOfField'>
-                        <Field xsi:type='esri:Field'>
-                            <Name>OBJECTID</Name>
-                            <Type>esriFieldTypeOID</Type>
-                            <IsNullable>false</IsNullable>
-                            <Length>4</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <Required>true</Required>
-                            <Editable>false</Editable>
-                            <AliasName>OBJECTID</AliasName>
-                            <ModelName>OBJECTID</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>name</Name>
-                            <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>255</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>Incident Name</AliasName>
-                            <ModelName>name</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>start_date_time</Name>
-                            <Type>esriFieldTypeDate</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>8</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>start_date_time</AliasName>
-                            <ModelName>start_date_time</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>end_date_time</Name>
-                            <Type>esriFieldTypeDate</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>8</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>end_date_time</AliasName>
-                            <ModelName>end_date_time</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>location</Name>
-                            <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>255</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>location</AliasName>
-                            <ModelName>locanion</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
-                            <Name>number</Name>
-                            <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>255</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>Incident Number</AliasName>
-                        </Field>
-                    </FieldArray>
-                </Fields>
-                <Indexes xsi:type='esri:Indexes'>
-                    <IndexArray xsi:type='esri:ArrayOfIndex'>
-                        <Index xsi:type='esri:Index'>
-                            <Name>FDO_OBJECTID</Name>
-                            <IsUnique>true</IsUnique>
-                            <IsAscending>true</IsAscending>
-                            <Fields xsi:type='esri:Fields'>
-                                <FieldArray xsi:type='esri:ArrayOfField'>
-                                    <Field xsi:type='esri:Field'>
-                                        <Name>OBJECTID</Name>
-                                        <Type>esriFieldTypeOID</Type>
-                                        <IsNullable>false</IsNullable>
-                                        <Length>4</Length>
-                                        <Precision>0</Precision>
-                                        <Scale>0</Scale>
-                                        <Required>true</Required>
-                                        <Editable>false</Editable>
-                                        <AliasName>OBJECTID</AliasName>
-                                        <ModelName>OBJECTID</ModelName>
-                                    </Field>
-                                </FieldArray>
-                            </Fields>
-                        </Index>
-                    </IndexArray>
-                </Indexes>
-                <CLSID>{7A566981-C114-11D2-8A28-006097AFF44E}</CLSID>
-                <EXTCLSID></EXTCLSID>
-                <RelationshipClassNames xsi:type='esri:Names'></RelationshipClassNames>
-                <AliasName>Incidents</AliasName>
-                <ModelName></ModelName>
-                <HasGlobalID>false</HasGlobalID>
-                <GlobalIDFieldName></GlobalIDFieldName>
-                <RasterFieldName></RasterFieldName>
-                <ExtensionProperties xsi:type='esri:PropertySet'>
-                    <PropertyArray xsi:type='esri:ArrayOfPropertySetProperty'></PropertyArray>
-                </ExtensionProperties>
-                <ControllerMemberships xsi:type='esri:ArrayOfControllerMembership'></ControllerMemberships>
-                <EditorTrackingEnabled>false</EditorTrackingEnabled>
-                <CreatorFieldName></CreatorFieldName>
-                <CreatedAtFieldName></CreatedAtFieldName>
-                <EditorFieldName></EditorFieldName>
-                <EditedAtFieldName></EditedAtFieldName>
-                <IsTimeInUTC>true</IsTimeInUTC>
-                <ChangeTracked>false</ChangeTracked>
-                <FieldFilteringEnabled>false</FieldFilteringEnabled>
-                <FilteredFieldNames xsi:type='esri:Names'></FilteredFieldNames>
-                <ReplicaTracked>false</ReplicaTracked>
-            </DataElement>
         </DatasetDefinitions>
-        <Metadata xsi:type='esri:XmlPropertySet'>
-            <XmlDoc>&lt;metadata xml:lang=&quot;en&quot;&gt;&lt;Esri&gt;&lt;CreaDate&gt;20190128&lt;/CreaDate&gt;&lt;CreaTime&gt;11422300&lt;/CreaTime&gt;&lt;ArcGISFormat&gt;1.0&lt;/ArcGISFormat&gt;&lt;SyncOnce&gt;TRUE&lt;/SyncOnce&gt;&lt;DataProperties&gt;&lt;lineage&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\CreateFileGDB&quot; Date=&quot;20190128&quot; Time=&quot;114223&quot;&gt;CreateFileGDB &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template&quot; &quot;FDNY Event GDB&quot; Current&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\ImportXMLWorkspaceDocument&quot; Date=&quot;20190128&quot; Time=&quot;114245&quot;&gt;ImportXMLWorkspaceDocument &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot; &quot;Z:\Documents\FDNY GIS\gdb.xml&quot; &quot;Import schema only&quot; #&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TableToDomain&quot; Date=&quot;20190128&quot; Time=&quot;115726&quot;&gt;TableToDomain lines code desc &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot; WildlandLines desc &quot;Replace the values&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TableToDomain&quot; Date=&quot;20190128&quot; Time=&quot;115800&quot;&gt;TableToDomain poly code desc &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot; WildlandPolygons &quot;Wildland Polygons&quot; &quot;Replace the values&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TableToDomain&quot; Date=&quot;20190128&quot; Time=&quot;115824&quot;&gt;TableToDomain point code desc &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot; WildlandPoints &quot;Wildland Points&quot; &quot;Replace the values&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Conversion Tools.tbx\TableToGeodatabase&quot; Date=&quot;20190128&quot; Time=&quot;132734&quot;&gt;TableToGeodatabase &apos;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY IMT Template.gdb\DynamicText&apos; &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;134431&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot; &quot;&amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddCodedValueToDomain&amp;gt;&amp;lt;domain_name&amp;gt;USARPoints&amp;lt;/domain_name&amp;gt;&amp;lt;code&amp;gt;Structure, Failed&amp;lt;/code&amp;gt;&amp;lt;code_description&amp;gt;Structure, Failed&amp;lt;/code_description&amp;gt;&amp;lt;/AddCodedValueToDomain&amp;gt;&amp;lt;SortCodedValueDomain&amp;gt;&amp;lt;domain_name&amp;gt;USARPoints&amp;lt;/domain_name&amp;gt;&amp;lt;descending&amp;gt;ASCENDING&amp;lt;/descending&amp;gt;&amp;lt;sortByDescription&amp;gt;CODE&amp;lt;/sortByDescription&amp;gt;&amp;lt;/SortCodedValueDomain&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;141618&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot; &quot;&amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;AddCodedValueToDomain&amp;gt;&amp;lt;domain_name&amp;gt;UrbanPolygons&amp;lt;/domain_name&amp;gt;&amp;lt;code&amp;gt;Evacuation Zone A&amp;lt;/code&amp;gt;&amp;lt;code_description&amp;gt;Evacuation Zone A&amp;lt;/code_description&amp;gt;&amp;lt;/AddCodedValueToDomain&amp;gt;&amp;lt;AddCodedValueToDomain&amp;gt;&amp;lt;domain_name&amp;gt;UrbanPolygons&amp;lt;/domain_name&amp;gt;&amp;lt;code&amp;gt;Evacuation Zone B&amp;lt;/code&amp;gt;&amp;lt;code_description&amp;gt;Evacuation Zone B&amp;lt;/code_description&amp;gt;&amp;lt;/AddCodedValueToDomain&amp;gt;&amp;lt;AddCodedValueToDomain&amp;gt;&amp;lt;domain_name&amp;gt;UrbanPolygons&amp;lt;/domain_name&amp;gt;&amp;lt;code&amp;gt;Evacuation Zone C&amp;lt;/code&amp;gt;&amp;lt;code_description&amp;gt;Evacuation Zone C&amp;lt;/code_description&amp;gt;&amp;lt;/AddCodedValueToDomain&amp;gt;&amp;lt;AddCodedValueToDomain&amp;gt;&amp;lt;domain_name&amp;gt;UrbanPolygons&amp;lt;/domain_name&amp;gt;&amp;lt;code&amp;gt;Evacuation Zone D&amp;lt;/code&amp;gt;&amp;lt;code_description&amp;gt;Evacuation Zone D&amp;lt;/code_description&amp;gt;&amp;lt;/AddCodedValueToDomain&amp;gt;&amp;lt;AddCodedValueToDomain&amp;gt;&amp;lt;domain_name&amp;gt;UrbanPolygons&amp;lt;/domain_name&amp;gt;&amp;lt;code&amp;gt;Flood/Innundation Zone&amp;lt;/code&amp;gt;&amp;lt;code_description&amp;gt;Flood/Innundation Zone&amp;lt;/code_description&amp;gt;&amp;lt;/AddCodedValueToDomain&amp;gt;&amp;lt;SortCodedValueDomain&amp;gt;&amp;lt;domain_name&amp;gt;UrbanPolygons&amp;lt;/domain_name&amp;gt;&amp;lt;descending&amp;gt;ASCENDING&amp;lt;/descending&amp;gt;&amp;lt;sortByDescription&amp;gt;CODE&amp;lt;/sortByDescription&amp;gt;&amp;lt;/SortCodedValueDomain&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;150659&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot; &quot;&amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;CreateDomain&amp;gt;&amp;lt;domain_name&amp;gt;Subtypes&amp;lt;/domain_name&amp;gt;&amp;lt;domain_description&amp;gt;Subtype Meny&amp;lt;/domain_description&amp;gt;&amp;lt;field_type&amp;gt;SHORT&amp;lt;/field_type&amp;gt;&amp;lt;domain_type&amp;gt;CODED&amp;lt;/domain_type&amp;gt;&amp;lt;split_policy&amp;gt;DEFAULT&amp;lt;/split_policy&amp;gt;&amp;lt;merge_policy&amp;gt;DEFAULT&amp;lt;/merge_policy&amp;gt;&amp;lt;/CreateDomain&amp;gt;&amp;lt;AddCodedValueToDomain&amp;gt;&amp;lt;domain_name&amp;gt;Subtypes&amp;lt;/domain_name&amp;gt;&amp;lt;code&amp;gt;0&amp;lt;/code&amp;gt;&amp;lt;code_description&amp;gt;Urban&amp;lt;/code_description&amp;gt;&amp;lt;/AddCodedValueToDomain&amp;gt;&amp;lt;AddCodedValueToDomain&amp;gt;&amp;lt;domain_name&amp;gt;Subtypes&amp;lt;/domain_name&amp;gt;&amp;lt;code&amp;gt;1&amp;lt;/code&amp;gt;&amp;lt;code_description&amp;gt;USAR&amp;lt;/code_description&amp;gt;&amp;lt;/AddCodedValueToDomain&amp;gt;&amp;lt;AddCodedValueToDomain&amp;gt;&amp;lt;domain_name&amp;gt;Subtypes&amp;lt;/domain_name&amp;gt;&amp;lt;code&amp;gt;2&amp;lt;/code&amp;gt;&amp;lt;code_description&amp;gt;Wildland&amp;lt;/code_description&amp;gt;&amp;lt;/AddCodedValueToDomain&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&quot;&lt;/Process&gt;&lt;Process ToolSource=&quot;c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema&quot; Date=&quot;20190128&quot; Time=&quot;150929&quot;&gt;UpdateSchema &quot;C:\Users\Erick\Documents\ArcGIS\Projects\FDNY IMT Template\FDNY Event GDB.gdb&quot; &amp;lt;operationSequence&amp;gt;&amp;lt;workflow&amp;gt;&amp;lt;DeleteDomain&amp;gt;&amp;lt;domain_name&amp;gt;Subtypes&amp;lt;/domain_name&amp;gt;&amp;lt;/DeleteDomain&amp;gt;&amp;lt;/workflow&amp;gt;&amp;lt;/operationSequence&amp;gt;&lt;/Process&gt;&lt;/lineage&gt;&lt;/DataProperties&gt;&lt;/Esri&gt;&lt;/metadata&gt;
-            </XmlDoc>
-        </Metadata>
     </WorkspaceDefinition>
     <WorkspaceData xsi:type='esri:WorkspaceData'></WorkspaceData>
 </esri:Workspace>
