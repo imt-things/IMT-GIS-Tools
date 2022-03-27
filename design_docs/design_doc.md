@@ -51,7 +51,7 @@ The ArcGIS product suite, including Pro, AGOL, and Field Maps.
 
 3. Develop a printing widget that exports the browser view at predetermined and custom sizes and file formats. The widget should have a toggle (default) that specifies the map be produced at FDNY IMT / NWCG product standards.
 
-4. Define a user class, including roles and permissions. To include but not limited to: Owner, IC, SITL, Logistics, GISS, View-Only. Create a process for managing users. Include web app login and authentication. Develop a feature approval workflow.
+4. Define a user class, including roles and permissions. To include but not limited to: Owner, IC, SITL, Logistics, GISS, View-Only. Create a process for managing users. Include web app login and authentication. Develop a feature approval workflow. At minimum, this should include an "Approval Workflow" based on the National Incident Feature Service Workflows. 
 
 5. Build an offline version of the application that is to be sideloaded onto a secondary device. Feature edits in the offline application should write to the “master” map pending role-based approval.
 
