@@ -46,7 +46,7 @@ Chosen option: Framework schema due to flexibility, ability to pre-develop/deplo
 
 ### Framework Schema
 
-Create frame work that contains can accept numerous pre-loaded feature types and provide the ability to update domains from a template. ([#14](https://github.com/fdny-imt/IMT-GIS-Tools/issues/14).
+Create frame work that contains can accept numerous pre-loaded feature types and provide the ability to update domains from a template. ([#14](https://github.com/fdny-imt/IMT-GIS-Tools/issues/14)).
 
 * Pros:
   * Allows for same schema for all potential incident types
@@ -94,6 +94,12 @@ Manual creation of database at time of assignment.
 
 
 # Low-level 
+
+**Discussion**:
+
+ - **Subtypes vs. Contingent Values:**
+   - At first glance, subtypes provide the required functionality however, they fall short in one critical area. Subtypes must be symbolized on the subtype field. That would result in all HazMat lines being symbolized the same as opposed to by feature type (ie. Warm Zone). This is a documented limitation ([see here](https://doc.arcgis.com/en/insights/latest/get-started/domains-and-subtypes.htm)). Contingent values offer very similar functionality without the subtype symbology limitation.
+
 
 **Evaluation criteria**:
 
