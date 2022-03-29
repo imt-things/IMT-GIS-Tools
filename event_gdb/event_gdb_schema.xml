@@ -2155,7 +2155,7 @@
                             <ModelName>Shape</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>FeatureGroup</Name>
+                            <Name>feature_group</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
                             <Length>2</Length>
@@ -2180,7 +2180,7 @@
                             </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>FeatureCategory</Name>
+                            <Name>feature_category</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>50</Length>
@@ -2190,7 +2190,7 @@
                             <ModelName>FeatureCategory</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>IncidentName</Name>
+                            <Name>inc_name</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>50</Length>
@@ -2200,7 +2200,7 @@
                             <ModelName>IncidentName</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Collector</Name>
+                            <Name>collector_name</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>50</Length>
@@ -2210,7 +2210,7 @@
                             <ModelName>Collector</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>MapMethod</Name>
+                            <Name>map_method</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>25</Length>
@@ -2302,7 +2302,7 @@
                             </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Label</Name>
+                            <Name>label</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>100</Length>
@@ -2312,7 +2312,7 @@
                             <ModelName>Label</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Comments</Name>
+                            <Name>comments</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>500</Length>
@@ -2322,7 +2322,7 @@
                             <ModelName>Comments</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>FeatureStatus</Name>
+                            <Name>feature_status</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>20</Length>
@@ -2358,7 +2358,7 @@
                             </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>FeatureAccess</Name>
+                            <Name>feature_access</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>50</Length>
@@ -2398,13 +2398,13 @@
                             </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>IsVisible</Name>
+                            <Name>is_visible</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>5</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>IsVisible</AliasName>
+                            <AliasName>Is Visible</AliasName>
                             <ModelName>IsVisible</ModelName>
                             <Domain xsi:type='esri:CodedValueDomain'>
                                 <DomainName>YesNo</DomainName>
@@ -2430,7 +2430,7 @@
                             </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>DeleteThis</Name>
+                            <Name>delete_this</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>3</Length>
@@ -2462,43 +2462,43 @@
                             </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>ContactName</Name>
+                            <Name>contact_name</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>50</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>ContactName</AliasName>
+                            <AliasName>Contact Name</AliasName>
                             <ModelName>ContactName</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>ContactEmail</Name>
+                            <Name>contact_email</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>50</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>ContactEmail</AliasName>
+                            <AliasName>Contact Email</AliasName>
                             <ModelName>ContactEmail</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>ContactPhone</Name>
+                            <Name>contact_phone</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>25</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>ContactPhone</AliasName>
+                            <AliasName>Contact Phone</AliasName>
                             <ModelName>ContactPhone</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>IsOwner</Name>
+                            <Name>is_owner</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>5</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>IsOwner</AliasName>
+                            <AliasName>Is Owner</AliasName>
                             <ModelName>IsOwner</ModelName>
                             <Domain xsi:type='esri:CodedValueDomain'>
                                 <DomainName>YesNo</DomainName>
@@ -2524,77 +2524,77 @@
                             </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Extra1</Name>
+                            <Name>extra_1</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>255</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Extra1</AliasName>
+                            <AliasName>Extra 1</AliasName>
                             <ModelName>Extra1</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Extra2</Name>
+                            <Name>extra_2</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>255</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Extra2</AliasName>
+                            <AliasName>Extra 2</AliasName>
                             <ModelName>Extra2</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Extra3</Name>
+                            <Name>extra_3</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>255</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Extra3</AliasName>
+                            <AliasName>Extra 3</AliasName>
                             <ModelName>Extra3</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Extra_Num1</Name>
+                            <Name>extra_num_1</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
                             <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Extra_Num1</AliasName>
+                            <AliasName>Extra Num 1</AliasName>
                             <ModelName>Extra_Num1</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Extra_Num2</Name>
+                            <Name>extra_num_2</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
                             <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Extra_Num2</AliasName>
+                            <AliasName>Extra Num 2</AliasName>
                             <ModelName>Extra_Num2</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>DateValid</Name>
+                            <Name>date_valid</Name>
                             <Type>esriFieldTypeDate</Type>
                             <IsNullable>true</IsNullable>
                             <Length>8</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>DateValid</AliasName>
+                            <AliasName>Date Valid</AliasName>
                             <ModelName>DateValid</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>DateInvalid</Name>
+                            <Name>date_invalid</Name>
                             <Type>esriFieldTypeDate</Type>
                             <IsNullable>true</IsNullable>
                             <Length>8</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>DateInvalid</AliasName>
+                            <AliasName>Date Invalid</AliasName>
                             <ModelName>DateInvalid</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Angle</Name>
+                            <Name>angle</Name>
                             <Type>esriFieldTypeDouble</Type>
                             <IsNullable>true</IsNullable>
                             <Length>8</Length>
@@ -2604,7 +2604,7 @@
                             <ModelName>Angle</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>LatWGS84_DDM</Name>
+                            <Name>lat_wgs84_ddm</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>25</Length>
@@ -2614,7 +2614,7 @@
                             <ModelName>LatWGS84_DDM</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>LongWGS84_DDM</Name>
+                            <Name>lon_wgs84_ddm</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>25</Length>
@@ -2624,7 +2624,7 @@
                             <ModelName>LongWGS84_DDM</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Elevation</Name>
+                            <Name>elevation</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
                             <Length>2</Length>
@@ -2634,7 +2634,7 @@
                             <ModelName>Elevation</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>PropertyInfo</Name>
+                            <Name>property_info</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>200</Length>
@@ -2644,7 +2644,7 @@
                             <ModelName>PropertyInfo</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Multiplier</Name>
+                            <Name>multiplier</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
                             <Length>2</Length>
@@ -2654,7 +2654,7 @@
                             <ModelName>Multiplier</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Sequence</Name>
+                            <Name>sequence</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
                             <Length>2</Length>
@@ -2664,43 +2664,43 @@
                             <ModelName>Sequence</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>IMTName</Name>
+                            <Name>imt_name</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>25</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>IMTName</AliasName>
+                            <AliasName>IMT Name</AliasName>
                             <ModelName>IMTName</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>UnitID</Name>
+                            <Name>unit</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>12</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>UnitID</AliasName>
+                            <AliasName>Unit</AliasName>
                             <ModelName>UnitID</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>LocalIncidentID</Name>
+                            <Name>local_inc_num</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>10</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>LocalIncidentID</AliasName>
+                            <AliasName>Local Incident Num</AliasName>
                             <ModelName>LocalIncidentID</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>IRWINID</Name>
+                            <Name>irwin_id</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>32</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>IRWINID</AliasName>
+                            <AliasName>IRWIN ID</AliasName>
                             <ModelName>IRWINID</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
