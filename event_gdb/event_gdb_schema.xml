@@ -206,7 +206,7 @@
                             <ModelName>OBJECTID</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>ic</Name>
+                            <Name>inc_commander</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>100</Length>
@@ -216,7 +216,7 @@
                             <ModelName>Field</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>incident_num</Name>
+                            <Name>inc_num</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>100</Length>
@@ -226,7 +226,7 @@
                             <ModelName>Value</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>operational_period_start</Name>
+                            <Name>op_period_start</Name>
                             <Type>esriFieldTypeDate</Type>
                             <IsNullable>true</IsNullable>
                             <Length>8</Length>
@@ -235,7 +235,7 @@
                             <AliasName>Operational Peried Start</AliasName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>operational_period_end</Name>
+                            <Name>op_period_end</Name>
                             <Type>esriFieldTypeDate</Type>
                             <IsNullable>true</IsNullable>
                             <Length>8</Length>
@@ -343,7 +343,7 @@
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Incident Name</AliasName>
-                            <ModelName>name</ModelName>
+                            <ModelName>Incident Name</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>start_date_time</Name>
@@ -352,8 +352,8 @@
                             <Length>8</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>start_date_time</AliasName>
-                            <ModelName>start_date_time</ModelName>
+                            <AliasName>Start Date/Time</AliasName>
+                            <ModelName>Start Date/Time</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>end_date_time</Name>
@@ -362,21 +362,21 @@
                             <Length>8</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>end_date_time</AliasName>
-                            <ModelName>end_date_time</ModelName>
+                            <AliasName>End Date/Time</AliasName>
+                            <ModelName>End Date/Time</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>location</Name>
+                            <Name>inc_location</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>255</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>location</AliasName>
-                            <ModelName>locanion</ModelName>
+                            <AliasName>Incident Location</AliasName>
+                            <ModelName>Incident Location</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>number</Name>
+                            <Name>inc_num</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>255</Length>
