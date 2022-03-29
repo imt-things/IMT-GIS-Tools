@@ -150,60 +150,6 @@
                 </CodedValues>
             </Domain>
             <Domain xsi:type='esri:CodedValueDomain'>
-                <DomainName>MeasurementTypesDomain</DomainName>
-                <FieldType>esriFieldTypeInteger</FieldType>
-                <MergePolicy>esriMPTDefaultValue</MergePolicy>
-                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
-                <Description>Map Measurement</Description>
-                <Owner></Owner>
-                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Point</Name>
-                        <Code xsi:type='xs:int'>0</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Distance</Name>
-                        <Code xsi:type='xs:int'>1</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Area</Name>
-                        <Code xsi:type='xs:int'>2</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Centroid</Name>
-                        <Code xsi:type='xs:int'>6</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Base To Top Height</Name>
-                        <Code xsi:type='xs:int'>3</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Base To Top Shadow Height</Name>
-                        <Code xsi:type='xs:int'>4</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Top To Top Shadow Height</Name>
-                        <Code xsi:type='xs:int'>5</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Point 3D</Name>
-                        <Code xsi:type='xs:int'>7</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Distance 3D</Name>
-                        <Code xsi:type='xs:int'>8</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Centroid 3D</Name>
-                        <Code xsi:type='xs:int'>13</Code>
-                    </CodedValue>
-                    <CodedValue xsi:type='esri:CodedValue'>
-                        <Name>Area 3D</Name>
-                        <Code xsi:type='xs:int'>9</Code>
-                    </CodedValue>
-                </CodedValues>
-            </Domain>
-            <Domain xsi:type='esri:CodedValueDomain'>
                 <DomainName>FeatureAccess</DomainName>
                 <FieldType>esriFieldTypeString</FieldType>
                 <MergePolicy>esriMPTDefaultValue</MergePolicy>
