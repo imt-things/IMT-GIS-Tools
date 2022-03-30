@@ -206,6 +206,16 @@
                             <ModelName>OBJECTID</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
+                            <Name>inc_name</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>255</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>Incident Name</AliasName>
+                            <ModelName>Incident Name</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
                             <Name>inc_commander</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
@@ -216,10 +226,10 @@
                             <ModelName>Field</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>inc_num</Name>
+                            <Name>local_inc_num</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>100</Length>
+                            <Length>32</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Incident Number</AliasName>
@@ -336,7 +346,7 @@
                             <ModelName>OBJECTID</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>name</Name>
+                            <Name>inc_name</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>255</Length>
@@ -366,7 +376,7 @@
                             <ModelName>End Date/Time</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>inc_location</Name>
+                            <Name>inc_loc</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
                             <Length>255</Length>
@@ -376,13 +386,22 @@
                             <ModelName>Incident Location</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>inc_num</Name>
+                            <Name>local_inc_num</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>255</Length>
+                            <Length>32</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Incident Number</AliasName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>irwin_id</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>32</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <AliasName>IRWIN ID</AliasName>
                         </Field>
                     </FieldArray>
                 </Fields>
@@ -702,7 +721,7 @@
                             <Name>feature_access</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>50</Length>
+                            <Length>20</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Feature Access</AliasName>
@@ -835,10 +854,10 @@
                             <Name>is_owner</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>5</Length>
+                            <Length>3</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Is Owner</AliasName>
+                            <AliasName>Is Owner?</AliasName>
                             <ModelName>IsOwner</ModelName>
                             <Domain xsi:type='esri:CodedValueDomain'>
                                 <DomainName>YesNo</DomainName>
@@ -976,7 +995,7 @@
                             <Name>local_inc_num</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>10</Length>
+                            <Length>32</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Local Incident Number</AliasName>
@@ -1526,7 +1545,7 @@
                             <Name>feature_access</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>50</Length>
+                            <Length>20</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Feature Access</AliasName>
@@ -1566,10 +1585,10 @@
                             <Name>is_visible</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>5</Length>
+                            <Length>3</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Is Visible</AliasName>
+                            <AliasName>Is Visible?</AliasName>
                             <ModelName>IsVisible</ModelName>
                             <Domain xsi:type='esri:CodedValueDomain'>
                                 <DomainName>YesNo</DomainName>
@@ -1660,10 +1679,10 @@
                             <Name>is_owner</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>5</Length>
+                            <Length>3</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Is Owner</AliasName>
+                            <AliasName>Is Owner?</AliasName>
                             <ModelName>IsOwner</ModelName>
                             <Domain xsi:type='esri:CodedValueDomain'>
                                 <DomainName>YesNo</DomainName>
@@ -1769,16 +1788,6 @@
                             <ModelName>GISAcres</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>GeometryID</Name>
-                            <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
-                            <Length>50</Length>
-                            <Precision>0</Precision>
-                            <Scale>0</Scale>
-                            <AliasName>GeometryID</AliasName>
-                            <ModelName>GeometryID</ModelName>
-                        </Field>
-                        <Field xsi:type='esri:Field'>
                             <Name>imt_name</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
@@ -1799,10 +1808,10 @@
                             <ModelName>UnitID</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>inc_num</Name>
+                            <Name>local_inc_num</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>10</Length>
+                            <Length>32</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Local Incident Num</AliasName>
@@ -2361,7 +2370,7 @@
                             <Name>feature_access</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>50</Length>
+                            <Length>20</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Feature Access</AliasName>
@@ -2401,10 +2410,10 @@
                             <Name>is_visible</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>5</Length>
+                            <Length>3</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Is Visible</AliasName>
+                            <AliasName>Is Visible?</AliasName>
                             <ModelName>IsVisible</ModelName>
                             <Domain xsi:type='esri:CodedValueDomain'>
                                 <DomainName>YesNo</DomainName>
@@ -2495,10 +2504,10 @@
                             <Name>is_owner</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>5</Length>
+                            <Length>3</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Is Owner</AliasName>
+                            <AliasName>Is Owner?</AliasName>
                             <ModelName>IsOwner</ModelName>
                             <Domain xsi:type='esri:CodedValueDomain'>
                                 <DomainName>YesNo</DomainName>
@@ -2687,7 +2696,7 @@
                             <Name>local_inc_num</Name>
                             <Type>esriFieldTypeString</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>10</Length>
+                            <Length>32</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Local Incident Num</AliasName>
