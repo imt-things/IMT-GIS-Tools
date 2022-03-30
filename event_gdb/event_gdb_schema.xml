@@ -529,7 +529,7 @@
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Feature Group</AliasName>
-                            <ModelName>Feature Group</ModelName>
+                            <ModelName>FeatureGroup</ModelName>
                             <DefaultValue xsi:type='xs:short'>0</DefaultValue>
                             <Domain xsi:type='esri:CodedValueDomain'>
                                 <DomainName>FeatureGroup</DomainName>
@@ -2092,7 +2092,7 @@
                             <ModelName>OBJECTID</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
-                            <Name>Shape</Name>
+                            <Name>SHAPE</Name>
                             <Type>esriFieldTypeGeometry</Type>
                             <IsNullable>true</IsNullable>
                             <Length>0</Length>
@@ -2123,8 +2123,8 @@
                                 </SpatialReference>
                                 <GridSize0>0.08794683126458154</GridSize0>
                             </GeometryDef>
-                            <AliasName>Shape</AliasName>
-                            <ModelName>Shape</ModelName>
+                            <AliasName>SHAPE</AliasName>
+                            <ModelName>SHAPE</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>feature_group</Name>
@@ -2757,13 +2757,13 @@
                             </Fields>
                         </Index>
                         <Index xsi:type='esri:Index'>
-                            <Name>FDO_Shape</Name>
+                            <Name>FDO_SHAPE</Name>
                             <IsUnique>false</IsUnique>
                             <IsAscending>true</IsAscending>
                             <Fields xsi:type='esri:Fields'>
                                 <FieldArray xsi:type='esri:ArrayOfField'>
                                     <Field xsi:type='esri:Field'>
-                                        <Name>Shape</Name>
+                                        <Name>SHAPE</Name>
                                         <Type>esriFieldTypeGeometry</Type>
                                         <IsNullable>true</IsNullable>
                                         <Length>0</Length>
@@ -2794,8 +2794,8 @@
                                             </SpatialReference>
                                             <GridSize0>0.08794683126458154</GridSize0>
                                         </GeometryDef>
-                                        <AliasName>Shape</AliasName>
-                                        <ModelName>Shape</ModelName>
+                                        <AliasName>SHAPE</AliasName>
+                                        <ModelName>SHAPE</ModelName>
                                     </Field>
                                 </FieldArray>
                             </Fields>
@@ -2843,7 +2843,7 @@
                 <IsTimeInUTC>true</IsTimeInUTC>
                 <FeatureType>esriFTSimple</FeatureType>
                 <ShapeType>esriGeometryPoint</ShapeType>
-                <ShapeFieldName>Shape</ShapeFieldName>
+                <ShapeFieldName>SHAPE</ShapeFieldName>
                 <HasM>false</HasM>
                 <HasZ>false</HasZ>
                 <HasSpatialIndex>true</HasSpatialIndex>
