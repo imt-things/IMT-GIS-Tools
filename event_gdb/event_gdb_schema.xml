@@ -524,7 +524,7 @@
                         <Field xsi:type='esri:Field'>
                             <Name>feature_group</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
-                            <IsNullable>true</IsNullable>
+                            <IsNullable>false</IsNullable>
                             <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
@@ -549,7 +549,7 @@
                         <Field xsi:type='esri:Field'>
                             <Name>feature_category</Name>
                             <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
+                            <IsNullable>false</IsNullable>
                             <Length>50</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
@@ -1327,7 +1327,7 @@
                         <Field xsi:type='esri:Field'>
                             <Name>feature_group</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
-                            <IsNullable>true</IsNullable>
+                            <IsNullable>false</IsNullable>
                             <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
@@ -1352,7 +1352,7 @@
                         <Field xsi:type='esri:Field'>
                             <Name>feature_category</Name>
                             <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
+                            <IsNullable>false</IsNullable>
                             <Length>50</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
@@ -2129,7 +2129,7 @@
                         <Field xsi:type='esri:Field'>
                             <Name>feature_group</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
-                            <IsNullable>true</IsNullable>
+                            <IsNullable>false</IsNullable>
                             <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
@@ -2154,7 +2154,7 @@
                         <Field xsi:type='esri:Field'>
                             <Name>feature_category</Name>
                             <Type>esriFieldTypeString</Type>
-                            <IsNullable>true</IsNullable>
+                            <IsNullable>false</IsNullable>
                             <Length>50</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
