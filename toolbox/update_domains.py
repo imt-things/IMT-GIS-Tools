@@ -50,7 +50,7 @@ class UpdateDomains:
         gdb = parameters[0].valueAsText
         in_file = Path(parameters[1].valueAsText).resolve()
         
-        add_domains(messages, gdb, in_file)
+        update_domain_helper(messages, gdb, in_file)
         
         
 
@@ -58,7 +58,13 @@ class UpdateDomains:
 
         return
 
-def add_domains(messages, gdb, in_file):
+
+# Determine if the geodatabase is a file geodatabase or an ArcGIS Online geodatabase and build the domain pairs
+def update_domain_helper(messages, gdb, in_file):
+    pass
+
+
+def update_domains_filegdb():
     # Todo: This should: read in file -> read in current domains -> delete ones no longer needed? -> add new domains -> update correct tables/fields
 
     values = []
@@ -88,18 +94,54 @@ def add_domains(messages, gdb, in_file):
             short_code = code.replace(' ', '_')
             arcpy.AddCodedValueToDomain_management(gdb, dom, short_code, code)
 
-        # # create subtype for domain
-
-
-
-        # # add domain to field in subtype
-        # if dom.contains('Polygons'):
-        #     in_table = 'Event_Polygon'
-        # elif dom.contains('Lines'):
-        #     in_table = 'Event_Line'
-        # elif dom.contains('Points'):
-        #     in_table = 'Event_Point'
-        # arcpy.AssignDomainToField_management(in_table, in_field, dom)
-
-
     return
+
+def update_domain_agol():
+    # Todo: completely untested!!!
+
+    from arcgis import GIS, features
+
+    # connect to AGOL
+    gis = GIS(username='', password='')
+
+    # get the feature service
+    service = gis.content.get('', feature_service_id='')
+
+    # get the feature layer
+    layer = service.layers[0]
+    features = features.FeatureLayerCollection.fromitem(service)
+
+    # get current domains
+    properties = features.properties
+
+    # delete ones no longer needed?
+    pass
+
+    # add new domains
+    pass
+
+    # update correct tables/fields
+    result = layer.manager.update_definition(update_dict)
+
+    update_dict = {
+    "fields": [{
+        "name": "feature_category",
+        "domain": {
+            "type": "codedValue",
+            "name": "FeatureCategory_Point",
+            "codedValues": [
+                {
+                    "name": "PyTest3",
+                    "code": "PyTest3"
+
+                },
+                {
+                    "name": "PyTest4",
+                    "code": "PyTest4"
+                }
+            ]
+        }
+    }]
+}
+
+result = layer.manager.update_definition(update_dict)
