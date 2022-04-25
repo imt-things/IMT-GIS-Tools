@@ -1,13 +1,14 @@
 import arcpy
 from pathlib import Path
+from datetime import datetime
 
-__version__ = '2022-03-11'
+__version__ = '2022-04-25'
 
 
 class ExportLayouts:
     def __init__(self) -> None:
-        self.label = 'Export All Project Layouts'
-        self.description = 'Export all layouts in project'
+        self.label = 'Export Project Layouts'
+        self.description = 'Export selected layouts in project'
         self.canRunInBackground = True
         self.category = 'Products' # Use your own category here, or an existing one.
         #self.stylesheet = '' # I don't know how to use this yet.
@@ -17,9 +18,7 @@ class ExportLayouts:
         # Define parameter definitions.
         # Refer to https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameters-in-a-python-toolbox.htm
 
-        
-        # Todo: Select layouts to export
-        layouts = arcpy.Parameter(
+        out_path = arcpy.Parameter(
             name='Output Directory',
             displayName='Output Directory',
             datatype='DEFolder',
@@ -27,36 +26,50 @@ class ExportLayouts:
             direction='Input'
         )
 
-        return [layouts]
+        layouts = arcpy.Parameter(
+            name='Layouts',
+            displayName='Layouts',
+            parameterType='Required',
+            datatype='String',
+            direction='Input',
+            multiValue=True
+        )
+    
+        layouts.filter.type = "ValueList"
+        layouts.filter.list = [layout.name for layout in arcpy.mp.ArcGISProject("CURRENT").listLayouts()]
 
-   
+        return [out_path, layouts]
+
+
     def execute(self, parameters, messages):
-        # The source code of your tool.
-        # Get the parameters from our parameters list, then call a generic python function.
-        # This separates the code doing the work from all the crazy code required to talk to ArcGIS.
-
         messages.AddMessage(f'Running {self.label} version {__version__}')
 
         for param in parameters:
             messages.addMessage(f'Parameter: {param.name} = {param.valueAsText}')
 
         out_path = Path(parameters[0].valueAsText).resolve()
-        
-        export_layouts(messages, out_path)
-        
-        
+
+        layouts = parameters[1].valueAsText.split(';')
+        layouts = [layout.replace("'", '') for layout in layouts]  # remove single quotes from layout parameter items
+
+        export_layouts(messages, out_path, layouts)
 
         # Todo: Add try/catch to catch cancellations and errors when cleanup is required.
 
         return
 
 
-def export_layouts(messages, out_path):
-    # Todo: Requires product naming IAW SOP
+def export_layouts(messages, out_path, layouts):
     messages.addMessage(f'Exporting layouts to {out_path}')
     aprx = arcpy.mp.ArcGISProject("CURRENT")
 
-    for layout in aprx.listLayouts():
+    layout_list = [aprx.listLayouts(layout)[0] for layout in layouts]
+
+    for layout in layout_list:
         messages.addMessage(f'Exporting {layout.name}')
-        layout.exportToPDF(out_path.joinpath(f'{layout.name}.pdf'))
+
+        # Change the formatting below to match your naming convention.
+        out_format = f'{layout.name.lower()}_{int(layout.pageWidth)}x{int(layout.pageHeight)}_{layout.pageUnits}_{datetime.today().strftime("%Y%m%d")}_{datetime.now().strftime("%H%M")}'.replace(' ', '_').replace('-',"_").replace('.', '_')
+        
+        layout.exportToPDF(out_path.joinpath(out_format).with_suffix('.pdf'))
     return
