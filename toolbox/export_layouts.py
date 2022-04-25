@@ -1,7 +1,7 @@
 import arcpy
 from pathlib import Path
 
-__version__ = '2022-03-11'
+__version__ = '2022-04-25'
 
 
 class ExportLayouts:
@@ -16,9 +16,6 @@ class ExportLayouts:
     def getParameterInfo(self):
         # Define parameter definitions.
         # Refer to https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameters-in-a-python-toolbox.htm
-
-        
-        # Todo: Select layouts to export
 
         out_path = arcpy.Parameter(
             name='Output Directory',
@@ -42,20 +39,18 @@ class ExportLayouts:
 
         return [out_path, layouts]
 
-   
-    def execute(self, parameters, messages):
-        # The source code of your tool.
-        # Get the parameters from our parameters list, then call a generic python function.
-        # This separates the code doing the work from all the crazy code required to talk to ArcGIS.
 
+    def execute(self, parameters, messages):
         messages.AddMessage(f'Running {self.label} version {__version__}')
 
         for param in parameters:
             messages.addMessage(f'Parameter: {param.name} = {param.valueAsText}')
 
         out_path = Path(parameters[0].valueAsText).resolve()
+
         layouts = parameters[1].valueAsText.split(';')
-        
+        layouts = [layout.replace("'", '') for layout in layouts]  # remove single quotes from layout parameter items
+
         export_layouts(messages, out_path, layouts)
 
         # Todo: Add try/catch to catch cancellations and errors when cleanup is required.
@@ -68,9 +63,9 @@ def export_layouts(messages, out_path, layouts):
     messages.addMessage(f'Exporting layouts to {out_path}')
     aprx = arcpy.mp.ArcGISProject("CURRENT")
 
-    layouts = [aprx.listLayouts(name)[0] for name in layouts]
+    layout_list = [aprx.listLayouts(layout)[0] for layout in layouts]
 
-    for layout in layouts:
+    for layout in layout_list:
         messages.addMessage(f'Exporting {layout.name}')
         layout.exportToPDF(out_path.joinpath(f'{layout.name}.pdf'))
     return
