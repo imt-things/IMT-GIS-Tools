@@ -6,8 +6,8 @@ __version__ = '2022-03-11'
 
 class ExportLayouts:
     def __init__(self) -> None:
-        self.label = 'Export All Project Layouts'
-        self.description = 'Export all layouts in project'
+        self.label = 'Export Project Layouts'
+        self.description = 'Export selected layouts in project'
         self.canRunInBackground = True
         self.category = 'Products' # Use your own category here, or an existing one.
         #self.stylesheet = '' # I don't know how to use this yet.
@@ -19,7 +19,8 @@ class ExportLayouts:
 
         
         # Todo: Select layouts to export
-        layouts = arcpy.Parameter(
+
+        out_path = arcpy.Parameter(
             name='Output Directory',
             displayName='Output Directory',
             datatype='DEFolder',
@@ -27,7 +28,19 @@ class ExportLayouts:
             direction='Input'
         )
 
-        return [layouts]
+        layouts = arcpy.Parameter(
+            name='Layouts',
+            displayName='Layouts',
+            parameterType='Required',
+            datatype='String',
+            direction='Input',
+            multiValue=True
+        )
+    
+        layouts.filter.type = "ValueList"
+        layouts.filter.list = [layout.name for layout in arcpy.mp.ArcGISProject("CURRENT").listLayouts()]
+
+        return [out_path, layouts]
 
    
     def execute(self, parameters, messages):
@@ -41,22 +54,23 @@ class ExportLayouts:
             messages.addMessage(f'Parameter: {param.name} = {param.valueAsText}')
 
         out_path = Path(parameters[0].valueAsText).resolve()
+        layouts = parameters[1].valueAsText.split(';')
         
-        export_layouts(messages, out_path)
-        
-        
+        export_layouts(messages, out_path, layouts)
 
         # Todo: Add try/catch to catch cancellations and errors when cleanup is required.
 
         return
 
 
-def export_layouts(messages, out_path):
+def export_layouts(messages, out_path, layouts):
     # Todo: Requires product naming IAW SOP
     messages.addMessage(f'Exporting layouts to {out_path}')
     aprx = arcpy.mp.ArcGISProject("CURRENT")
 
-    for layout in aprx.listLayouts():
+    layouts = [aprx.listLayouts(name)[0] for name in layouts]
+
+    for layout in layouts:
         messages.addMessage(f'Exporting {layout.name}')
         layout.exportToPDF(out_path.joinpath(f'{layout.name}.pdf'))
     return
