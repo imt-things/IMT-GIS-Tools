@@ -1,5 +1,6 @@
 import arcpy
 from pathlib import Path
+from datetime import datetime
 
 __version__ = '2022-04-25'
 
@@ -59,7 +60,6 @@ class ExportLayouts:
 
 
 def export_layouts(messages, out_path, layouts):
-    # Todo: Requires product naming IAW SOP
     messages.addMessage(f'Exporting layouts to {out_path}')
     aprx = arcpy.mp.ArcGISProject("CURRENT")
 
@@ -67,5 +67,11 @@ def export_layouts(messages, out_path, layouts):
 
     for layout in layout_list:
         messages.addMessage(f'Exporting {layout.name}')
-        layout.exportToPDF(out_path.joinpath(f'{layout.name}.pdf'))
+
+        # Change the formatting below to match your naming convention.
+        out_format = f'{layout.name.lower()}_{int(layout.pageWidth)}x{int(layout.pageHeight)}_{layout.pageUnits}_{datetime.today().strftime("%Y%m%d")}_{datetime.now().strftime("%H%M")}'.replace(' ', '_').replace('-',"_").replace('.', '_')
+        
+        out_file = out_path.joinpath(out_format)
+        messages.addMessage(out_file)
+        layout.exportToPDF(out_file.with_suffix('.pdf'))
     return
