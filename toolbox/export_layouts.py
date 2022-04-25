@@ -71,7 +71,5 @@ def export_layouts(messages, out_path, layouts):
         # Change the formatting below to match your naming convention.
         out_format = f'{layout.name.lower()}_{int(layout.pageWidth)}x{int(layout.pageHeight)}_{layout.pageUnits}_{datetime.today().strftime("%Y%m%d")}_{datetime.now().strftime("%H%M")}'.replace(' ', '_').replace('-',"_").replace('.', '_')
         
-        out_file = out_path.joinpath(out_format)
-        messages.addMessage(out_file)
-        layout.exportToPDF(out_file.with_suffix('.pdf'))
+        layout.exportToPDF(out_path.joinpath(out_format).with_suffix('.pdf'))
     return
