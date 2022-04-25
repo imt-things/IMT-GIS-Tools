@@ -243,7 +243,7 @@
                             <Length>8</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Operational Peried Start</AliasName>
+                            <AliasName>Operational Period Start</AliasName>
                             <ModelName>OpPeriodStart</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
@@ -253,7 +253,7 @@
                             <Length>8</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
-                            <AliasName>Operational Peried End</AliasName>
+                            <AliasName>Operational Period End</AliasName>
                             <ModelName>OpPeriodEnd</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
