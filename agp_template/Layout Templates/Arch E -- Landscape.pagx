@@ -1,13 +1,8 @@
 {
   "type" : "CIMLayoutDocument",
-  "version" : "2.5.0",
-  "build" : 22081,
+  "version" : "2.9.0",
+  "build" : 32739,
   "binaryReferences" : [
-    {
-      "type" : "CIMBinaryReference",
-      "uRI" : "CIMPATH=Metadata/1a32d033dfdfbba76034b8b28ed82e95.xml",
-      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20190507</CreaDate><CreaTime>15140600</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>Light Gray Reference</resTitle></idCitation><idAbs></idAbs><idCredit></idCredit><idPurp></idPurp><resConst><Consts><useLimit></useLimit></Consts></resConst></dataIdInfo></metadata>\r\n"
-    },
     {
       "type" : "CIMBinaryReference",
       "uRI" : "CIMPATH=Metadata/2ca2c0b6e4f48a973a2ac3f915980e3f.xml",
@@ -17,69 +12,6 @@
       "type" : "CIMBinaryReference",
       "uRI" : "CIMPATH=Metadata/b657aaf897f52d37292638a7f3a8a9cf.xml",
       "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20190507</CreaDate><CreaTime>15132200</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>Map</resTitle></idCitation></dataIdInfo><Binary><Thumbnail><Data EsriPropertyType=\"PictureX\">/9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a\r\nHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy\r\nMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCADIASwDAREA\r\nAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA\r\nAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3\r\nODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm\r\np6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA\r\nAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx\r\nBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK\r\nU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3\r\nuLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+gAo\r\nAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgA\r\noAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACg\r\nAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKAC\r\ngAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKA\r\nCgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAK\r\nACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoA\r\nKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAo\r\nAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgA\r\noAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACg\r\nAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKAC\r\ngAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKA\r\nCgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAK\r\nACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoA\r\nKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAo\r\nAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgA\r\noAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACg\r\nAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKAC\r\ngAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKA\r\nCgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAK\r\nACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoA\r\nKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAo\r\nAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgA\r\noAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACg\r\nAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKAC\r\ngAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKA\r\nCgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAK\r\nACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoA\r\nKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAo\r\nAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgA\r\noAKACgAoA//Z</Data></Thumbnail></Binary></metadata>\r\n"
-    },
-    {
-      "type" : "CIMBinaryReference",
-      "uRI" : "CIMPATH=Metadata/fa2da761e7b9a4f6f947530ca43b8d19.xml",
-      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20190507</CreaDate><CreaTime>15140600</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>Light Gray Base</resTitle></idCitation><idAbs></idAbs><idCredit></idCredit><idPurp></idPurp><resConst><Consts><useLimit></useLimit></Consts></resConst></dataIdInfo></metadata>\r\n"
-    }
-  ],
-  "layerDefinitions" : [
-    {
-      "type" : "CIMVectorTileLayer",
-      "name" : "Light Gray Reference",
-      "uRI" : "CIMPATH=34f7d1a0510d4ac6a3ee08c73339b500.xml",
-      "sourceURI" : "1768e8369a214dfab4e2167d5c5f2454",
-      "sourceModifiedTime" : {
-        "type" : "TimeInstant"
-      },
-      "metadataURI" : "CIMPATH=Metadata/1a32d033dfdfbba76034b8b28ed82e95.xml",
-      "useSourceMetadata" : true,
-      "layerElevation" : {
-        "type" : "CIMLayerElevationSurface",
-        "mapElevationID" : "{366C3E85-BAB6-439D-A250-FBC562BDFDB2}"
-      },
-      "layerType" : "BasemapTopReference",
-      "showLegends" : true,
-      "visibility" : false,
-      "displayCacheType" : "Permanent",
-      "maxDisplayCacheAge" : 5,
-      "showPopups" : true,
-      "serviceLayerID" : -1,
-      "refreshRate" : -1,
-      "refreshRateUnit" : "esriTimeUnitsSeconds",
-      "dataConnection" : {
-        "type" : "CIMVectorTileDataConnection",
-        "uRI" : "https://www.arcgis.com/sharing/rest/content/items/1768e8369a214dfab4e2167d5c5f2454/resources/styles/root.json"
-      }
-    },
-    {
-      "type" : "CIMVectorTileLayer",
-      "name" : "Light Gray Base",
-      "uRI" : "CIMPATH=460db57759494ddfbba7574626109e79.xml",
-      "sourceURI" : "291da5eab3a0412593b66d384379f89f",
-      "sourceModifiedTime" : {
-        "type" : "TimeInstant"
-      },
-      "metadataURI" : "CIMPATH=Metadata/fa2da761e7b9a4f6f947530ca43b8d19.xml",
-      "useSourceMetadata" : true,
-      "layerElevation" : {
-        "type" : "CIMLayerElevationSurface",
-        "mapElevationID" : "{366C3E85-BAB6-439D-A250-FBC562BDFDB2}"
-      },
-      "layerType" : "BasemapBackground",
-      "showLegends" : true,
-      "visibility" : false,
-      "displayCacheType" : "Permanent",
-      "maxDisplayCacheAge" : 5,
-      "showPopups" : true,
-      "serviceLayerID" : -1,
-      "refreshRate" : -1,
-      "refreshRateUnit" : "esriTimeUnitsSeconds",
-      "dataConnection" : {
-        "type" : "CIMVectorTileDataConnection",
-        "uRI" : "https://www.arcgis.com/sharing/rest/content/items/291da5eab3a0412593b66d384379f89f/resources/styles/root.json"
-      }
     }
   ],
   "mapDefinitions" : [
@@ -105,19 +37,15 @@
         "enableAmbientOcclusion" : true,
         "enableEyeDomeLighting" : true
       },
-      "layers" : [
-        "CIMPATH=34f7d1a0510d4ac6a3ee08c73339b500.xml",
-        "CIMPATH=460db57759494ddfbba7574626109e79.xml"
-      ],
-      "standaloneTables" : [
-        "CIMPATH=map/dynamictext.xml"
-      ],
       "defaultViewingMode" : "Map",
       "mapType" : "Map",
+      "standaloneTables" : [
+        "CIMPATH=dynamic_text/dynamictext.xml"
+      ],
       "defaultExtent" : {
-        "xmin" : -73.7762908260999382,
+        "xmin" : -73.7762981147083678,
         "ymin" : 40.7892327242039627,
-        "xmax" : -73.7733028058999309,
+        "xmax" : -73.7732955172915013,
         "ymax" : 40.7914481237961795,
         "spatialReference" : {
           "wkid" : 4326,
@@ -165,7 +93,8 @@
             "maximumNumberOfLines" : 20,
             "minimumNumberOfLines" : 2,
             "name" : "Default",
-            "numberResetType" : "None"
+            "numberResetType" : "None",
+            "keyNumberMethod" : "PreventUnplacedLabels"
           }
         ],
         "placementQuality" : "High"
@@ -175,7 +104,10 @@
         "xYTolerance" : 10,
         "xYToleranceUnit" : "SnapXYToleranceUnitPixel",
         "snapToSketchEnabled" : true,
-        "snapRequestType" : "SnapRequestType_GeometricAndVisualSnapping"
+        "snapRequestType" : "SnapRequestType_GeometricAndVisualSnapping",
+        "showSnapTip" : true,
+        "isZSnappingEnabled" : true,
+        "snapTipDisplayParts" : 3
       },
       "spatialReference" : {
         "wkid" : 4326,
@@ -204,82 +136,21 @@
     {
       "type" : "CIMStandaloneTable",
       "name" : "DynamicText",
-      "uRI" : "CIMPATH=map/dynamictext.xml",
+      "uRI" : "CIMPATH=dynamic_text/dynamictext.xml",
       "sourceModifiedTime" : {
-        "type" : "TimeInstant",
-        "start" : 978307200000
+        "type" : "TimeInstant"
       },
       "useSourceMetadata" : true,
-      "displayField" : "Field",
+      "displayField" : "inc_name",
       "editable" : true,
-      "fieldDescriptions" : [
-        {
-          "type" : "CIMFieldDescription",
-          "alias" : "OBJECTID",
-          "fieldName" : "OBJECTID",
-          "numberFormat" : {
-            "type" : "CIMNumericFormat",
-            "alignmentOption" : "esriAlignRight",
-            "alignmentWidth" : 0,
-            "roundingOption" : "esriRoundNumberOfDecimals",
-            "roundingValue" : 0
-          },
-          "readOnly" : true,
-          "visible" : true,
-          "searchMode" : "Exact"
-        },
-        {
-          "type" : "CIMFieldDescription",
-          "alias" : "Incident Commander",
-          "fieldName" : "ic",
-          "visible" : true,
-          "searchMode" : "Exact"
-        },
-        {
-          "type" : "CIMFieldDescription",
-          "alias" : "Incident Number",
-          "fieldName" : "inc_num",
-          "visible" : true,
-          "searchMode" : "Exact"
-        },
-        {
-          "type" : "CIMFieldDescription",
-          "alias" : "Operational Peried",
-          "fieldName" : "period",
-          "visible" : true,
-          "searchMode" : "Exact"
-        },
-        {
-          "type" : "CIMFieldDescription",
-          "alias" : "Author",
-          "fieldName" : "author",
-          "visible" : true,
-          "searchMode" : "Exact"
-        },
-        {
-          "type" : "CIMFieldDescription",
-          "alias" : "Date/Time",
-          "fieldName" : "time",
-          "visible" : true,
-          "searchMode" : "Exact"
-        }
-      ],
       "dataConnection" : {
         "type" : "CIMStandardDataConnection",
-        "workspaceConnectionString" : "DATABASE=..\\FDNY Event GDB.gdb",
+        "workspaceConnectionString" : "DATABASE=..\\eventGDB.gdb",
         "workspaceFactory" : "FileGDB",
         "dataset" : "DynamicText",
         "datasetType" : "esriDTTable"
       },
       "autoGenerateRowTemplates" : true,
-      "rowTemplates" : [
-        {
-          "type" : "CIMFeatureTemplate",
-          "name" : "DynamicText",
-          "tags" : "Table",
-          "toolProgID" : "00000000-0000-0000-0000-000000000000"
-        }
-      ],
       "serviceTableID" : -1,
       "showPopups" : true
     }
@@ -309,7 +180,7 @@
             [
               [
                 0.75,
-                2.94516455634694552
+                2.9451645563469455
               ],
               [
                 0.75,
@@ -321,11 +192,11 @@
               ],
               [
                 47.2499999999999858,
-                2.94516455634694552
+                2.9451645563469455
               ],
               [
                 0.75,
-                2.94516455634694552
+                2.9451645563469455
               ]
             ]
           ]
@@ -1088,11 +959,11 @@
                 -10
               ],
               [
-                -9.90000000000000036,
+                -9.9000000000000004,
                 -10
               ],
               [
-                -9.90000000000000036,
+                -9.9000000000000004,
                 -10.1000000000000014
               ],
               [
@@ -1950,16 +1821,6 @@
           "attributes" : {
             "type" : "PropertySet",
             "propertySetItems" : [
-              "CheckSpelling",
-              true,
-              "xmin",
-              -1.9032224024854985,
-              "ymin",
-              34.795464409722193,
-              "xmax",
-              0.73685680758394601,
-              "ymax",
-              35.249999999999972
             ]
           },
           "placement" : "Unspecified",
@@ -1978,7 +1839,7 @@
         "visible" : true,
         "rotationCenter" : {
           "x" : 0.97511245924159606,
-          "y" : 3.28493934037517965
+          "y" : 3.2849393403751797
         },
         "lockedAspectRatio" : true,
         "frame" : {
@@ -1986,23 +1847,23 @@
             [
               [
                 0.97511245924159606,
-                3.15091116186071307
+                3.1509111618607131
               ],
               [
                 0.97511245924159606,
-                3.41896751888964623
+                3.4189675188896462
               ],
               [
-                3.95312154092278956,
-                3.41896751888964623
+                3.9531215409227896,
+                3.4189675188896462
               ],
               [
-                3.95312154092278956,
-                3.15091116186071307
+                3.9531215409227896,
+                3.1509111618607131
               ],
               [
                 0.97511245924159606,
-                3.15091116186071307
+                3.1509111618607131
               ]
             ]
           ]
@@ -2263,6 +2124,7 @@
           },
           "symbolName" : "Symbol_1173"
         },
+        "midpointMarkHeight" : 5,
         "fillSymbol1" : {
           "type" : "CIMSymbolReference",
           "symbol" : {
@@ -2430,15 +2292,7 @@
               "Overflow",
               true,
               "ShowOverflow",
-              true,
-              "xmin",
-              0.50000190734863281,
-              "ymin",
-              10.298830032348633,
-              "xmax",
-              4.0415096282958984,
-              "ymax",
-              10.500001907348633
+              true
             ]
           },
           "placement" : "Unspecified",
@@ -2447,7 +2301,7 @@
             "rings" : [
               [
                 [
-                  4.04150962829589844,
+                  4.0415096282958984,
                   10.2988300323486328
                 ],
                 [
@@ -2459,11 +2313,11 @@
                   10.5000019073486328
                 ],
                 [
-                  4.04150962829589844,
+                  4.0415096282958984,
                   10.5000019073486328
                 ],
                 [
-                  4.04150962829589844,
+                  4.0415096282958984,
                   10.2988300323486328
                 ]
               ]
@@ -2538,7 +2392,7 @@
         "name" : "Map Info",
         "visible" : true,
         "rotationCenter" : {
-          "x" : 44.4758251779242855,
+          "x" : 44.4758251779242784,
           "y" : 0.50000190734863192
         },
         "lockedAspectRatio" : true,
@@ -2601,22 +2455,14 @@
           "attributes" : {
             "type" : "PropertySet",
             "propertySetItems" : [
-              "CheckSpelling",
-              true,
               "TextLimit",
               129600,
-              "xmin",
-              43.540603823757614,
-              "ymin",
-              0.50000190734863192,
-              "xmax",
-              44.475825177924278,
-              "ymax",
-              0.90234565734863192
+              "IsCached",
+              true
             ]
           },
           "placement" : "Unspecified",
-          "text" : "<dyn type=\"table\" property=\"value\" mapFrame=\"Dynamic Text\" mapMemberUri=\"CIMPATH=map/dynamictext.xml\" field=\"author\" delimiter=\"\\n\"/>\n<dyn type=\"table\" property=\"value\" mapFrame=\"Dynamic Text\" mapMemberUri=\"CIMPATH=map/dynamictext.xml\" field=\"time\" delimiter=\" \"/>",
+          "text" : "<dyn type=\"table\" property=\"value\" mapFrame=\"Dynamic Text\" mapMemberUri=\"CIMPATH=dynamic_text/dynamictext.xml\" field=\"author\" delimiter=\"\\n\"/>\n<dyn type=\"table\" property=\"value\" mapFrame=\"Dynamic Text\" mapMemberUri=\"CIMPATH=dynamic_text/dynamictext.xml\" field=\"output_time\" delimiter=\" \"/>",
           "shape" : {
             "x" : 44.4758251779242855,
             "y" : 0.50000190734863192
@@ -2631,7 +2477,7 @@
         "visible" : true,
         "rotationCenter" : {
           "x" : 44.6089223126313641,
-          "y" : 1.42629944617174043
+          "y" : 1.4262994461717404
         },
         "lockedAspectRatio" : true,
         "frame" : {
@@ -2763,7 +2609,7 @@
         "visible" : true,
         "rotationCenter" : {
           "x" : 24,
-          "y" : 1.68553352355957031
+          "y" : 1.6855335235595703
         },
         "graphic" : {
           "type" : "CIMParagraphTextGraphic",
@@ -2826,24 +2672,16 @@
             "propertySetItems" : [
               "Overflow",
               true,
-              "CheckSpelling",
+              "ShowOverflow",
               true,
               "TextLimit",
               481,
-              "ShowOverflow",
-              true,
-              "xmin",
-              19.189401626586914,
-              "ymin",
-              0.50000190734863281,
-              "xmax",
-              28.810598373413086,
-              "ymax",
-              1.6855335235595703
+              "IsCached",
+              true
             ]
           },
           "placement" : "Unspecified",
-          "text" : "<dyn type=\"table\" property=\"value\" mapFrame=\"Dynamic Text\" mapMemberUri=\"CIMPATH=map/dynamictext.xml\" field=\"ic\" delimiter=\"\"/>\n<dyn type=\"table\" property=\"value\" mapFrame=\"Dynamic Text\" mapMemberUri=\"CIMPATH=map/dynamictext.xml\" field=\"period\" delimiter=\" \"/>",
+          "text" : "<dyn type=\"table\" property=\"value\" mapFrame=\"Dynamic Text\" mapMemberUri=\"CIMPATH=dynamic_text/dynamictext.xml\" field=\"inc_commander\" delimiter=\"\"/>\n<dyn type=\"table\" property=\"value\" mapFrame=\"Dynamic Text\" mapMemberUri=\"CIMPATH=dynamic_text/dynamictext.xml\" field=\"op_period_start\" delimiter=\" \"/>",
           "shape" : {
             "rings" : [
               [
@@ -2857,11 +2695,11 @@
                 ],
                 [
                   19.1894016265869141,
-                  1.68553352355957031
+                  1.6855335235595703
                 ],
                 [
                   28.8105983734130859,
-                  1.68553352355957031
+                  1.6855335235595703
                 ],
                 [
                   28.8105983734130859,
@@ -2925,7 +2763,7 @@
         "visible" : true,
         "rotationCenter" : {
           "x" : 23.9999999999999929,
-          "y" : 2.08306592683654568
+          "y" : 2.0830659268365457
         },
         "lockedAspectRatio" : true,
         "graphic" : {
@@ -2987,23 +2825,13 @@
           "attributes" : {
             "type" : "PropertySet",
             "propertySetItems" : [
-              "CheckSpelling",
-              true,
-              "xmin",
-              22.756401367187493,
-              "ymin",
-              1.7813081143365457,
-              "xmax",
-              25.243702799479159,
-              "ymax",
-              2.0830659268365457
             ]
           },
           "placement" : "Unspecified",
           "text" : "<dyn type=\"layout\" property=\"name\"/>",
           "shape" : {
             "x" : 24.0004166666666592,
-            "y" : 2.08306592683654568
+            "y" : 2.0830659268365457
           }
         }
       },
@@ -3015,7 +2843,7 @@
         "visible" : true,
         "rotationCenter" : {
           "x" : 23.9999999999999929,
-          "y" : 2.55787798783840659
+          "y" : 2.5578779878384066
         },
         "lockedAspectRatio" : true,
         "graphic" : {
@@ -3077,20 +2905,14 @@
           "attributes" : {
             "type" : "PropertySet",
             "propertySetItems" : [
-              "CheckSpelling",
-              true,
-              "xmin",
-              22.324544270833329,
-              "ymin",
-              2.155534237838407,
-              "xmax",
-              25.675455729166661,
-              "ymax",
-              2.5578779878384066
+              "TextLimit",
+              32400,
+              "IsCached",
+              true
             ]
           },
           "placement" : "Unspecified",
-          "text" : "<dyn type=\"project\" property=\"name\"/>",
+          "text" : "<dyn type=\"table\" property=\"value\" mapFrame=\"Dynamic Text\" mapMemberUri=\"CIMPATH=dynamic_text/dynamictext.xml\" field=\"inc_name\" delimiter=\"\"/>",
           "shape" : {
             "x" : 23.9999999999999964,
             "y" : 2.557877987838407
@@ -3105,7 +2927,7 @@
         "visible" : true,
         "rotationCenter" : {
           "x" : 0.73685680758394723,
-          "y" : 2.55787798783840259
+          "y" : 2.5578779878384026
         },
         "frame" : {
           "rings" : [
@@ -3116,14 +2938,14 @@
               ],
               [
                 0.73685680758394767,
-                2.55787798783840259
+                2.5578779878384026
               ],
               [
-                4.78057923728425749,
-                2.55787798783840259
+                4.7805792372842575,
+                2.5578779878384026
               ],
               [
-                4.78057923728425749,
+                4.7805792372842575,
                 0.50000000000000311
               ],
               [
@@ -3286,7 +3108,7 @@
             "xmin" : 44.7783978751052274,
             "ymin" : 0.50000000000000089,
             "xmax" : 47.4999999999999929,
-            "ymax" : 2.35670611283840659
+            "ymax" : 2.3567061128384066
           },
           "frame" : {
             "type" : "CIMGraphicFrame",
@@ -3401,7 +3223,8 @@
       ],
       "showRulers" : true,
       "showGuides" : true,
-      "smallestRulerDivision" : 0.01
+      "smallestRulerDivision" : 0.01,
+      "showMargin" : true
     },
     "dateExported" : {
       "type" : "TimeInstant",
