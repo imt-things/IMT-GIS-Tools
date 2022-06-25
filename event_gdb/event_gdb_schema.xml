@@ -1065,6 +1065,17 @@
                             <ModelName>last_edited_date</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
+                            <Name>deviceid</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>32</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <Editable>false</Editable>
+                            <AliasName>deviceid</AliasName>
+                            <ModelName>deviceid</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
                             <Name>GlobalID</Name>
                             <Type>esriFieldTypeGlobalID</Type>
                             <IsNullable>false</IsNullable>
@@ -1856,6 +1867,17 @@
                             <Editable>false</Editable>
                             <AliasName>last_edited_date</AliasName>
                             <ModelName>last_edited_date</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>deviceid</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>32</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <Editable>false</Editable>
+                            <AliasName>deviceid</AliasName>
+                            <ModelName>deviceid</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>GlobalID</Name>
@@ -2718,6 +2740,17 @@
                             <Editable>false</Editable>
                             <AliasName>last_edited_date</AliasName>
                             <ModelName>last_edited_date</ModelName>
+                        </Field>
+                        <Field xsi:type='esri:Field'>
+                            <Name>deviceid</Name>
+                            <Type>esriFieldTypeString</Type>
+                            <IsNullable>true</IsNullable>
+                            <Length>32</Length>
+                            <Precision>0</Precision>
+                            <Scale>0</Scale>
+                            <Editable>false</Editable>
+                            <AliasName>deviceid</AliasName>
+                            <ModelName>deviceid</ModelName>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>GlobalID</Name>
