@@ -11,10 +11,15 @@ import export_layouts
 importlib.reload(export_layouts)
 from export_layouts import ExportLayouts
 
+import event_start
+importlib.reload(event_start)
+from event_start import EventStart
+
 # Add tools here
 tool_list = [
     #_Template
-    ExportLayouts
+    ExportLayouts,
+    EventStart
 ]
 
 class Toolbox(object):
