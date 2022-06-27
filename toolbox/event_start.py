@@ -18,6 +18,7 @@ class EventStart:
     def getParameterInfo(self):
         # Define parameter definitions.
         # Refer to https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameters-in-a-python-toolbox.htm
+        # and https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameter-data-types-in-a-python-toolbox.htm
 
         inc_gdb = arcpy.Parameter(
             name='Incident Geodatabase',
@@ -64,23 +65,21 @@ class EventStart:
             messages.addMessage(
                 f'Parameter: {param.name} = {param.valueAsText}')
 
-        inc_name = arcpy.GetParameter(0)
-        inc_commander = arcpy.GetParameter(1)
-        inc_num = arcpy.GetParameter(2)
-        inc_gdb = arcpy.GetParameter(3)
-
-        # Ensure we don't have data in the table...that would indicate we are not creating an incident
-        arcpy.env.workspace = inc_gdb
-        assert arcpy.GetCount_management("DynamicText") == 0, messages.addMessage(
-            "!!!Exiting -- Dynamic text table already contains data. Perhaps you want to join an incident, not create a new one?")
+        IncidentName = parameters[0].valueAsText
+        inc_commander = parameters[1].valueAsText
+        inc_num = parameters[2].valueAsText
+        inc_gdb = parameters[3].valueAsText
 
         messages.addMessage('Adding data to dynamic text table')
 
         data = {
-            'inc_name': inc_name,
+            # 'IncidentName': IncidentName, # Not part of the 'dynamictable' table
             'inc_num': inc_num,
             'inc_commander': inc_commander,
-            }
+        }
+
+        # ensure we don't have null values (this will cause an error in arcpy)
+        data = {k: v for k, v in data.items() if v is not None}
 
         update_dyn_text(messages, inc_gdb, data)
 
@@ -92,11 +91,17 @@ class EventStart:
 def update_dyn_text(messages, inc_gdb, data):
 
     layer = f'{inc_gdb}/"DynamicText"'
-    fields = data.keys()
 
-    cursor = arcpy.da.InsertCursor(layer, fields)
+    # Ensure we don't have data in the table...that would indicate we are not creating an incident
+    arcpy.env.workspace = inc_gdb
+    assert int(arcpy.GetCount_management("DynamicText")[0]) == 0, messages.addMessage(
+        "!!!Exiting -- Dynamic text table already contains data. Perhaps you want to join an incident, not create a new one?")
 
-    cursor.insertRow(data.values())
+    # must create list, arcpy won't parse the object...despite it being an iterable
+    cursor = arcpy.da.InsertCursor("DynamicText", list(data.keys()))
+
+    # must create list, arcpy won't parse the object...despite it being an iterable
+    cursor.insertRow(list(data.values()))
 
     del cursor
 
