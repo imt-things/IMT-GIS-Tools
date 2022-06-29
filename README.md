@@ -45,11 +45,11 @@ The ESRI product suite, including ArcGIS Pro, AGOL, and Field Maps.
 
 ![implementation](images/impl_img.png)
 
-1. Load a WebMap from the FDNY IMT Org AGOL and feature layers from other data sources (e.g., PLUTO) for development purposes. WebMap will eventually include the custom .gdb as created from an Excel template and accompanying python script.
+1. Load a WebMap from AGOL and feature layers from other data sources (e.g., PLUTO) for development purposes. WebMap will eventually include the custom .gdb as created from an Excel template and accompanying python script.
 
 2. Include an editor that will add, delete, and edit features. Choose appropriate UI for the widget that displays name and symbology of features in the gdb organized by data type (point, line, polygon) or ‘genre’ (e.g., wildfire, collapse, etc.).
 
-3. Develop a printing widget that exports the browser view at predetermined and custom sizes and file formats. The widget should have a toggle (default) that specifies the map be produced at FDNY IMT / NWCG product standards.
+3. Develop a printing widget that exports the browser view at predetermined and custom sizes and file formats. The widget should have a toggle (default) that specifies the map be produced in accordance with SOPs.
 
 4. Define a user class, including roles and permissions. To include but not limited to: Owner, IC, SITL, Logistics, GISS, View-Only. Create a process for managing users. Include web app login and authentication. Develop a feature approval workflow. At minimum, this should include an "Approval Workflow" based on the National Incident Feature Service Workflows. 
 
