@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>All-Hazards IMT Web Mapping Application</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0; 
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.23/"></script>
+
+  <script>
+    require([
+      "esri/WebMap",
+      "esri/views/MapView",
+      "esri/widgets/ScaleBar",
+      "esri/widgets/Legend",
+      "esri/widgets/Editor",
+      "esri/widgets/Print",
+      "esri/widgets/LayerList",
+      "esri/widgets/Expand",
+      "esri/widgets/Print"
+    ], function(WebMap, MapView, ScaleBar, Legend, Editor, Print, LayerList, Expand, Print) {
+
+      const webmap = new WebMap({
+        portalItem: {
+          //id: "459a495fc16d4d4caa35e92e895694c8"
+          id: "e50ea5c569604a469201893e0c272a36" // Malveaux LODD
+        }
+      });
+
+      const view = new MapView({
+        container: "viewDiv",
+        map: webmap
+      });
+      
+      const scalebar = new ScaleBar({
+        view: view,
+        style: "ruler",
+        unit: "non-metric"
+      });
+      view.ui.add(scalebar, "bottom-left");
+
+      const legend = new Legend ({
+        view: view,
+        style: "classic"
+      });
+      legendExpand = new Expand({
+        //expandIconClass: "...",
+        view: view,
+        content: legend
+      });
+      view.ui.add(legendExpand, "top-right");
+      
+      const editor = new Editor({
+        view: view,
+      });
+      editorExpand = new Expand({
+        //expandIconClass: "...",
+        view: view,
+        content: editor
+      })
+      view.ui.add(editorExpand, "top-right");
+
+      const layerlist = new LayerList({
+        view: view,
+      })
+      layerlistExpand = new Expand({
+        view: view,
+        content: layerlist
+      })
+      view.ui.add(layerlistExpand, "top-right");
+      
+      const print = new Print({
+        view: view,
+        // specify a custom Print Service if we so choose
+        printServiceUrl:
+              "https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task",
+        allowedFormats: ['pdf','eps','png32','jpg'],
+        allowedLayouts: ['a4-landscape','a4-portrait','a3-landscape','a3-portrait']
+      });
+      printExpand = new Expand({
+        view: view,
+        content: print
+      })
+      view.ui.add(printExpand, "top-right");
+
+  });
+  </script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>
