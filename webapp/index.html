@@ -1,15 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
-    <title>All-Hazards IMT Web Mapping Application</title>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+  <title>All-Hazards IMT Web Mapping Application</title>
   <style>
-    html, body, #viewDiv {
+    html,
+    body,
+    #viewDiv {
       padding: 0;
-      margin: 0; 
+      margin: 0;
       height: 100%;
       width: 100%;
+    }
+
+    div.esri-widget--button {
+      width: 64px;
+      height: 32px;
+    }
+
+    div.esri-widget--button.esri-widget.esri-interactive {
+      width: 32px;
+      height: 32px;
+    }
+
+    .esri-collapse__icon.esri-icon-layer-list,
+    .esri-collapse__icon.esri-icon-layer-list:before {
+      background-image: [];
+      content: "Legend";
+      text-align: center;
+      position: relative;
+    }
+
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container>div.esri-expand__panel>div>span.esri-collapse__icon.esri-icon-edit,
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container>div.esri-expand__panel>div>span.esri-collapse__icon.esri-icon-edit:before {
+      background-image: [];
+      content: "Create";
+      text-align: center;
+      position: relative;
+    }
+
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container>div.esri-expand__panel>div>span.esri-collapse__icon.esri-icon-edit,
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container>div.esri-expand__panel>div>span.esri-collapse__icon.esri-icon-edit:before {
+      background-image: [];
+      content: "Edit";
+      text-align: center;
+      position: relative;
+    }
+
+    /*snapping*/
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>calcite-popover-manager.esri-editor__panel-toolbar,
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>calcite-popover-manager.esri-editor__panel-toolbar:before,
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>calcite-popover-manager.esri-editor__panel-toolbar,
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>calcite-popover-manager.esri-editor__panel-toolbar:before {
+      display: none;
+    }
+
+    /* remove "Edit features" from "Create" */
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(1),
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(1):before {
+      display: none;
+    }
+
+    /* remove "Create features" from "Edit" */
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(2),
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(2):before {
+      display: none;
+    }
+
+    .esri-collapse__icon.esri-icon-layers,
+    .esri-collapse__icon.esri-icon-layers:before {
+      background-image: [];
+      content: "Layers";
+      text-align: center;
+      position: relative;
+    }
+
+    .esri-collapse__icon.esri-icon-printer,
+    .esri-collapse__icon.esri-icon-printer:before {
+      background-image: [];
+      content: "Print";
+      text-align: center;
+      position: relative;
     }
   </style>
   <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css">
@@ -27,96 +100,125 @@
       "esri/widgets/Expand",
       "esri/widgets/Print"
     ], function(WebMap, MapView, ScaleBar, Legend, Portal, Editor, LayerList, Expand, Print) {
-
-    const portal = new Portal({
-    portal: {
-      url: "https://fdny-imt.maps.arcgis.com/"
-    }
+      const portal = new Portal({
+        portal: {
+          url: "https://fdny-imt.maps.arcgis.com/"
+        }
       });
       portal.authMode = "immediate";
       portal.load().then(function() {
-      console.log(portal.user.role) // console log
-
-      const webmap = new WebMap({
-        portalItem: {
-          //id: "459a495fc16d4d4caa35e92e895694c8"
-          id: "e50ea5c569604a469201893e0c272a36" // Malveaux LODD
+        console.log(portal.user.role) // console log
+        const webmap = new WebMap({
+          portalItem: {
+            //id: "459a495fc16d4d4caa35e92e895694c8"
+            id: "e50ea5c569604a469201893e0c272a36" // Malveaux LODD
+          }
+        });
+        console.log(webmap.portalItem.id) // console log  
+        const view = new MapView({
+          container: "viewDiv",
+          map: webmap,
+          popup: {
+            dockEnabled: true,
+            dockOptions: {
+              buttonEnabled: false,
+              breakpoint: false
+            }
+          }
+        });
+        // Defines an action to zoom out from the selected feature
+        let editFeatureAction = {
+          // This text is displayed as a tooltip
+          title: "Edit",
+          // The ID by which to reference the action in the event handler
+          id: "edit-feature",
+          // Sets the icon font used to style the action button
+          className: "esri-icon-edit"
+        };
+        // Adds the custom action to the popup.
+        view.popup.actions.push(editFeatureAction);
+        // The function to execute when the zoom-out action is clicked
+        function zoomOut() {
+          // in this case the view zooms out two LODs on each click
+          view.goTo({
+            center: view.center,
+            zoom: view.zoom - 2
+          });
         }
-      });
-      console.log(webmap.portalItem.id) // console log  
-
-      const view = new MapView({
-        container: "viewDiv",
-        map: webmap
-      });
-      
-      const scalebar = new ScaleBar({
-        view: view,
-        style: "ruler",
-        unit: "non-metric"
-      });
-      view.ui.add(scalebar, "bottom-left");
-
-      const legend = new Legend ({
-        view: view,
-        style: "classic"
-      });
-      legendExpand = new Expand({
-        //expandIconClass: "...",
-        view: view,
-        content: legend
-      });
-      view.ui.add(legendExpand, "top-right");
-      
-      if (portal.user.role == "org_user"){
-      const editor = new Editor({
-        view: view,
-        allowedWorkflows: ["create-features"] // note: 'create' was deprecated as of 4.23
-      });
-      editorExpand = new Expand({
-        //expandIconClass: "...",
-        view: view,
-        content: editor
-      })
-      view.ui.add(editorExpand, "top-right");
-      } else {
+        // This event fires for each click on any action
+        view.popup.on("trigger-action", function(event) {
+          // If the zoom-out action is clicked, fire the zoomOut() function
+          if (event.action.id === "edit-feature") {
+            zoomOut();
+          }
+        });
+        const scalebar = new ScaleBar({
+          view: view,
+          style: "ruler",
+          unit: "non-metric"
+        });
+        view.ui.add(scalebar, "bottom-left");
+        const legend = new Legend({
+          view: view,
+          style: "classic"
+        });
+        legendExpand = new Expand({
+          //expandIconClass: "...",
+          view: view,
+          content: legend,
+          group: "top-right"
+        });
+        view.ui.add(legendExpand, "top-right");
         const editor = new Editor({
-        view: view,
+          view: view,
+          allowedWorkflows: ["create-features"]
+        });
+        editorExpand = new Expand({
+          view: view,
+          content: editor,
+          group: "top-right"
+        })
+        view.ui.add(editorExpand, "top-right");
+        const editor2 = new Editor({
+          view: view,
+          allowedWorkflows: ["update"]
+        });
+        editorExpand2 = new Expand({
+          view: view,
+          content: editor2,
+          group: "top-right"
+        })
+        view.ui.add(editorExpand2, "top-right");
+        editor.when(() => {
+          editor.messages.widgetLabel = [];
+        })
+        const layerlist = new LayerList({
+          view: view,
+        })
+        layerlistExpand = new Expand({
+          view: view,
+          content: layerlist,
+          group: "top-right"
+        })
+        view.ui.add(layerlistExpand, "top-right");
+        const print = new Print({
+          view: view,
+          // specify a custom Print Service if we so choose
+          printServiceUrl: "https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
+        });
+        printExpand = new Expand({
+          view: view,
+          content: print,
+          group: "top-right"
+        })
+        view.ui.add(printExpand, "top-right");
       });
-      editorExpand = new Expand({
-        //expandIconClass: "...",
-        view: view,
-        content: editor
-      })
-      view.ui.add(editorExpand, "top-right");
-      }
-
-      const layerlist = new LayerList({
-        view: view,
-      })
-      layerlistExpand = new Expand({
-        view: view,
-        content: layerlist
-      })
-      view.ui.add(layerlistExpand, "top-right");
-      
-      const print = new Print({
-        view: view,
-        // specify a custom Print Service if we so choose
-        printServiceUrl:
-              "https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
-      });
-      printExpand = new Expand({
-        view: view,
-        content: print
-      })
-      view.ui.add(printExpand, "top-right");
-      
-      });
-  });
+    });
   </script>
 </head>
+
 <body>
   <div id="viewDiv"></div>
 </body>
+
 </html>
