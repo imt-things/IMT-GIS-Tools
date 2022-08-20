@@ -1,17 +1,21 @@
 # All-Hazard IMT Web Mapping Application 
-## Concept Design Document
-### March 27, 2022
+## Executive Summary
 
-In anticipation of the wide variety of incidents that All-Hazards IMTs may respond to, we seek to develop a web mapping application that enables streamlined incident monitoring with highly customizable geospatial products. The web application will be constructed with the ArcGIS API for Javascript and will enable users to input features for “all hazards” pertitent to emergency responses, including custom symbols for points, lines, and polygons. 
+All-hazard incident management teams (AHIMT) are often tasked with responding to and managing incidents of wildly varying scope and complexity. The role of AHIMTs continues to evolve into a more data centric role due to legal issues, incident complexity, and interoperability requirements. These challenges necessitate a framework for managing geospatial data during incident assignments. Currently no standards exist specific to geospatial data management for AHIMTs like there is for the wildland fire community (NWCG<!-- Todo: add link -->).
+To that end, we propose the following solution:
+1. Standardized event geodatabase (EGDB) schema.
+2. Pre-built web-apps, map layouts, and analysis tools that match schema.
+3. Tools to allow adapting framework to mission requirements with minimal training.
+4. Standard operating procedures (SOP) that defines operational procedures for handling geospatial data and associated products.
 
-The project requirements, architecture, and implementation plan are outlined as follows:
+The above will allow teams to quickly establish methods for capturing, analyzing, and visualizing data while providing the flexibility required to adapt to changing situations.
 
-#### Project Requirements
-Customizable Event Geodatabase
+## Discussion
+### Event Geodatabase
 - Excel spreadsheet template for incident-specific event geodatabase
 - Python script to create/update/import incident-specific geodatabase to ArcGIS from template
 - Expanded incident event symbology based on core of US&R template and NWCG event geodatabase
-#### Web Application
+### Web Application
 - Incident monitoring
 - Create, read, update, and delete (CRUD) event data 
 - Print format-customizable maps at product (e.g., NWCG) standard
@@ -20,7 +24,23 @@ Customizable Event Geodatabase
 - Functional across common hardware and browsers
 - Offline functionality with source feature service synchronization of edits
 
-### Architecture Overview
+### Custom ArcGIS Pro Templates and Map Layouts
+- ArcGIS Pro template containing
+  - EGDB
+  - Custom toolbox
+  - Customizable map layouts
+- May layouts
+  - Customizable for organizational use
+  - Customizable to map/product requirements
+  - Dynamic text for rapid updating of map info
+
+### Analysis Tools
+- Custom Python tools to accomplish (not all inclusive)
+  - ✅ Export all layouts in project
+  - Start up/join/shutdown an incident
+  - Create ready state AGOL deployment
+
+## Architecture Overview
 
 ![architecture](images/arch_img.png)
 
@@ -41,7 +61,7 @@ The incident-customizable event geodatabase, generated from an Excel spreadsheet
 ArcGIS: 
 The ESRI product suite, including ArcGIS Pro, AGOL, and Field Maps.
 
-### Implementation Plan
+## Implementation Plan
 
 ![implementation](images/impl_img.png)
 
@@ -58,3 +78,11 @@ The ESRI product suite, including ArcGIS Pro, AGOL, and Field Maps.
 6. Refine all aspects of the user experience, including but not limited to the expanded symbology, the Event GDB template, and the web mapping application. The software should be user-friendly to those with limited technological familiarity. Procure and act upon feedback from expected users.
 
 7. Develop regression testing scripts to be performed after software updates. The scripts should capture the full functionality of the software, including updates/modifications to the event GDB and synchronizing with offline devices.
+
+## Changelog // Status update
+### 2022-08-11
+- Alpha version of event GDB ready
+- Still in conversations with ESRI on how to best adapt the domains/contingent values of feature category after EGDB has been pushed to AGOL
+- Basic webapp running
+- SOP stub created
+- Some layout management tools completed

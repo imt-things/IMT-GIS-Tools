@@ -14,7 +14,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Code Standards
 1. All paths shall be created as Path (from pathlib) objects at the time of initialization. Should a package not accept Path objects, such as GDAL, paths should be passed to the package as str(path/to/file).
-2. Doc strings shall be included in each function. Doc strings should be in the XXXX format <!-- Todo: define this !-->
+2. Doc strings shall be included in each function. <!-- Todo: define this..what format? !-->
 3. Tests are not required, but testing is. Due to the nature of required tools, testing can be a hassle. Tools shall be tested to ensure operation as advertised and tests should be written when appropriate. Pytest is the test platform of choice.
 4. No usernames or passwords are to be stored in plain text.
 
