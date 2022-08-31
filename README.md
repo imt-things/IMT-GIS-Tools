@@ -79,7 +79,14 @@ The ESRI product suite, including ArcGIS Pro, AGOL, and Field Maps.
 
 7. Develop regression testing scripts to be performed after software updates. The scripts should capture the full functionality of the software, including updates/modifications to the event GDB and synchronizing with offline devices.
 
-## Changelog // Status update
+## Current Status
+- Event GDB: [event_gdb/README.md](event_gdb/README.md)
+- Webapps: [webapp/README.md](webapp/README.md)
+- 
+## Changelog
+### 2022-08-31
+- Add event GDB readme: [event_gdb/README.md](event_gdb/README.md)
+- Add webapp readme: [webapp/README.md](webapp/README.md)
 ### 2022-08-11
 - Alpha version of event GDB ready
 - Still in conversations with ESRI on how to best adapt the domains/contingent values of feature category after EGDB has been pushed to AGOL
