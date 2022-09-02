@@ -58,14 +58,14 @@
     }
 
     /* remove "Edit features" from "Create" */
-    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(1),
-    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(1):before {
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel:nth-child(2)>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(1),
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(2)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel:nth-child(2)>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(1):before {
       display: none;
     }
 
     /* remove "Create features" from "Edit" */
-    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(2),
-    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(2):before {
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel:nth-child(2)>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(2),
+    #viewDiv>div.esri-view-root>div.esri-ui.calcite-theme-light>div.esri-ui-inner-container.esri-ui-corner-container>div.esri-ui-top-right.esri-ui-corner>div:nth-child(3)>div.esri-expand__container.esri-expand__container--expanded>div.esri-expand__content.esri-expand__content--expanded>div.esri-editor.esri-widget.esri-widget--panel>calcite-flow>calcite-panel:nth-child(2)>div.esri-editor__panel-content.esri-editor__scroller>div:nth-child(2):before {
       display: none;
     }
 
@@ -110,8 +110,8 @@
         console.log(portal.user.role) // console log
         const webmap = new WebMap({
           portalItem: {
-            id: "459a495fc16d4d4caa35e92e895694c8"
-            //id: "e50ea5c569604a469201893e0c272a36" // Malveaux LODD
+            //id: "459a495fc16d4d4caa35e92e895694c8"
+            id: "e50ea5c569604a469201893e0c272a36" // Malveaux LODD
           }
         });
         console.log(webmap.portalItem.id) // console log  
@@ -173,7 +173,7 @@
         if (portal.user.role == "org_user") {
           const editor = new Editor({
             view: view,
-            allowedWorkflows: ["create-features"]
+            //allowedWorkflows: ["create-features"]
           });
           editorExpand = new Expand({
             view: view,
