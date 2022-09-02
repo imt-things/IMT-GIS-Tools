@@ -110,8 +110,8 @@
         console.log(portal.user.role) // console log
         const webmap = new WebMap({
           portalItem: {
-            //id: "459a495fc16d4d4caa35e92e895694c8"
-            id: "e50ea5c569604a469201893e0c272a36" // Malveaux LODD
+            id: "459a495fc16d4d4caa35e92e895694c8"
+            //id: "e50ea5c569604a469201893e0c272a36" // Malveaux LODD
           }
         });
         console.log(webmap.portalItem.id) // console log  
@@ -169,29 +169,46 @@
           group: "top-right"
         });
         view.ui.add(legendExpand, "top-right");
-        const editor = new Editor({
-          view: view,
-          allowedWorkflows: ["create-features"]
-        });
-        editorExpand = new Expand({
-          view: view,
-          content: editor,
-          group: "top-right"
-        })
-        view.ui.add(editorExpand, "top-right");
-        const editor2 = new Editor({
-          view: view,
-          allowedWorkflows: ["update"]
-        });
-        editorExpand2 = new Expand({
-          view: view,
-          content: editor2,
-          group: "top-right"
-        })
-        view.ui.add(editorExpand2, "top-right");
-        editor.when(() => {
-          editor.messages.widgetLabel = [];
-        })
+        // NWCG GISS workflow interpretation: If the role is user, can only create. Other roles can create and edit.
+        if (portal.user.role == "org_user") {
+          const editor = new Editor({
+            view: view,
+            allowedWorkflows: ["create-features"]
+          });
+          editorExpand = new Expand({
+            view: view,
+            content: editor,
+            group: "top-right"
+          })
+          view.ui.add(editorExpand, "top-right");
+          editor.when(() => {
+            editor.messages.widgetLabel = [];
+          })
+        } else {
+          const editor = new Editor({
+            view: view,
+            allowedWorkflows: ["create-features"]
+          });
+          editorExpand = new Expand({
+            view: view,
+            content: editor,
+            group: "top-right"
+          })
+          view.ui.add(editorExpand, "top-right");
+          const editor2 = new Editor({
+            view: view,
+            allowedWorkflows: ["update"]
+          });
+          editorExpand2 = new Expand({
+            view: view,
+            content: editor2,
+            group: "top-right"
+          })
+          view.ui.add(editorExpand2, "top-right");
+          editor.when(() => {
+            editor.messages.widgetLabel = [];
+          })
+        }
         const layerlist = new LayerList({
           view: view,
         })
