@@ -98,8 +98,9 @@
       "esri/widgets/Editor",
       "esri/widgets/LayerList",
       "esri/widgets/Expand",
-      "esri/widgets/Print"
-    ], function(WebMap, MapView, ScaleBar, Legend, Portal, Editor, LayerList, Expand, Print) {
+      "esri/widgets/Print",
+      "esri/core/reactiveUtils"
+    ], function(WebMap, MapView, ScaleBar, Legend, Portal, Editor, LayerList, Expand, Print, reactiveUtils) {
       const portal = new Portal({
         portal: {
           url: "https://fdny-imt.maps.arcgis.com/"
@@ -126,18 +127,14 @@
             }
           }
         });
-        // Defines an action to zoom out from the selected feature
+        /*// In dev: defining an action to edit a feature from the popup
         let editFeatureAction = {
-          // This text is displayed as a tooltip
           title: "Edit",
-          // The ID by which to reference the action in the event handler
           id: "edit-feature",
-          // Sets the icon font used to style the action button
           className: "esri-icon-edit"
         };
-        // Adds the custom action to the popup.
-        view.popup.actions.push(editFeatureAction);
-        // The function to execute when the zoom-out action is clicked
+        view.popup.actions.push(editFeatureAction); // add action to popup
+        // The function to execute when the action is clicked
         function zoomOut() {
           // in this case the view zooms out two LODs on each click
           view.goTo({
@@ -151,7 +148,7 @@
           if (event.action.id === "edit-feature") {
             zoomOut();
           }
-        });
+        });*/
         const scalebar = new ScaleBar({
           view: view,
           style: "ruler",
@@ -173,7 +170,7 @@
         if (portal.user.role == "org_user") {
           const editor = new Editor({
             view: view,
-            //allowedWorkflows: ["create-features"]
+            allowedWorkflows: ["create-features"]
           });
           editorExpand = new Expand({
             view: view,
@@ -208,6 +205,20 @@
           editor.when(() => {
             editor.messages.widgetLabel = [];
           })
+          editor.viewModel.watch("state", function(state) {
+            console.log(state); // gives the "state" of "Create" Editor
+          });
+          editor2.viewModel.watch("state", function(state) {
+            console.log(state); // gives the "state" of "Edit" Editor
+          });
+          // Cancel the Create workflow when we start the Update workflow
+          reactiveUtils.when(() => editor2.viewModel.state === "awaiting-feature-to-update", () => {
+            editor.viewModel.cancelWorkflow();
+          });
+          // Cancel the Update workflow when we start the Create workflow
+          reactiveUtils.when(() => editor.viewModel.state === "creating-features", () => {
+            editor2.viewModel.cancelWorkflow();
+          });
         }
         const layerlist = new LayerList({
           view: view,
