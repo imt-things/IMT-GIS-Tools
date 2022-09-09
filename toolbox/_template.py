@@ -17,7 +17,8 @@ class _Template:
     def getParameterInfo(self):
         # Define parameter definitions.
         # Refer to https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameters-in-a-python-toolbox.htm
-
+        # and https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameter-data-types-in-a-python-toolbox.htm
+        
         start_number = arcpy.Parameter(
             name='Start Number',
             displayName='Number to add to',
