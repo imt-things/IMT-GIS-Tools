@@ -6,15 +6,17 @@ from toolbox.cv_update import CVUpdate
 fields = ["geom_type", "feat_group", "feat_category", "is_active", "keywords"]
 
 data = [
-    ("polygon", "Haz-Mat", "Hot-Zone", "Yes", ""),
-    ("polygon", "Haz-Mat", "Cold-Zone", "Yes", ""),
-    ("polygon", "Haz-Mat", "Warm-Zone", "Yes", ""),
-    ("point", "Haz-Mat", "CCP", "Yes", ""),
-    ("point", "Haz-Mat", "Decon", "Yes", ""),
-    ("point", "ICS", "ICP", "Yes", ""),
-    ("point", "Response Resources", "Engine", "Yes", ""),
-    ("line", "Infrastructure", "Road Closure", "Yes", ""),
-    ("line", "Response Resources", "Handline", "Yes", ""),
+    ("polygon", "Haz-Mat", "Hot-Zone", 1, ""),
+    ("polygon", "Haz-Mat", "Cold-Zone", 1, ""),
+    ("polygon", "Haz-Mat", "Warm-Zone", 1, ""),
+    ("point", "Haz-Mat", "CCP", 1, ""),
+    ("point", "Haz-Mat", "Decon", 1, ""),
+    ("point", "ICS", "ICP", 1, ""),
+    ("point", "Response Resources", "Engine", 1, ""),
+    ("line", "Infrastructure", "Road Closure", 1, ""),
+    ("line", "Response Resources", "Handline", 1, ""),
+    ("point", "Response Resources", "Engine", 1, ""),  # duplicate to test catching of dup values
+    ("point", "Haz-Mat", "Not Active", 0, "")  # not active to test non-active domains
 ]
 
 table_name = "Contingent_Values"
@@ -31,7 +33,7 @@ class TestCVUpdate:
             gdb, "event_gdb/event_gdb_schema.xml"
         )
 
-        table = f"{str(gdb_path)}\{table_name}"
+        table = str(gdb_path.joinpath(table_name))
         with arcpy.da.InsertCursor(table, fields) as cursor:
             [cursor.insertRow(row) for row in data]
 

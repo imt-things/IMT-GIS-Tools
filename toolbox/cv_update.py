@@ -52,7 +52,9 @@ class CVUpdate:
         cv_table = parameters[0].valueAsText
 
         fields = ["geom_type", "feat_group", "feat_category", "is_active", "keywords"]
-        values = [row for row in arcpy.da.SearchCursor(cv_table, fields)] # TODO: filer is_active == "Yes"
+        values = [row for row in arcpy.da.SearchCursor(cv_table, fields, where_clause="is_active=1")]
+
+        # get our values to append. use sets to drop duplicate values.
         groups = set([val[1] for val in values])
         point_vals = set([val[2] for val in values if val[0] == "point"])
         poly_vals = set([val[2] for val in values if val[0] == "polygon"])
