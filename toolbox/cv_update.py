@@ -1,6 +1,7 @@
 import arcpy
+from pathlib import Path
 
-__version__ = "2022-09-09"
+__version__ = "2022-09-12"
 
 
 class CVUpdate:
@@ -46,41 +47,51 @@ class CVUpdate:
         for param in parameters:
             messages.addMessage(f"Parameter: {param.name} = {param.valueAsText}")
 
-        # currently for AGP
         # prepare variables for different ways tools require the arguments passed
         gdb = parameters[1].valueAsText
         cv_table = parameters[0].valueAsText
-
+        
+        # currently for AGP
         fields = ["geom_type", "feat_group", "feat_category", "is_active", "keywords"]
-        values = [row for row in arcpy.da.SearchCursor(cv_table, fields, where_clause="is_active=1")]
+        with arcpy.da.SearchCursor(cv_table, fields, where_clause="is_active=1") as cursor:
+            values = [row for row in cursor]
 
         # get our values to append. use sets to drop duplicate values.
         groups = set([val[1] for val in values])
-        point_vals = set([val[2] for val in values if val[0] == "point"])
-        poly_vals = set([val[2] for val in values if val[0] == "polygon"])
-        line_vals = set([val[2] for val in values if val[0] == "line"])
+        point_vals = set([val for val in values if val[0] == "point"])
+        poly_vals = set([val for val in values if val[0] == "polygon"])
+        line_vals = set([val for val in values if val[0] == "line"])
 
+        # append domain values and update CVs
         # TODO: Check for existing domains and decide how to handle them
+        # TODO: retire CVs that exist in the gdb but not active in the CV table
+        # TODO: make sure Other/Other is added to each CV (will have to be removed from list of CVs to retire)
         for i in groups:
             arcpy.AddCodedValueToDomain_management(gdb, "FeatureGroup", i, i)
+        for i in line_vals:
+            arcpy.AddCodedValueToDomain_management(gdb, "FeatureCategory(Line)", i[2], i[2])
+            insert = f"feature_group CODED_VALUE '{i[1]}'; feature_category CODED_VALUE '{i[2]}'"
+            arcpy.AddContingentValue_management(str(Path(gdb).joinpath("Event_Line")), "FeatureType", insert, )
 
         for i in point_vals:
-            arcpy.AddCodedValueToDomain_management(gdb, "FeatureCategory(Point)", i, i)
+            arcpy.AddCodedValueToDomain_management(gdb, "FeatureCategory(Point)", i[2], i[2])
+            insert = f"feature_group CODED_VALUE '{i[1]}'; feature_category CODED_VALUE '{i[2]}'"
+            arcpy.AddContingentValue_management(str(Path(gdb).joinpath("Event_Point")), "FeatureType", insert, )
 
         for i in poly_vals:
-            arcpy.AddCodedValueToDomain_management(gdb, "FeatureCategory(Polygon)", i, i)
+            arcpy.AddCodedValueToDomain_management(gdb, "FeatureCategory(Polygon)", i[2], i[2])
+            insert = f"feature_group CODED_VALUE '{i[1]}'; feature_category CODED_VALUE '{i[2]}'"
+            arcpy.AddContingentValue_management(str(Path(gdb).joinpath("Event_Polygon")), "FeatureType", insert, )
 
-        for i in line_vals:
-            arcpy.AddCodedValueToDomain_management(gdb, "FeatureCategory(Line)", i, i)
-
-        # TODO: impliment for AGOL
+        # TODO: implement for AGOL
 
         # TODO:
-        # 1. filter rows by is_active == 'Yes'
-        # 2. get unique values in feat_group column in each geom_type
-        # 3. update feature_group with unique group values (this will apply across all geometry types)
-        # 4. for each geom type, update geom feature_category domains
+        # 1. filter rows by is_active == 'Yes' ✅
+        # 2. get unique values in feat_group column in each geom_type ✅
+        # 3. update feature_group with unique group values (this will apply across all geometry types) ✅
+        # 4. for each geom type, update geom feature_category domains ✅
         # 5. update CV's to match values
+        # 6. retire CV's in GDB but not in table (or is_active = 0)
 
         # Todo: Add try/catch to catch cancellations and errors when cleanup is required.
 

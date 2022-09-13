@@ -1,3 +1,5 @@
+# Modeled off template located at: https://github.com/Wildsong/ArcGIS_Python_Template
+# Official ESRI template: https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/a-template-for-python-toolboxes.htm
 import arcpy
 from pathlib import Path
 from datetime import date

@@ -12,11 +12,11 @@ data = [
     ("point", "Haz-Mat", "CCP", 1, ""),
     ("point", "Haz-Mat", "Decon", 1, ""),
     ("point", "ICS", "ICP", 1, ""),
-    ("point", "Response Resources", "Engine", 1, ""),
+    ("point", "Resources", "Engine", 1, ""),
     ("line", "Infrastructure", "Road Closure", 1, ""),
-    ("line", "Response Resources", "Handline", 1, ""),
-    ("point", "Response Resources", "Engine", 1, ""),  # duplicate to test catching of dup values
-    ("point", "Haz-Mat", "Not Active", 0, "")  # not active to test non-active domains
+    ("line", "Resources", "Handline", 1, ""),
+    ("point", "Resources", "Engine", 1, ""),  # duplicate to test catching of dup values
+    ("point", "Haz-Mat", "Not Active", 0, "")  # not active
 ]
 
 table_name = "Contingent_Values"
@@ -48,30 +48,31 @@ class TestCVUpdate:
         domains = arcpy.da.ListDomains(gdb_path)
 
         domain_group_vals = [
-            d.codedValues
-            for d in domains
-            if d.name == "FeatureGroup"
+            d.codedValues for d in domains if d.name == "FeatureGroup"
         ][0]
 
         domain_point_vals = [
-            d.codedValues
-            for d in domains
-            if d.name == "FeatureCategory(Point)"
+            d.codedValues for d in domains if d.name == "FeatureCategory(Point)"
         ][0]
 
         domain_poly_vals = [
-            d.codedValues
-            for d in domains
-            if d.name == "FeatureCategory(Polygon)"
+            d.codedValues for d in domains if d.name == "FeatureCategory(Polygon)"
         ][0]
 
         domain_line_vals = [
-            d.codedValues
-            for d in domains
-            if d.name == "FeatureCategory(Line)"
+            d.codedValues for d in domains if d.name == "FeatureCategory(Line)"
         ][0]
 
-        assert len(domain_group_vals) == 5 # This appends so the default "Other/Unknown" is still there.
-        assert len(domain_point_vals) == 4
-        assert len(domain_poly_vals) == 3
-        assert len(domain_line_vals) == 2
+        cv_point = arcpy.da.ListContingentValues(str(gdb_path.joinpath("Event_Point")))
+        cv_poly = arcpy.da.ListContingentValues(str(gdb_path.joinpath("Event_Polygon")))
+        cv_line = arcpy.da.ListContingentValues(str(gdb_path.joinpath("Event_Line")))
+
+        assert len(domain_group_vals) == 5  # This appends so the default "Other/Unknown" is still there.
+        assert len(domain_point_vals) == 5
+        assert len(domain_poly_vals) == 4
+        assert len(domain_line_vals) == 3
+        assert len(cv_point) == 5
+        assert len(cv_poly) == 4
+        assert len(cv_line) == 3
+
+
