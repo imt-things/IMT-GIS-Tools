@@ -29,13 +29,18 @@
                 </CodedValues>
             </Domain>
             <Domain xsi:type='esri:CodedValueDomain'>
-                <DomainName>FeatureCategory(Line)</DomainName>
+                <DomainName>FeatureGroup</DomainName>
                 <FieldType>esriFieldTypeString</FieldType>
                 <MergePolicy>esriMPTDefaultValue</MergePolicy>
                 <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
-                <Description>Line feature types</Description>
+                <Description>Feature group</Description>
                 <Owner></Owner>
-                <CodedValues xsi:type='esri:ArrayOfCodedValue'></CodedValues>
+                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Other/Unknown</Name>
+                        <Code xsi:type='xs:string'>Other</Code>
+                    </CodedValue>
+                </CodedValues>
             </Domain>
             <Domain xsi:type='esri:CodedValueDomain'>
                 <DomainName>FeatureStatus</DomainName>
@@ -64,11 +69,11 @@
                 </CodedValues>
             </Domain>
             <Domain xsi:type='esri:CodedValueDomain'>
-                <DomainName>FeatureGroup</DomainName>
+                <DomainName>FeatureCategory(Line)</DomainName>
                 <FieldType>esriFieldTypeString</FieldType>
                 <MergePolicy>esriMPTDefaultValue</MergePolicy>
                 <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
-                <Description>Feature group</Description>
+                <Description>Line feature types</Description>
                 <Owner></Owner>
                 <CodedValues xsi:type='esri:ArrayOfCodedValue'>
                     <CodedValue xsi:type='esri:CodedValue'>
@@ -196,7 +201,12 @@
                 <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
                 <Description>Point feature types</Description>
                 <Owner></Owner>
-                <CodedValues xsi:type='esri:ArrayOfCodedValue'></CodedValues>
+                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Other/Unknown</Name>
+                        <Code xsi:type='xs:string'>Other</Code>
+                    </CodedValue>
+                </CodedValues>
             </Domain>
             <Domain xsi:type='esri:CodedValueDomain'>
                 <DomainName>FeatureCategory(Polygon)</DomainName>
@@ -205,7 +215,12 @@
                 <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
                 <Description>Polygon feature types</Description>
                 <Owner></Owner>
-                <CodedValues xsi:type='esri:ArrayOfCodedValue'></CodedValues>
+                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                    <CodedValue xsi:type='esri:CodedValue'>
+                        <Name>Other/Unknown</Name>
+                        <Code xsi:type='xs:string'>Other</Code>
+                    </CodedValue>
+                </CodedValues>
             </Domain>
             <Domain xsi:type='esri:CodedValueDomain'>
                 <DomainName>YesNo</DomainName>
@@ -453,7 +468,7 @@
                             <Name>is_active</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>false</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>is_active</AliasName>
@@ -633,6 +648,20 @@
                             <Scale>0</Scale>
                             <AliasName>Feature Category (Line Type)</AliasName>
                             <ModelName>FeatureCategory</ModelName>
+                            <Domain xsi:type='esri:CodedValueDomain'>
+                                <DomainName>FeatureCategory(Line)</DomainName>
+                                <FieldType>esriFieldTypeString</FieldType>
+                                <MergePolicy>esriMPTDefaultValue</MergePolicy>
+                                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
+                                <Description>Line feature types</Description>
+                                <Owner></Owner>
+                                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                                    <CodedValue xsi:type='esri:CodedValue'>
+                                        <Name>Other/Unknown</Name>
+                                        <Code xsi:type='xs:string'>Other</Code>
+                                    </CodedValue>
+                                </CodedValues>
+                            </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>inc_name</Name>
@@ -846,7 +875,7 @@
                             <Name>is_visible</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Is Visible?</AliasName>
@@ -878,7 +907,7 @@
                             <Name>delete_this</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Delete this feature?</AliasName>
@@ -940,7 +969,7 @@
                             <Name>is_owner</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Is Owner?</AliasName>
@@ -1347,7 +1376,7 @@
                         <IsEditingRestrictive>true</IsEditingRestrictive>
                     </FieldGroup>
                 </FieldGroups>
-                <ContingentValues xsi:type='xs:base64Binary'>ChkKC0ZlYXR1cmVUeXBlEgoKCAgBIgIgACIA</ContingentValues>
+                <ContingentValues xsi:type='xs:base64Binary'>ChsKC0ZlYXR1cmVUeXBlEgwKCggBIgJQACICUAASBU90aGVy</ContingentValues>
                 <ReplicaTracked>false</ReplicaTracked>
                 <FieldFilteringEnabled>false</FieldFilteringEnabled>
                 <FilteredFieldNames xsi:type='esri:Names'></FilteredFieldNames>
@@ -1446,6 +1475,20 @@
                             <Scale>0</Scale>
                             <AliasName>Feature Category (Polygon Type)</AliasName>
                             <ModelName>FeatureCategory</ModelName>
+                            <Domain xsi:type='esri:CodedValueDomain'>
+                                <DomainName>FeatureCategory(Polygon)</DomainName>
+                                <FieldType>esriFieldTypeString</FieldType>
+                                <MergePolicy>esriMPTDefaultValue</MergePolicy>
+                                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
+                                <Description>Polygon feature types</Description>
+                                <Owner></Owner>
+                                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                                    <CodedValue xsi:type='esri:CodedValue'>
+                                        <Name>Other/Unknown</Name>
+                                        <Code xsi:type='xs:string'>Other</Code>
+                                    </CodedValue>
+                                </CodedValues>
+                            </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>inc_name</Name>
@@ -1659,7 +1702,7 @@
                             <Name>is_visible</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Is Visible?</AliasName>
@@ -1691,7 +1734,7 @@
                             <Name>delete_this</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Delete this feature?</AliasName>
@@ -1753,7 +1796,7 @@
                             <Name>is_owner</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Is Owner?</AliasName>
@@ -2161,7 +2204,7 @@
                         <IsEditingRestrictive>true</IsEditingRestrictive>
                     </FieldGroup>
                 </FieldGroups>
-                <ContingentValues xsi:type='xs:base64Binary'>ChkKC0ZlYXR1cmVUeXBlEgoKCAgBIgIgACIA</ContingentValues>
+                <ContingentValues xsi:type='xs:base64Binary'>ChsKC0ZlYXR1cmVUeXBlEgwKCggBIgJQACICUAASBU90aGVy</ContingentValues>
                 <ReplicaTracked>false</ReplicaTracked>
                 <FieldFilteringEnabled>false</FieldFilteringEnabled>
                 <FilteredFieldNames xsi:type='esri:Names'></FilteredFieldNames>
@@ -2258,6 +2301,20 @@
                             <Scale>0</Scale>
                             <AliasName>Feature Category (Point Type)</AliasName>
                             <ModelName>FeatureCategory</ModelName>
+                            <Domain xsi:type='esri:CodedValueDomain'>
+                                <DomainName>FeatureCategory(Point)</DomainName>
+                                <FieldType>esriFieldTypeString</FieldType>
+                                <MergePolicy>esriMPTDefaultValue</MergePolicy>
+                                <SplitPolicy>esriSPTDefaultValue</SplitPolicy>
+                                <Description>Point feature types</Description>
+                                <Owner></Owner>
+                                <CodedValues xsi:type='esri:ArrayOfCodedValue'>
+                                    <CodedValue xsi:type='esri:CodedValue'>
+                                        <Name>Other/Unknown</Name>
+                                        <Code xsi:type='xs:string'>Other</Code>
+                                    </CodedValue>
+                                </CodedValues>
+                            </Domain>
                         </Field>
                         <Field xsi:type='esri:Field'>
                             <Name>inc_name</Name>
@@ -2471,7 +2528,7 @@
                             <Name>is_visible</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Is Visible?</AliasName>
@@ -2503,7 +2560,7 @@
                             <Name>delete_this</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Delete this feature?</AliasName>
@@ -2565,7 +2622,7 @@
                             <Name>is_owner</Name>
                             <Type>esriFieldTypeSmallInteger</Type>
                             <IsNullable>true</IsNullable>
-                            <Length>0</Length>
+                            <Length>2</Length>
                             <Precision>0</Precision>
                             <Scale>0</Scale>
                             <AliasName>Is Owner?</AliasName>
@@ -3009,7 +3066,7 @@
                         <IsEditingRestrictive>true</IsEditingRestrictive>
                     </FieldGroup>
                 </FieldGroups>
-                <ContingentValues xsi:type='xs:base64Binary'>ChkKC0ZlYXR1cmVUeXBlEgoKCAgBIgIgACIA</ContingentValues>
+                <ContingentValues xsi:type='xs:base64Binary'>ChsKC0ZlYXR1cmVUeXBlEgwKCggBIgJQACICUAASBU90aGVy</ContingentValues>
                 <ReplicaTracked>false</ReplicaTracked>
                 <FieldFilteringEnabled>false</FieldFilteringEnabled>
                 <FilteredFieldNames xsi:type='esri:Names'></FilteredFieldNames>
