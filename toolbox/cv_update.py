@@ -38,50 +38,64 @@ class CVUpdate:
         return [table, gdb]
 
     def execute(self, parameters, messages):
-        # The source code of your tool.
-        # Get the parameters from our parameters list, then call a generic python function.
-        # This separates the code doing the work from all the crazy code required to talk to ArcGIS.
-
         messages.addMessage(f"Running {self.label} version {__version__}")
 
         for param in parameters:
             messages.addMessage(f"Parameter: {param.name} = {param.valueAsText}")
 
         # prepare variables for different ways tools require the arguments passed
-        gdb = parameters[1].valueAsText
+        gdb = Path(parameters[1].valueAsText)
         cv_table = parameters[0].valueAsText
         
-        # currently for AGP
+        # for AGP
+
+        # get current domains
+        domains = arcpy.da.ListDomains(str(gdb))
+
+        def _do_append(values: set[tuple], table: str, domain: str):
+            # get domains from cv table
+            table_doms = {val[2] for val in values}
+            messages.addMessage(table_doms)
+
+            # get domains that already exist in gdb
+            existing_doms = {val for val in [dom.codedValues.values() for dom in domains if dom.name == domain][0]}
+            messages.addMessage(existing_doms)
+
+            # get values to append that are in the table but don't already exist
+            to_append = {val for val in values if val[2] in table_doms - existing_doms}
+            messages.addMessage(to_append)
+            
+            for val in to_append:
+                arcpy.AddCodedValueToDomain_management(str(gdb), domain, val[2], val[2])
+                insert = f"feature_group CODED_VALUE '{val[1]}'; feature_category CODED_VALUE '{val[2]}'"
+                arcpy.AddContingentValue_management(str(gdb.joinpath(table)), "FeatureType", insert, )
+
+        # get values to append from cv table
         fields = ["geom_type", "feat_group", "feat_category", "is_active", "keywords"]
         with arcpy.da.SearchCursor(cv_table, fields, where_clause="is_active=1") as cursor:
             values = [row for row in cursor]
 
         # get our values to append. use sets to drop duplicate values.
-        groups = set([val[1] for val in values])
-        point_vals = set([val for val in values if val[0] == "point"])
-        poly_vals = set([val for val in values if val[0] == "polygon"])
-        line_vals = set([val for val in values if val[0] == "line"])
 
+        # groups
+        groups_append = set([val[1] for val in values])
+        for i in groups_append:
+            arcpy.AddCodedValueToDomain_management(str(gdb), "FeatureGroup", i, i)
+        
+        # TODO: 
         # append domain values and update CVs
         # TODO: Check for existing domains and decide how to handle them
         # TODO: retire CVs that exist in the gdb but not active in the CV table
         # TODO: make sure Other/Other is added to each CV (will have to be removed from list of CVs to retire)
-        for i in groups:
-            arcpy.AddCodedValueToDomain_management(gdb, "FeatureGroup", i, i)
-        for i in line_vals:
-            arcpy.AddCodedValueToDomain_management(gdb, "FeatureCategory(Line)", i[2], i[2])
-            insert = f"feature_group CODED_VALUE '{i[1]}'; feature_category CODED_VALUE '{i[2]}'"
-            arcpy.AddContingentValue_management(str(Path(gdb).joinpath("Event_Line")), "FeatureType", insert, )
-
-        for i in point_vals:
-            arcpy.AddCodedValueToDomain_management(gdb, "FeatureCategory(Point)", i[2], i[2])
-            insert = f"feature_group CODED_VALUE '{i[1]}'; feature_category CODED_VALUE '{i[2]}'"
-            arcpy.AddContingentValue_management(str(Path(gdb).joinpath("Event_Point")), "FeatureType", insert, )
-
-        for i in poly_vals:
-            arcpy.AddCodedValueToDomain_management(gdb, "FeatureCategory(Polygon)", i[2], i[2])
-            insert = f"feature_group CODED_VALUE '{i[1]}'; feature_category CODED_VALUE '{i[2]}'"
-            arcpy.AddContingentValue_management(str(Path(gdb).joinpath("Event_Polygon")), "FeatureType", insert, )
+        
+        # gather and update domains/cv for feature_categories
+        point_vals_append = set([val for val in values if val[0] == "point"])
+        poly_vals_append = set([val for val in values if val[0] == "polygon"])
+        line_vals_append = set([val for val in values if val[0] == "line"])
+        
+        _do_append(point_vals_append, "Event_Point", "FeatureCategory(Point)")
+        _do_append(poly_vals_append, "Event_Polygon", "FeatureCategory(Polygon)")
+        _do_append(line_vals_append, "Event_Line", "FeatureCategory(Line)")
 
         # TODO: implement for AGOL
 
