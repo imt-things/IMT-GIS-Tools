@@ -1,7 +1,7 @@
 import arcpy
 from pathlib import Path
 
-__version__ = "2022-09-12"
+__version__ = "2022-09-18.4"
 
 
 class CVUpdate:
@@ -55,15 +55,12 @@ class CVUpdate:
         def _do_append(values: set[tuple], table: str, domain: str):
             # get domains from cv table
             table_doms = {val[2] for val in values}
-            messages.addMessage(table_doms)
 
             # get domains that already exist in gdb
             existing_doms = {val for val in [dom.codedValues.values() for dom in domains if dom.name == domain][0]}
-            messages.addMessage(existing_doms)
 
             # get values to append that are in the table but don't already exist
             to_append = {val for val in values if val[2] in table_doms - existing_doms}
-            messages.addMessage(to_append)
             
             for val in to_append:
                 arcpy.AddCodedValueToDomain_management(str(gdb), domain, val[2], val[2])
@@ -95,7 +92,7 @@ class CVUpdate:
         
         _do_append(point_vals_append, "Event_Point", "FeatureCategory(Point)")
         _do_append(poly_vals_append, "Event_Polygon", "FeatureCategory(Polygon)")
-        _do_append(line_vals_append, "Event_Line", "FeatureCategory(Line)")
+        _do_append(line_vals_append, "Event_Line", "FeatureCategory(Line)") 
 
         # TODO: implement for AGOL
 
