@@ -1,18 +1,20 @@
 import arcpy
 from pathlib import Path
 
-__version__ = "2022-09-18.4"
+__version__ = "2022-09-21"
 
 
 class CVUpdate:
+    """Appends new contingent values from selected table and retires contingent values no longer in the selected table
+    Notes:
+    - Values in self.persist will always be persisted if it previously existed -- should be set to domain codedvalue
+    """
     def __init__(self):
-        # Define the tool (tool name is the name of the class).
         self.label = "Update Contingent Values"
         self.description = "Update Contingent Values"
         self.canRunInBackground = False
-        # Use your own category here, or an existing one.
         self.category = "Data Management"
-        # self.stylesheet = '' # I don't know how to use this yet.
+        self.persist_values = {("Other", "Other")}
 
     def getParameterInfo(self):
         # Define parameter definitions.
@@ -52,20 +54,33 @@ class CVUpdate:
         # get current domains
         domains = arcpy.da.ListDomains(str(gdb))
 
-        def _do_append(values: set[tuple], table: str, domain: str):
+        def _do_append(values, table, domain):
             # get domains from cv table
             table_doms = {val[2] for val in values}
-
-            # get domains that already exist in gdb
-            existing_doms = {val for val in [dom.codedValues.values() for dom in domains if dom.name == domain][0]}
-
-            # get values to append that are in the table but don't already exist
+            # get existing domains from gdb
+            existing_doms = {val for val in [dom.codedValues.keys() for dom in domains if dom.name == domain][0]}
+            # get values to append by subtracting what we want from what we have
             to_append = {val for val in values if val[2] in table_doms - existing_doms}
-            
+
+            # get CVs from table
+            table_cvs = {(val[1], val[2]) for val in values}
+            # get existing CVs from gdb
+            existing_cvs = {(val.id, val.values[0].code, val.values[1].code) for val in [cv for cv in arcpy.da.ListContingentValues(str(gdb.joinpath(table)))]}
+            # get values to retire by subtracting we want (including values in self.persist) from what we have
+            to_retire = {val for val in existing_cvs if (val[1], val[2]) in {(val[1], val[2]) for val in existing_cvs} - table_cvs - self.persist_values }
+
+            # append domains
             for val in to_append:
                 arcpy.AddCodedValueToDomain_management(str(gdb), domain, val[2], val[2])
                 insert = f"feature_group CODED_VALUE '{val[1]}'; feature_category CODED_VALUE '{val[2]}'"
                 arcpy.AddContingentValue_management(str(gdb.joinpath(table)), "FeatureType", insert, )
+                # TODO: Add feature template for new value -- someday...no support for this in arcpy
+
+            # retire CVs
+            for val in to_retire:
+                insert = f"feature_group CODED_VALUE '{val[1]}'; feature_category CODED_VALUE '{val[2]}'"
+                arcpy.AddContingentValue_management(str(gdb.joinpath(table)), "FeatureType", insert, retire_value=True)
+                arcpy.RemoveContingentValue_management(str(gdb.joinpath(table)), val[0])
 
         # get values to append from cv table
         fields = ["geom_type", "feat_group", "feat_category", "is_active", "keywords"]
