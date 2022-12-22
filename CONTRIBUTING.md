@@ -15,6 +15,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 ### Notes:
 1. The repo make use of `nbdev`. If you are unfamiliar you may learn more at: https://nbdev.fast.ai/tutorials/tutorial.html. The bottom line is that all work is done in notebooks located in `nbs/`. Docs will be automatically generated on commit.
 1. The repo makes use of `pre-commit`. Please familiarize with `pre-commit` by reading their docs at: https://pre-commit.com/
+2. Plese read: https://nbdev.fast.ai/tutorials/best_practices.html
 
 ## Code Standards
 1. All paths shall be created as Path (from pathlib) objects at the time of initialization. Should a package not accept Path objects, such as GDAL, paths should be passed to the package as str(path/to/file).
