@@ -12,6 +12,11 @@ Please note we have a code of conduct, please follow it in all your interactions
 3. Increase the version numbers in any examples, tools, and README.md to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
 4. You may merge the Pull Request in once you have the sign-off of one additional developer, or if you do not have permission to do that, you may request the reviewer to merge it for you. **Note:** You will need to convert the Pull Request from Draft in order to merge.
 
+### Notes:
+1. The repo make use of `nbdev`. If you are unfamiliar you may learn more at: https://nbdev.fast.ai/tutorials/tutorial.html. The bottom line is that all work is done in notebooks located in `nbs/`. Docs will be automatically generated on commit.
+1. The repo makes use of `pre-commit`. Please familiarize with `pre-commit` by reading their docs at: https://pre-commit.com/
+2. Plese read: https://nbdev.fast.ai/tutorials/best_practices.html
+
 ## Code Standards
 1. All paths shall be created as Path (from pathlib) objects at the time of initialization. Should a package not accept Path objects, such as GDAL, paths should be passed to the package as str(path/to/file).
 2. Doc strings shall be included in each function. <!-- Todo: define this..what format? !-->

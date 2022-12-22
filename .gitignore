@@ -1,7 +1,32 @@
+# added for nbdev
+_publish.yml
+_quarto.yml
+_proc/
+tests/settings.ini
+idx/
+.install
+conda/
+_site/
+_docs/
+test_settings.ini
+
+*.bak
+.gitattributes
+.last_checked
+.gitconfig
+*.bak
+*.log
+*~
+~*
+_tmp*
+tmp*
+tags
+
 # User added
 scratch*
 .DS_Store
 .lh
+.vscode/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
