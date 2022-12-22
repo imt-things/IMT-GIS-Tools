@@ -2,6 +2,6 @@ website:
   sidebar:
     contents:
       - index.ipynb
-      - section: how-to
+      - section: how-tos
         contents:
-          - how-to/test.ipynb
+          - how-tos/test.ipynb
