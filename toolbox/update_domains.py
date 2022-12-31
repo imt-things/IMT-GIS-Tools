@@ -68,6 +68,25 @@ def update_domain_helper(messages, gdb, in_file):
     # - build dict for operations
     # - determine if we are using file_gdb or AGOL
     # - perform appropriate operations
+    def _get_table_doms() -> set:
+        doms = {}
+        return doms
+
+    def _get_existing_doms() -> set:
+        doms = {}
+        return doms
+
+    gdb_type = (
+        "AGOL"  # TODO: this should be 'agol' or 'fileggdb'...how do we determine this?
+    )
+    table_doms = _get_table_doms()  # TODO: implement this
+    existing_doms = {}  # TODO: implement this
+
+    to_retire = existing_doms - table_doms
+    to_add = table_doms - existing_doms
+
+    # TODO: test that domains get synced when working offline
+
     pass
 
 

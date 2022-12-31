@@ -2,7 +2,6 @@ import pytest
 
 
 class Messages:
-
     def addMessage(self, message):
         print(message)
 
