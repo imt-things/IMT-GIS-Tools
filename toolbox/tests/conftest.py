@@ -3,7 +3,6 @@ import arcpy
 
 
 class Messages:
-
     def addMessage(self, message):
         print(message)
 

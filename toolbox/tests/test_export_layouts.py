@@ -1,8 +1,8 @@
 import pytest
 from toolbox.export_layouts import ExportLayouts
 
-class TestExportLayouts:
 
+class TestExportLayouts:
     def test_export_layouts_one(self, tmp_path, messages, test_aprx_path):
         """Tests that we get a single pdf output when a single layout is passed
 
@@ -18,7 +18,6 @@ class TestExportLayouts:
         exp_layouts.execute(params, messages, aprx_path=test_aprx_path)
 
         assert len(list(tmp_path.iterdir())) == 1
-
 
     def test_export_layouts_two(self, tmp_path, messages, test_aprx_path):
         """Tests that we get two (multiple) pdf outputs two (multiple) layouts are passed

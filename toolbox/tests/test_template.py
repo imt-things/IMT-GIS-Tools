@@ -4,7 +4,6 @@ from toolbox._template import _Template
 
 
 class TestTemplate:
-
     def test_template(self, messages):
         # Get an instance of the tool.
         template = _Template()
@@ -18,4 +17,3 @@ class TestTemplate:
 
         # Run it.
         assert template.execute(params, messages) == 7
-        

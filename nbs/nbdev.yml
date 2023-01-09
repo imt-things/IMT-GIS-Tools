@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "IMT-GIS-Tools"
+  site-url: "https://imt-things.github.io/IMT-GIS-Tools"
+  description: "IMT GISS Tools"
+  repo-branch: main
+  repo-url: "https://github.com/imt-things/IMT-GIS-Tools"
