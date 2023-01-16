@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "IMT-GIS-Tools",
+    "section": "",
+    "text": "All-hazard incident management teams (AHIMTs) are often tasked with responding to and managing incidents of wildly varying scope and complexity. The role of AHIMTs continues to evolve into a more data centric role due to legal issues, incident complexity, and interoperability requirements. These challenges necessitate a flexible framework for managing geospatial data during incidents. Unlike the wildland firefighting community, no standards currently exist specific to geospatial data management for AHIMTs. With this project, we aim to provide a framework for handling geospatial data for AHIMTs and the necessary tools for managing said framework.\nTo that end, we propose the following solution:\n\nStandardized event geodatabase (EGDB) schema.\n\n[Future] PostGIS schema matching EGDB\n\nPre-built web-apps, map layouts, and analysis tools that match schema.\nTools to allow adapting framework to mission requirements with minimal training.\nStandard operating procedures (SOP) that defines operational procedures for handling geospatial data and associated products.\n\nThe above will allow teams to quickly establish methods for capturing, analyzing, and visualizing data while providing the flexibility required to adapt to changing situations."
+  },
+  {
+    "objectID": "index.html#components",
+    "href": "index.html#components",
+    "title": "IMT-GIS-Tools",
+    "section": "Components",
+    "text": "Components\n\nEvent Geodatabase (EGDB)\n\nPre-defined schema extended from National Wildland Coordinating Group (NWCG).\nTools for creating EGDB on ESRI platforms (ArcGIS Pro and ArcGIS Online (AGOL)).\nTools for managing domains to facilitate unknown assignment requirements.\n\n\n\nWeb Application\n\nProvide for Incident monitoring.\nCreate, read, update, and delete (CRUD) event data.\nPrint format-customizable maps.\nPermissions for query/approval based on IMT roles (GISS, SITL, IC, etc.).\nInput features based on hand-held data collection (ESRI Field Maps).\nFunctional across common hardware and browsers.\nOffline functionality with source feature service synchronization of edits.\n\n\n\nCustomizable ArcGIS Pro Templates and Map Layouts\n\nArcGIS Pro template containing:\n\nEGDB\nCustom toolbox\nCustomizable map layouts\n\nMap layouts\n\nCustomizable for organizational use.\nCustomizable to map/product requirements.\nDynamic text for rapid updating of map info.\n\n\n\n\nAnalysis Tools\nIncludes custom Python tools to accomplish start up, joining, and closing-out an incident. Additional tools can be added by users for custom needs."
+  },
+  {
+    "objectID": "index.html#current-status",
+    "href": "index.html#current-status",
+    "title": "IMT-GIS-Tools",
+    "section": "Current Status",
+    "text": "Current Status\nAll code in the this repository is a work in progress. Use at your own risk and please feel free to contribute.\n\nEvent GDB: event_gdb/README.md\nWebapps: webapp/README.md"
+  },
+  {
+    "objectID": "index.html#changelog",
+    "href": "index.html#changelog",
+    "title": "IMT-GIS-Tools",
+    "section": "Changelog",
+    "text": "Changelog\n\n2022-12-22\n\nMigrate to nbdev for improved documentation\n\n\n\n2022-08-31\n\nAdd event GDB readme: event_gdb/README.md\nAdd webapp readme: webapp/README.md\n\n\n\n2022-08-11\n\nAlpha version of event GDB ready\nStill in conversations with ESRI on how to best adapt the domains/contingent values of feature category after EGDB has been pushed to AGOL\nBasic webapp running\nSOP stub created\nSome layout management tools completed"
+  },
+  {
+    "objectID": "docker_stack/docker_tool_stack.html",
+    "href": "docker_stack/docker_tool_stack.html",
+    "title": "Docker Stack",
+    "section": "",
+    "text": "PostGIS is the Postgres database with the GIS extension pre-packaged. Most GIS tools in use (ArcGIS, QGIS) can connect directly to the database.\n\n\n\nPGAdmin is an admin tool for PostGIS database.\n\n\n\nWebDAV is a network file sharing tool. WebDAV shares can be mounted by most operating systems and"
+  },
+  {
+    "objectID": "docker_stack/docker_tool_stack.html#usage",
+    "href": "docker_stack/docker_tool_stack.html#usage",
+    "title": "Docker Stack",
+    "section": "Usage",
+    "text": "Usage\n\nEnsure you have docker downloaded and installed.\nCopy .env.template to .env.\nPopulate .env with your preferred values.\nFrom the root directory, run: docker compose -d up.\nConnect to service with the appropriate port. That can be found in the docker-compose.yml.\n\nExample: PostGIS can be connected to by using the hostname of localhost and the port 5400…localhost:5400"
+  }
+]
