@@ -1,0 +1,32 @@
+services:
+  database:
+    image: postgis/postgis:14-3.3
+    ports:
+      - "5400:5432"
+    volumes:
+      - ./data/database:/var/lib/postgresql/data
+    env_file: .env
+    restart: unless-stopped
+
+  pg_admin:
+    image: dpage/pgadmin4:6.14
+    ports:
+      - 80:80
+      # - 443:443
+    volumes:
+      - ./config/pg_admin:/var/lib/pgadmin
+    env_file: .env
+    restart: unless-stopped
+    depends_on:
+      - database
+
+  webdav:
+    image: drakkan/sftpgo:2.3.x-alpine-slim
+    ports:
+      - 2022:2022
+      - "8080:8080"
+      - "10080:10080"
+    volumes:
+      - ./data/webdav:/srv/sftpgo
+    environment:
+      - SFTPGO_WEBDAVD__BINDINGS__0__PORT=10080
