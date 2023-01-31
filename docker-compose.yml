@@ -30,3 +30,14 @@ services:
       - ./data/webdav:/srv/sftpgo
     environment:
       - SFTPGO_WEBDAVD__BINDINGS__0__PORT=10080
+
+  syncthing:
+    image: syncthing/syncthing:1.23
+    ports:
+      - 8384:8384 # Web UI
+      - 22000:22000/tcp # TCP file transfers
+      - 22000:22000/udp # QUIC file transfers
+      - 21027:21027/udp # Receive local discovery broadcasts
+    volumes:
+      - ./data/syncthing:/var/syncthing
+    restart: unless-stopped
