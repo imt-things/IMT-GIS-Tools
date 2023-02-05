@@ -41,3 +41,11 @@ services:
     volumes:
       - ./data/syncthing:/var/syncthing
     restart: unless-stopped
+
+  geoserver: # docs: https://github.com/geoserver/docker
+    image: docker.osgeo.org/geoserver:latest
+    ports: 8090:8080
+    volumes:
+      - ./data/geoserver:/opt/geoserver_data/
+    environment:
+      - SKIP_DEMO_DATA=true # set to false or comment out to populate with demo data
